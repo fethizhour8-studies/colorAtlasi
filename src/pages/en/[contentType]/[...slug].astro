@@ -251,6 +251,37 @@ if (props.kind === "printable") {
                   Back to collection
                 </a>
               </div>
+              <div class="mt-8 grid gap-4 md:grid-cols-3">
+                <div class="sidebar-box p-4">
+                  <h2 class="font-serif text-xl font-black text-ink">Quick facts</h2>
+                  <dl class="mt-4 grid gap-3">
+                    {props.topic.quickFacts.map((fact) => (
+                      <div>
+                        <dt class="text-[0.68rem] font-black uppercase text-muted">{fact.label}</dt>
+                        <dd class="mt-1 text-sm font-bold leading-5 text-ink">{fact.value}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+                <div class="sidebar-box p-4">
+                  <h2 class="font-serif text-xl font-black text-ink">Browse tags</h2>
+                  <div class="mt-3 flex flex-wrap gap-2">
+                    {props.topic.tags.map((tag) => (
+                      <span class="rounded-full border border-line bg-paper px-2 py-1 text-xs font-bold text-muted">{tag}</span>
+                    ))}
+                    {props.printable.tags.map((tag) => (
+                      <span class="rounded-full border border-line bg-paper px-2 py-1 text-xs font-bold text-muted">{tag}</span>
+                    ))}
+                  </div>
+                </div>
+                <div class="sidebar-box bg-mint/50 p-4">
+                  <h2 class="font-serif text-xl font-black text-ink">Safe topic note</h2>
+                  <p class="mt-3 text-sm leading-6 text-muted">
+                    This printable belongs to an original collection rather than protected characters,
+                    brand mascots, logos, or franchise designs.
+                  </p>
+                </div>
+              </div>
             </div>
             <PrintableCard printable={props.printable} mode="detail" />
           </div>
