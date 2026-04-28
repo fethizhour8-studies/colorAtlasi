@@ -64,6 +64,16 @@
       "order": 20
     },
     {
+      "id": "coloring-pages-dinosaurs",
+      "contentTypeId": "coloring-pages",
+      "slug": "dinosaurs",
+      "title": "Dinosaur Coloring Pages",
+      "description": "Original dinosaur coloring page collections with friendly prehistoric scenes and classroom-friendly species themes.",
+      "seoTitle": "Free Printable Dinosaur Coloring Pages",
+      "seoDescription": "Browse original dinosaur coloring page collections with clean PDF downloads and safe prehistoric themes.",
+      "order": 25
+    },
+    {
       "id": "coloring-pages-adults",
       "contentTypeId": "coloring-pages",
       "slug": "adults",
@@ -72,6 +82,16 @@
       "seoTitle": "Free Printable Adult Coloring Pages",
       "seoDescription": "Browse relaxing adult coloring pages, mandalas, and detailed printable PDFs.",
       "order": 30
+    },
+    {
+      "id": "coloring-pages-seasonal",
+      "contentTypeId": "coloring-pages",
+      "slug": "seasonal",
+      "title": "Seasonal Coloring Pages",
+      "description": "Seasonal and holiday-inspired coloring pages with original, non-character themes for classrooms and home activities.",
+      "seoTitle": "Free Printable Seasonal Coloring Pages",
+      "seoDescription": "Browse seasonal coloring pages with original holiday, autumn, winter, and classroom-friendly PDF themes.",
+      "order": 40
     },
     {
       "id": "calendars-2026",
@@ -100,11 +120,74 @@
         { "label": "Difficulty", "value": "Easy to medium" }
       ],
       "tags": ["fantasy", "magic", "kids", "classroom"],
-      "relatedTopicIds": ["farm-animals-coloring-pages", "mandala-coloring-pages"],
+      "relatedTopicIds": ["cute-coloring-pages", "dinosaur-coloring-pages", "farm-animals-coloring-pages"],
       "indexable": true,
       "seoTitle": "Free Printable Wizard School Coloring Pages",
       "seoDescription": "Browse original wizard school coloring pages with magic owls, spell books, towers, and simple PDF downloads.",
       "order": 10
+    },
+    {
+      "id": "cute-coloring-pages",
+      "contentTypeId": "coloring-pages",
+      "hubId": "coloring-pages-kids",
+      "slug": "cute-coloring-pages",
+      "title": "Cute Coloring Pages",
+      "h1": "Cute Coloring Pages",
+      "intro": "Cute original coloring pages with friendly animals, happy shapes, simple scenes, and cheerful line art for young colorers.",
+      "description": "Planned collection of cute printable coloring pages for kids, classrooms, and simple screen-free activities.",
+      "quickFacts": [
+        { "label": "Best for", "value": "Kids, preschool, kindergarten" },
+        { "label": "Format", "value": "Letter-size PDF printables" },
+        { "label": "Status", "value": "Ready for approved assets" }
+      ],
+      "tags": ["cute", "kids", "easy", "classroom"],
+      "relatedTopicIds": ["wizard-school-coloring-pages", "rainbow-coloring-pages", "farm-animals-coloring-pages"],
+      "indexable": false,
+      "seoTitle": "Cute Coloring Pages",
+      "seoDescription": "Browse planned cute coloring pages with original kid-friendly themes and printable PDF structure.",
+      "order": 20
+    },
+    {
+      "id": "rainbow-coloring-pages",
+      "contentTypeId": "coloring-pages",
+      "hubId": "coloring-pages-kids",
+      "slug": "rainbow-coloring-pages",
+      "title": "Rainbow Coloring Pages",
+      "h1": "Rainbow Coloring Pages",
+      "intro": "Original rainbow coloring pages with clouds, weather scenes, stars, hearts, and simple cheerful shapes.",
+      "description": "Planned collection of rainbow coloring pages for kids, weather units, classroom crafts, and cheerful PDF activities.",
+      "quickFacts": [
+        { "label": "Best for", "value": "Kids, weather themes, classroom crafts" },
+        { "label": "Format", "value": "Letter-size PDF printables" },
+        { "label": "Status", "value": "Ready for approved assets" }
+      ],
+      "tags": ["rainbow", "weather", "kids", "easy"],
+      "relatedTopicIds": ["cute-coloring-pages", "train-coloring-pages", "wizard-school-coloring-pages"],
+      "indexable": false,
+      "seoTitle": "Rainbow Coloring Pages",
+      "seoDescription": "Browse planned rainbow coloring pages with clouds, weather scenes, and simple printable PDF themes.",
+      "order": 30
+    },
+    {
+      "id": "train-coloring-pages",
+      "contentTypeId": "coloring-pages",
+      "hubId": "coloring-pages-kids",
+      "slug": "train-coloring-pages",
+      "title": "Train Coloring Pages",
+      "h1": "Train Coloring Pages",
+      "intro": "Original train coloring pages with engines, tracks, stations, cargo cars, and simple travel scenes for kids.",
+      "description": "Planned collection of train coloring pages for kids who like vehicles, railroads, and printable transport activities.",
+      "quickFacts": [
+        { "label": "Best for", "value": "Kids, vehicle themes, transport units" },
+        { "label": "Format", "value": "Letter-size PDF printables" },
+        { "label": "Status", "value": "Ready for approved assets" }
+      ],
+      "tags": ["trains", "vehicles", "kids", "transport"],
+      "relatedTopicIds": ["rainbow-coloring-pages", "cute-coloring-pages", "dinosaur-coloring-pages"],
+      "indexable": false,
+      "seoTitle": "Train Coloring Pages",
+      "seoDescription": "Browse planned train coloring pages with original engines, tracks, and transport-themed printable PDFs.",
+      "order": 40
     },
     {
       "id": "farm-animals-coloring-pages",
@@ -121,11 +204,179 @@
         { "label": "Difficulty", "value": "Easy" }
       ],
       "tags": ["animals", "farm", "kids", "classroom"],
-      "relatedTopicIds": ["wizard-school-coloring-pages"],
+      "relatedTopicIds": ["cat-coloring-pages", "dog-coloring-pages", "ocean-animals-coloring-pages"],
       "indexable": true,
       "seoTitle": "Free Printable Farm Animals Coloring Pages",
       "seoDescription": "Browse free printable farm animal coloring pages with friendly cows, barns, fields, and easy PDF downloads.",
       "order": 20
+    },
+    {
+      "id": "cat-coloring-pages",
+      "contentTypeId": "coloring-pages",
+      "hubId": "coloring-pages-animals",
+      "slug": "cat-coloring-pages",
+      "title": "Cat Coloring Pages",
+      "h1": "Cat Coloring Pages",
+      "intro": "Original cat coloring pages with cozy kittens, playful pets, yarn balls, windows, and simple home scenes.",
+      "description": "Planned collection of cat coloring pages for animal lovers, kids activities, and printable pet-themed PDFs.",
+      "quickFacts": [
+        { "label": "Best for", "value": "Kids, pet themes, animal units" },
+        { "label": "Format", "value": "Letter-size PDF printables" },
+        { "label": "Status", "value": "Ready for approved assets" }
+      ],
+      "tags": ["cats", "pets", "animals", "kids"],
+      "relatedTopicIds": ["dog-coloring-pages", "farm-animals-coloring-pages", "butterfly-coloring-pages"],
+      "indexable": false,
+      "seoTitle": "Cat Coloring Pages",
+      "seoDescription": "Browse planned cat coloring pages with cozy kittens, pets, and original printable PDF themes.",
+      "order": 30
+    },
+    {
+      "id": "dog-coloring-pages",
+      "contentTypeId": "coloring-pages",
+      "hubId": "coloring-pages-animals",
+      "slug": "dog-coloring-pages",
+      "title": "Dog Coloring Pages",
+      "h1": "Dog Coloring Pages",
+      "intro": "Original dog coloring pages with friendly puppies, bones, parks, collars, and simple pet scenes.",
+      "description": "Planned collection of dog coloring pages for kids, pet themes, and animal activity PDFs.",
+      "quickFacts": [
+        { "label": "Best for", "value": "Kids, pet themes, animal units" },
+        { "label": "Format", "value": "Letter-size PDF printables" },
+        { "label": "Status", "value": "Ready for approved assets" }
+      ],
+      "tags": ["dogs", "pets", "animals", "kids"],
+      "relatedTopicIds": ["cat-coloring-pages", "farm-animals-coloring-pages", "ocean-animals-coloring-pages"],
+      "indexable": false,
+      "seoTitle": "Dog Coloring Pages",
+      "seoDescription": "Browse planned dog coloring pages with friendly puppies, pet scenes, and printable PDF themes.",
+      "order": 40
+    },
+    {
+      "id": "ocean-animals-coloring-pages",
+      "contentTypeId": "coloring-pages",
+      "hubId": "coloring-pages-animals",
+      "slug": "ocean-animals-coloring-pages",
+      "title": "Ocean Animals Coloring Pages",
+      "h1": "Ocean Animals Coloring Pages",
+      "intro": "Original ocean animal coloring pages with fish, turtles, whales, seahorses, shells, and underwater scenes.",
+      "description": "Planned collection of ocean animal coloring pages for nature units, classrooms, and printable sea-life activities.",
+      "quickFacts": [
+        { "label": "Best for", "value": "Kids, ocean units, nature lessons" },
+        { "label": "Format", "value": "Letter-size PDF printables" },
+        { "label": "Status", "value": "Ready for approved assets" }
+      ],
+      "tags": ["ocean", "animals", "nature", "classroom"],
+      "relatedTopicIds": ["farm-animals-coloring-pages", "butterfly-coloring-pages", "dinosaur-coloring-pages"],
+      "indexable": false,
+      "seoTitle": "Ocean Animals Coloring Pages",
+      "seoDescription": "Browse planned ocean animal coloring pages with original sea-life scenes and printable PDF themes.",
+      "order": 50
+    },
+    {
+      "id": "butterfly-coloring-pages",
+      "contentTypeId": "coloring-pages",
+      "hubId": "coloring-pages-animals",
+      "slug": "butterfly-coloring-pages",
+      "title": "Butterfly Coloring Pages",
+      "h1": "Butterfly Coloring Pages",
+      "intro": "Original butterfly coloring pages with wings, flowers, gardens, and simple nature scenes for kids and classrooms.",
+      "description": "Planned collection of butterfly coloring pages for spring themes, nature units, and printable PDF activities.",
+      "quickFacts": [
+        { "label": "Best for", "value": "Kids, spring themes, nature units" },
+        { "label": "Format", "value": "Letter-size PDF printables" },
+        { "label": "Status", "value": "Ready for approved assets" }
+      ],
+      "tags": ["butterflies", "nature", "spring", "kids"],
+      "relatedTopicIds": ["cat-coloring-pages", "ocean-animals-coloring-pages", "floral-mandala-coloring-pages"],
+      "indexable": false,
+      "seoTitle": "Butterfly Coloring Pages",
+      "seoDescription": "Browse planned butterfly coloring pages with original wing, flower, and nature-themed printable PDFs.",
+      "order": 60
+    },
+    {
+      "id": "dinosaur-coloring-pages",
+      "contentTypeId": "coloring-pages",
+      "hubId": "coloring-pages-dinosaurs",
+      "slug": "dinosaur-coloring-pages",
+      "title": "Dinosaur Coloring Pages",
+      "h1": "Dinosaur Coloring Pages",
+      "intro": "Original dinosaur coloring pages with friendly prehistoric scenes, volcano backgrounds, leaves, fossils, and kid-safe line art.",
+      "description": "Planned dinosaur coloring page collection for kids, classrooms, prehistoric units, and printable PDF activities.",
+      "quickFacts": [
+        { "label": "Best for", "value": "Kids, dinosaur units, classroom packets" },
+        { "label": "Format", "value": "Letter-size PDF printables" },
+        { "label": "Status", "value": "Ready for approved assets" }
+      ],
+      "tags": ["dinosaurs", "prehistoric", "kids", "classroom"],
+      "relatedTopicIds": ["brachiosaurus-coloring-pages", "ankylosaurus-coloring-pages", "farm-animals-coloring-pages"],
+      "indexable": false,
+      "seoTitle": "Dinosaur Coloring Pages",
+      "seoDescription": "Browse planned dinosaur coloring pages with original prehistoric scenes and printable PDF structure.",
+      "order": 10
+    },
+    {
+      "id": "brachiosaurus-coloring-pages",
+      "contentTypeId": "coloring-pages",
+      "hubId": "coloring-pages-dinosaurs",
+      "slug": "brachiosaurus-coloring-pages",
+      "title": "Brachiosaurus Coloring Pages",
+      "h1": "Brachiosaurus Coloring Pages",
+      "intro": "Original brachiosaurus coloring pages with long-neck dinosaurs, treetops, leaves, and gentle prehistoric backgrounds.",
+      "description": "Planned brachiosaurus coloring page collection for dinosaur lessons and printable prehistoric activities.",
+      "quickFacts": [
+        { "label": "Best for", "value": "Kids, dinosaur species pages, classroom units" },
+        { "label": "Format", "value": "Letter-size PDF printables" },
+        { "label": "Status", "value": "Ready for approved assets" }
+      ],
+      "tags": ["dinosaurs", "brachiosaurus", "prehistoric", "kids"],
+      "relatedTopicIds": ["dinosaur-coloring-pages", "ankylosaurus-coloring-pages", "therizinosaurus-coloring-pages"],
+      "indexable": false,
+      "seoTitle": "Brachiosaurus Coloring Pages",
+      "seoDescription": "Browse planned brachiosaurus coloring pages with original long-neck dinosaur scenes and printable PDF themes.",
+      "order": 20
+    },
+    {
+      "id": "ankylosaurus-coloring-pages",
+      "contentTypeId": "coloring-pages",
+      "hubId": "coloring-pages-dinosaurs",
+      "slug": "ankylosaurus-coloring-pages",
+      "title": "Ankylosaurus Coloring Pages",
+      "h1": "Ankylosaurus Coloring Pages",
+      "intro": "Original ankylosaurus coloring pages with armored dinosaurs, club tails, rocks, plants, and simple prehistoric scenes.",
+      "description": "Planned ankylosaurus coloring page collection for dinosaur species themes and printable classroom PDFs.",
+      "quickFacts": [
+        { "label": "Best for", "value": "Kids, dinosaur species pages, classroom units" },
+        { "label": "Format", "value": "Letter-size PDF printables" },
+        { "label": "Status", "value": "Ready for approved assets" }
+      ],
+      "tags": ["dinosaurs", "ankylosaurus", "prehistoric", "kids"],
+      "relatedTopicIds": ["dinosaur-coloring-pages", "brachiosaurus-coloring-pages", "therizinosaurus-coloring-pages"],
+      "indexable": false,
+      "seoTitle": "Ankylosaurus Coloring Pages",
+      "seoDescription": "Browse planned ankylosaurus coloring pages with original armored dinosaur scenes and printable PDF themes.",
+      "order": 30
+    },
+    {
+      "id": "therizinosaurus-coloring-pages",
+      "contentTypeId": "coloring-pages",
+      "hubId": "coloring-pages-dinosaurs",
+      "slug": "therizinosaurus-coloring-pages",
+      "title": "Therizinosaurus Coloring Pages",
+      "h1": "Therizinosaurus Coloring Pages",
+      "intro": "Original therizinosaurus coloring pages with long claws, leafy plants, nests, and friendly prehistoric line art.",
+      "description": "Planned therizinosaurus coloring page collection for dinosaur fans and printable prehistoric activities.",
+      "quickFacts": [
+        { "label": "Best for", "value": "Kids, dinosaur species pages, classroom units" },
+        { "label": "Format", "value": "Letter-size PDF printables" },
+        { "label": "Status", "value": "Ready for approved assets" }
+      ],
+      "tags": ["dinosaurs", "therizinosaurus", "prehistoric", "kids"],
+      "relatedTopicIds": ["dinosaur-coloring-pages", "brachiosaurus-coloring-pages", "ankylosaurus-coloring-pages"],
+      "indexable": false,
+      "seoTitle": "Therizinosaurus Coloring Pages",
+      "seoDescription": "Browse planned therizinosaurus coloring pages with original dinosaur scenes and printable PDF themes.",
+      "order": 40
     },
     {
       "id": "mandala-coloring-pages",
@@ -142,10 +393,136 @@
         { "label": "Difficulty", "value": "Medium to detailed" }
       ],
       "tags": ["mandalas", "adult coloring", "relaxing", "patterns"],
-      "relatedTopicIds": ["wizard-school-coloring-pages"],
+      "relatedTopicIds": ["floral-mandala-coloring-pages", "geometric-mandala-coloring-pages", "relaxing-coloring-pages"],
       "indexable": true,
       "seoTitle": "Free Printable Mandala Coloring Pages",
       "seoDescription": "Browse free printable mandala coloring pages with detailed patterns, calming symmetry, and PDF downloads.",
+      "order": 30
+    },
+    {
+      "id": "floral-mandala-coloring-pages",
+      "contentTypeId": "coloring-pages",
+      "hubId": "coloring-pages-adults",
+      "slug": "floral-mandala-coloring-pages",
+      "title": "Floral Mandala Coloring Pages",
+      "h1": "Floral Mandala Coloring Pages",
+      "intro": "Original floral mandala coloring pages with petals, leaves, garden-inspired circles, and relaxing symmetry.",
+      "description": "Planned floral mandala coloring page collection for adults, teens, calm breaks, and printable PDF activities.",
+      "quickFacts": [
+        { "label": "Best for", "value": "Adults, teens, mindful coloring" },
+        { "label": "Format", "value": "Letter-size PDF printables" },
+        { "label": "Status", "value": "Ready for approved assets" }
+      ],
+      "tags": ["mandalas", "floral", "adult coloring", "relaxing"],
+      "relatedTopicIds": ["mandala-coloring-pages", "geometric-mandala-coloring-pages", "relaxing-coloring-pages"],
+      "indexable": false,
+      "seoTitle": "Floral Mandala Coloring Pages",
+      "seoDescription": "Browse planned floral mandala coloring pages with original petals, leaves, and printable PDF structure.",
+      "order": 40
+    },
+    {
+      "id": "geometric-mandala-coloring-pages",
+      "contentTypeId": "coloring-pages",
+      "hubId": "coloring-pages-adults",
+      "slug": "geometric-mandala-coloring-pages",
+      "title": "Geometric Mandala Coloring Pages",
+      "h1": "Geometric Mandala Coloring Pages",
+      "intro": "Original geometric mandala coloring pages with balanced rings, repeated shapes, clean symmetry, and detailed patterns.",
+      "description": "Planned geometric mandala coloring page collection for calm adult coloring and printable PDF activities.",
+      "quickFacts": [
+        { "label": "Best for", "value": "Adults, teens, detailed pattern coloring" },
+        { "label": "Format", "value": "Letter-size PDF printables" },
+        { "label": "Status", "value": "Ready for approved assets" }
+      ],
+      "tags": ["mandalas", "geometric", "adult coloring", "patterns"],
+      "relatedTopicIds": ["mandala-coloring-pages", "floral-mandala-coloring-pages", "relaxing-coloring-pages"],
+      "indexable": false,
+      "seoTitle": "Geometric Mandala Coloring Pages",
+      "seoDescription": "Browse planned geometric mandala coloring pages with original patterns and printable PDF structure.",
+      "order": 50
+    },
+    {
+      "id": "relaxing-coloring-pages",
+      "contentTypeId": "coloring-pages",
+      "hubId": "coloring-pages-adults",
+      "slug": "relaxing-coloring-pages",
+      "title": "Relaxing Coloring Pages",
+      "h1": "Relaxing Coloring Pages",
+      "intro": "Original relaxing coloring pages with cozy corners, plants, calm patterns, soft scenes, and quiet creative details.",
+      "description": "Planned relaxing coloring page collection for adults, teens, mindful breaks, and printable calm activities.",
+      "quickFacts": [
+        { "label": "Best for", "value": "Adults, teens, quiet breaks" },
+        { "label": "Format", "value": "Letter-size PDF printables" },
+        { "label": "Status", "value": "Ready for approved assets" }
+      ],
+      "tags": ["relaxing", "adult coloring", "calm", "patterns"],
+      "relatedTopicIds": ["mandala-coloring-pages", "floral-mandala-coloring-pages", "geometric-mandala-coloring-pages"],
+      "indexable": false,
+      "seoTitle": "Relaxing Coloring Pages",
+      "seoDescription": "Browse planned relaxing coloring pages with original calm scenes and printable PDF structure.",
+      "order": 60
+    },
+    {
+      "id": "christmas-coloring-pages",
+      "contentTypeId": "coloring-pages",
+      "hubId": "coloring-pages-seasonal",
+      "slug": "christmas-coloring-pages",
+      "title": "Christmas Coloring Pages",
+      "h1": "Christmas Coloring Pages",
+      "intro": "Original Christmas coloring pages with trees, ornaments, gifts, snowflakes, cozy winter scenes, and classroom-friendly holiday art.",
+      "description": "Planned Christmas coloring page collection using original non-character holiday themes and printable PDF structure.",
+      "quickFacts": [
+        { "label": "Best for", "value": "Kids, holiday activities, classroom packets" },
+        { "label": "Format", "value": "Letter-size PDF printables" },
+        { "label": "Status", "value": "Ready for approved assets" }
+      ],
+      "tags": ["christmas", "seasonal", "holiday", "kids"],
+      "relatedTopicIds": ["pumpkin-coloring-pages", "winter-coloring-pages", "cute-coloring-pages"],
+      "indexable": false,
+      "seoTitle": "Christmas Coloring Pages",
+      "seoDescription": "Browse planned Christmas coloring pages with original trees, ornaments, snowflakes, and printable PDF themes.",
+      "order": 10
+    },
+    {
+      "id": "pumpkin-coloring-pages",
+      "contentTypeId": "coloring-pages",
+      "hubId": "coloring-pages-seasonal",
+      "slug": "pumpkin-coloring-pages",
+      "title": "Pumpkin Coloring Pages",
+      "h1": "Pumpkin Coloring Pages",
+      "intro": "Original pumpkin coloring pages with fall leaves, simple jack-o-lantern faces, harvest scenes, and classroom-friendly autumn art.",
+      "description": "Planned pumpkin coloring page collection for fall activities, Halloween-adjacent crafts, and printable PDF pages.",
+      "quickFacts": [
+        { "label": "Best for", "value": "Kids, fall activities, classroom crafts" },
+        { "label": "Format", "value": "Letter-size PDF printables" },
+        { "label": "Status", "value": "Ready for approved assets" }
+      ],
+      "tags": ["pumpkin", "fall", "seasonal", "kids"],
+      "relatedTopicIds": ["christmas-coloring-pages", "winter-coloring-pages", "farm-animals-coloring-pages"],
+      "indexable": false,
+      "seoTitle": "Pumpkin Coloring Pages",
+      "seoDescription": "Browse planned pumpkin coloring pages with original fall scenes and printable PDF structure.",
+      "order": 20
+    },
+    {
+      "id": "winter-coloring-pages",
+      "contentTypeId": "coloring-pages",
+      "hubId": "coloring-pages-seasonal",
+      "slug": "winter-coloring-pages",
+      "title": "Winter Coloring Pages",
+      "h1": "Winter Coloring Pages",
+      "intro": "Original winter coloring pages with snowflakes, mittens, cozy houses, snowy trees, and gentle cold-weather scenes.",
+      "description": "Planned winter coloring page collection for seasonal classrooms, quiet activities, and printable PDF pages.",
+      "quickFacts": [
+        { "label": "Best for", "value": "Kids, winter themes, classroom packets" },
+        { "label": "Format", "value": "Letter-size PDF printables" },
+        { "label": "Status", "value": "Ready for approved assets" }
+      ],
+      "tags": ["winter", "snow", "seasonal", "kids"],
+      "relatedTopicIds": ["christmas-coloring-pages", "pumpkin-coloring-pages", "rainbow-coloring-pages"],
+      "indexable": false,
+      "seoTitle": "Winter Coloring Pages",
+      "seoDescription": "Browse planned winter coloring pages with original snow, mitten, and cozy printable PDF themes.",
       "order": 30
     },
     {
@@ -163,11 +540,32 @@
         { "label": "Use", "value": "Home, classroom, office" }
       ],
       "tags": ["calendar", "2026", "monthly planner"],
-      "relatedTopicIds": ["preschool-counting-worksheets", "weekly-planner-printables"],
+      "relatedTopicIds": ["blank-monthly-calendar", "weekly-planner-printables", "preschool-counting-worksheets"],
       "indexable": true,
       "seoTitle": "Free Printable January 2026 Calendar",
       "seoDescription": "Download a free printable January 2026 calendar with a clean letter-size PDF layout.",
       "order": 10
+    },
+    {
+      "id": "blank-monthly-calendar",
+      "contentTypeId": "calendars",
+      "hubId": "calendars-2026",
+      "slug": "blank-monthly-calendar",
+      "title": "Blank Monthly Calendar",
+      "h1": "Blank Monthly Calendar",
+      "intro": "Clean blank monthly calendar pages for flexible planning, classroom routines, home schedules, and simple printable notes.",
+      "description": "Planned blank monthly calendar collection for printable planning and reusable organization pages.",
+      "quickFacts": [
+        { "label": "Best for", "value": "Home, classroom, office planning" },
+        { "label": "Format", "value": "Letter-size PDF calendar" },
+        { "label": "Status", "value": "Ready for approved assets" }
+      ],
+      "tags": ["calendar", "monthly planner", "blank calendar"],
+      "relatedTopicIds": ["january-2026-calendar", "weekly-planner-printables", "preschool-counting-worksheets"],
+      "indexable": false,
+      "seoTitle": "Blank Monthly Calendar",
+      "seoDescription": "Browse planned blank monthly calendar pages with clean printable PDF layouts.",
+      "order": 20
     },
     {
       "id": "preschool-counting-worksheets",
@@ -183,11 +581,51 @@
         { "label": "Format", "value": "Letter-size PDF worksheets" }
       ],
       "tags": ["worksheets", "preschool", "counting", "animals"],
-      "relatedTopicIds": ["farm-animals-coloring-pages", "january-2026-calendar"],
+      "relatedTopicIds": ["dot-to-dot-printables", "color-by-number-printables", "farm-animals-coloring-pages"],
       "indexable": true,
       "seoTitle": "Free Printable Preschool Counting Worksheets",
       "seoDescription": "Browse free printable preschool counting worksheets with friendly animal themes and simple PDF downloads.",
       "order": 10
+    },
+    {
+      "id": "dot-to-dot-printables",
+      "contentTypeId": "worksheets",
+      "slug": "dot-to-dot-printables",
+      "title": "Dot to Dot Printables",
+      "h1": "Dot to Dot Printables",
+      "intro": "Simple dot to dot printables with animals, shapes, seasonal objects, and beginner-friendly number paths.",
+      "description": "Planned dot to dot printable collection for early learners, number practice, and classroom activity PDFs.",
+      "quickFacts": [
+        { "label": "Best for", "value": "Preschool, kindergarten, number practice" },
+        { "label": "Format", "value": "Letter-size PDF worksheets" },
+        { "label": "Status", "value": "Ready for approved assets" }
+      ],
+      "tags": ["worksheets", "dot to dot", "counting", "kids"],
+      "relatedTopicIds": ["preschool-counting-worksheets", "color-by-number-printables", "cute-coloring-pages"],
+      "indexable": false,
+      "seoTitle": "Dot to Dot Printables",
+      "seoDescription": "Browse planned dot to dot printables with simple number paths and printable PDF structure.",
+      "order": 20
+    },
+    {
+      "id": "color-by-number-printables",
+      "contentTypeId": "worksheets",
+      "slug": "color-by-number-printables",
+      "title": "Color by Number Printables",
+      "h1": "Color by Number Printables",
+      "intro": "Original color by number printables with simple shapes, animals, seasonal images, and easy number-color matching.",
+      "description": "Planned color by number printable collection for kids, early learning, and classroom PDF activities.",
+      "quickFacts": [
+        { "label": "Best for", "value": "Kids, early learning, quiet activities" },
+        { "label": "Format", "value": "Letter-size PDF worksheets" },
+        { "label": "Status", "value": "Ready for approved assets" }
+      ],
+      "tags": ["worksheets", "color by number", "kids", "classroom"],
+      "relatedTopicIds": ["preschool-counting-worksheets", "dot-to-dot-printables", "rainbow-coloring-pages"],
+      "indexable": false,
+      "seoTitle": "Color by Number Printables",
+      "seoDescription": "Browse planned color by number printables with simple original activities and printable PDF structure.",
+      "order": 30
     },
     {
       "id": "weekly-planner-printables",
@@ -203,7 +641,7 @@
         { "label": "Format", "value": "Letter-size PDF planner" }
       ],
       "tags": ["planner", "weekly", "organization"],
-      "relatedTopicIds": ["january-2026-calendar", "preschool-counting-worksheets"],
+      "relatedTopicIds": ["january-2026-calendar", "blank-monthly-calendar", "preschool-counting-worksheets"],
       "indexable": true,
       "seoTitle": "Free Printable Weekly Planners",
       "seoDescription": "Browse free printable weekly planner pages with clean layouts and simple PDF downloads.",
