@@ -11,16 +11,25 @@ interface Props {
 const { topic } = Astro.props;
 const printables = getPrintablesForTopic(topic.id);
 const relatedTopics = getRelatedTopics(topic);
+const topicLower = topic.title.toLowerCase();
+const isCalendar = topic.tags.includes("calendar") || topicLower.includes("calendar");
+const isAdult = topic.tags.includes("adult coloring") || topic.tags.includes("relaxing") || topicLower.includes("mandala") || topicLower.includes("adult");
+const useCase = isCalendar
+  ? "family schedules, classroom planning, desk organization, and quick monthly notes"
+  : isAdult
+    ? "quiet creative breaks, mindful coloring, evening relaxation, and screen-free downtime"
+    : "early finishers, rainy days, classroom packets, weekend crafts, and screen-free creative time";
 ---
 
 <section class="container-page py-8">
-  <div class="grid gap-8 lg:grid-cols-[1fr_260px] lg:items-start">
+  <div class="grid gap-8 lg:grid-cols-[1fr_280px] lg:items-start">
     <div>
-      <div class="mb-4 rounded-md border border-coral/35 bg-ivory p-4 text-center">
-        <p class="text-sm font-black text-ink">Which page do you want to print?</p>
-        <div class="mt-3 flex justify-center gap-3 text-xs font-black">
-          <a href="#printable-grid" class="border border-sky px-4 py-2 text-sky-dark">View pages</a>
-          <a href="#how-to-use" class="border border-line px-4 py-2 text-muted">Printing tips</a>
+      <div class="mb-4 rounded-2xl border-2 border-coral/35 bg-ivory p-4 text-center shadow-soft">
+        <p class="text-sm font-black text-ink">Choose a printable, preview it, then download the PDF.</p>
+        <div class="mt-3 flex flex-wrap justify-center gap-3 text-xs font-black">
+          <a href="#printable-grid" class="rounded-full border border-sky bg-white px-4 py-2 text-sky-dark">View pages</a>
+          <a href="#how-to-use" class="rounded-full border border-line bg-white px-4 py-2 text-muted">Printing tips</a>
+          <a href="#faq" class="rounded-full border border-line bg-white px-4 py-2 text-muted">FAQ</a>
         </div>
       </div>
 
@@ -29,7 +38,7 @@ const relatedTopics = getRelatedTopics(topic);
       </div>
     </div>
 
-    <aside class="grid gap-4">
+    <aside class="grid gap-4 lg:sticky lg:top-24">
       <div class="sidebar-box p-4">
         <h2 class="font-serif text-xl font-black text-ink">Quick facts</h2>
         <dl class="mt-4 grid gap-3">
@@ -55,39 +64,78 @@ const relatedTopics = getRelatedTopics(topic);
           }
         </div>
       </div>
+      <div class="sidebar-box bg-mint/50 p-4">
+        <h2 class="font-serif text-xl font-black text-ink">Safe topic note</h2>
+        <p class="mt-3 text-sm leading-6 text-muted">
+          This collection is built around original printable ideas rather than protected characters,
+          brand mascots, logos, or franchise designs.
+        </p>
+      </div>
     </aside>
   </div>
 </section>
 
 <section id="how-to-use" class="section-rule content-page py-10">
-  <div class="grid gap-6">
+  <div class="grid gap-6 md:grid-cols-3">
     <div>
-      <h2 class="font-serif text-3xl font-black text-ink">How to use these printables</h2>
+      <p class="eyebrow">What is included</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-ink">Printable PDFs for {topicLower}</h2>
       <p class="mt-4 text-sm leading-7 text-muted">
-        Download the PDF, print at actual size when possible, and use standard letter paper unless
-        the page says otherwise. These pages are made for simple home, classroom, and quiet-time
-        use.
+        This collection includes individual PDF printables with large previews, clear titles, and
+        direct download buttons. The printable grid appears near the top so you can choose a page
+        quickly before reading extra tips.
+      </p>
+    </div>
+    <div>
+      <p class="eyebrow">Best for</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-ink">Simple real-life uses</h2>
+      <p class="mt-4 text-sm leading-7 text-muted">
+        Use these pages for {useCase}. Print one page for a quick activity or save a few favorites
+        for repeat use.
+      </p>
+    </div>
+    <div>
+      <p class="eyebrow">How to print</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-ink">Clean print settings</h2>
+      <p class="mt-4 text-sm leading-7 text-muted">
+        Open the PDF, print at actual size on US Letter paper, or choose fit to page for A4. Plain
+        copy paper works for crayons and pencils; heavier paper is better for markers.
       </p>
     </div>
   </div>
 </section>
 
-<section class="content-page py-10">
+<section id="faq" class="content-page py-10">
   <div class="grid gap-5">
+    <p class="eyebrow">FAQ</p>
     <h2 class="font-serif text-3xl font-black text-ink">Common questions</h2>
-    <div class="grid gap-4">
-      <div>
+    <div class="grid gap-4 md:grid-cols-2">
+      <div class="sidebar-box p-4">
         <h3 class="font-serif text-xl font-black text-ink">Can I use these in a classroom?</h3>
         <p class="mt-3 text-sm leading-6 text-muted">
-          Yes, Color Atlas printables are intended for personal, home, and classroom use unless a
-          page says otherwise.
+          Yes, these printables are intended for personal, home, and classroom use unless a page
+          says otherwise.
         </p>
       </div>
-      <div>
+      <div class="sidebar-box p-4">
+        <h3 class="font-serif text-xl font-black text-ink">Do I need special software?</h3>
+        <p class="mt-3 text-sm leading-6 text-muted">
+          No. Open the PDF in your browser or PDF viewer, then print it with your normal printer
+          settings.
+        </p>
+      </div>
+      <div class="sidebar-box p-4">
         <h3 class="font-serif text-xl font-black text-ink">Why are individual pages noindex?</h3>
         <p class="mt-3 text-sm leading-6 text-muted">
           Thin printable pages point search engines back to the stronger collection page, where
           visitors can compare previews and find related PDFs.
+        </p>
+      </div>
+      <div class="sidebar-box p-4">
+        <h3 class="font-serif text-xl font-black text-ink">Can I share a download link?</h3>
+        <p class="mt-3 text-sm leading-6 text-muted">
+          Share the collection page whenever possible so people can see the preview, license notes,
+          related pages, and printing tips.
         </p>
       </div>
     </div>
