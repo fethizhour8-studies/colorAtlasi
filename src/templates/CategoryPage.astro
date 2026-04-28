@@ -1,6 +1,7 @@
 ---
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import CollectionCard from "@components/CollectionCard.astro";
+import HelpfulGuide from "@components/HelpfulGuide.astro";
 import PrintableGrid from "@components/PrintableGrid.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import {
@@ -23,6 +24,7 @@ const site = Astro.site || new URL("https://example.com");
 const topics = getTopicsForHub(hub.id);
 const printables = getPagesForHub(hub.id);
 const crumbs = getBreadcrumbsForHub(hub);
+const featuredTopics = topics.slice(0, 6);
 ---
 
 <BaseLayout
@@ -32,11 +34,16 @@ const crumbs = getBreadcrumbsForHub(hub);
   image={printables[0]?.files.preview}
   jsonLdItems={[collectionJsonLd(hub, getHubPath(hub), site), breadcrumbJsonLd(crumbs, site)]}
 >
-  <section class="section">
+  <section class="section hub-hero">
     <Breadcrumbs crumbs={crumbs} />
     <p class="eyebrow">Printable hub</p>
     <h1>{hub.title}</h1>
     <p class="lead">{hub.description}</p>
+    <div class="hub-stats">
+      <span><strong>{topics.length}</strong> collections</span>
+      <span><strong>{printables.length}</strong> printables</span>
+      <span><strong>{hub.audiences.join(" / ")}</strong></span>
+    </div>
   </section>
 
   <section class="section section-tight">
@@ -56,6 +63,18 @@ const crumbs = getBreadcrumbsForHub(hub);
     </div>
   </section>
 
+  {featuredTopics.length > 0 && (
+    <section class="section section-tight">
+      <p class="eyebrow">Featured paths</p>
+      <h2>Start with these popular collections</h2>
+      <div class="feature-row">
+        {featuredTopics.map((topic) => (
+          <a class="feature-pill" href={getTopicPath(topic)}>{topic.title}</a>
+        ))}
+      </div>
+    </section>
+  )}
+
   {printables.length > 0 && (
     <section class="section">
       <p class="eyebrow">New PDFs</p>
@@ -63,10 +82,48 @@ const crumbs = getBreadcrumbsForHub(hub);
       <PrintableGrid pages={printables.slice(0, 9)} />
     </section>
   )}
+
+  <section class="section">
+    <HelpfulGuide title={hub.title} audience={hub.audiences} variant="hub" />
+  </section>
 </BaseLayout>
 
 <style>
-  .card-grid {
+  .hub-hero {
+    background:
+      radial-gradient(circle at 82% 18%, rgba(244, 201, 93, 0.22), transparent 28%),
+      linear-gradient(180deg, #fff, transparent);
+  }
+
+  .card-grid,
+  :global(.printable-grid) {
     margin-top: 1rem;
+  }
+
+  .hub-stats,
+  .feature-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 1.1rem;
+  }
+
+  .hub-stats span,
+  .feature-pill {
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.82);
+    padding: 0.45rem 0.7rem;
+    color: var(--muted);
+    box-shadow: 0 8px 20px rgba(26, 26, 46, 0.05);
+  }
+
+  .hub-stats strong {
+    color: var(--ink);
+  }
+
+  .feature-pill {
+    color: var(--teal-dark);
+    font-weight: 800;
   }
 </style>
