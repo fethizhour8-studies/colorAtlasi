@@ -37,6 +37,12 @@ export interface QuickFact {
   value: string;
 }
 
+export interface ContentSection {
+  eyebrow?: string;
+  title: string;
+  body: string;
+}
+
 export interface Topic extends OrderedRecord {
   contentTypeId: ContentTypeId;
   hubId?: string;
@@ -45,6 +51,7 @@ export interface Topic extends OrderedRecord {
   quickFacts: QuickFact[];
   tags: string[];
   relatedTopicIds: string[];
+  sections?: ContentSection[];
   indexable: boolean;
   seoTitle: string;
   seoDescription: string;
