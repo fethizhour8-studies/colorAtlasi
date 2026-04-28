@@ -1,0 +1,56 @@
+[
+  {
+    "categoryId": "animal-coloring-pages",
+    "primaryTopicId": "rainforest-animals-coloring-pages",
+    "topic": "rainforest animals",
+    "type": "coloring-page",
+    "orientation": "portrait",
+    "audience": "kids",
+    "difficulty": "easy",
+    "title": {
+      "en": "Rainforest Animals Coloring Page"
+    },
+    "description": {
+      "en": "A simple printable rainforest animal coloring sheet with broad outlines for kids."
+    },
+    "keywords": ["animal coloring pages", "rainforest coloring page", "coloring pages for kids"],
+    "tags": ["animals", "rainforest", "nature", "kids"],
+    "composition": "a friendly toucan, frog, butterfly, and leafy plants arranged as an original nature scene"
+  },
+  {
+    "categoryId": "dinosaur-coloring-pages",
+    "primaryTopicId": "dinosaur-coloring-pages",
+    "topic": "friendly dinosaur",
+    "type": "coloring-page",
+    "orientation": "portrait",
+    "audience": "kids",
+    "difficulty": "easy",
+    "title": {
+      "en": "Friendly Dinosaur Coloring Page"
+    },
+    "description": {
+      "en": "A cute original dinosaur coloring page with simple outlines and a kid-friendly prehistoric background."
+    },
+    "keywords": ["dinosaur coloring pages", "kids coloring pages", "free coloring pages"],
+    "tags": ["dinosaurs", "preschool", "easy", "kids"],
+    "composition": "one smiling long-neck dinosaur beside simple plants, rocks, and a volcano far in the background"
+  },
+  {
+    "categoryId": "mandala-coloring-pages",
+    "primaryTopicId": "mandala-coloring-pages",
+    "topic": "floral mandala",
+    "type": "coloring-page",
+    "orientation": "portrait",
+    "audience": "adults",
+    "difficulty": "medium",
+    "title": {
+      "en": "Floral Mandala Coloring Page"
+    },
+    "description": {
+      "en": "A relaxing printable floral mandala coloring sheet with balanced geometric petals and clean line art."
+    },
+    "keywords": ["mandala coloring pages", "adult coloring pages", "relaxing coloring pages"],
+    "tags": ["mandala", "floral", "adult coloring", "relaxing"],
+    "composition": "a centered original floral mandala with symmetrical petals, leaves, and geometric rings"
+  }
+]
