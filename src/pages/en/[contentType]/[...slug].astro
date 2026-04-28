@@ -5,18 +5,23 @@ import PrintableCard from "@/components/PrintableCard.astro";
 import TopicCollection from "@/components/TopicCollection.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import {
+  breadcrumbJsonLd,
   buildHubSeo,
   buildPrintableSeo,
   buildTopicSeo,
+  collectionJsonLd,
   getContentTypeById,
   getContentTypePath,
   getHubById,
   getHubPath,
+  getPrintablePath,
   getPrintablesForTopic,
   getTopicPath,
   getTopicsForHub,
   hubs,
+  printableJsonLd,
   printables,
+  topicFaqJsonLd,
   topics,
 } from "@/lib/catalog";
 import type { ContentType, Hub, Printable, SeoMeta, Topic } from "@/lib/catalog";
@@ -118,6 +123,22 @@ if (props.kind === "printable") {
   breadcrumbItems.push({ label: props.topic.title, href: getTopicPath(props.topic) });
   breadcrumbItems.push({ label: props.printable.title });
 }
+
+const jsonLd = [breadcrumbJsonLd(breadcrumbItems)];
+
+if (props.kind === "hub") {
+  const count = getTopicsForHub(props.hub.id).reduce((total, topic) => total + getPrintablesForTopic(topic.id).length, 0);
+  jsonLd.push(collectionJsonLd(props.hub, getHubPath(props.hub), count));
+}
+
+if (props.kind === "topic") {
+  jsonLd.push(collectionJsonLd(props.topic, getTopicPath(props.topic), getPrintablesForTopic(props.topic.id).length));
+  jsonLd.push(topicFaqJsonLd(props.topic));
+}
+
+if (props.kind === "printable") {
+  jsonLd.push(printableJsonLd(props.printable));
+}
 ---
 
 <BaseLayout
@@ -125,6 +146,7 @@ if (props.kind === "printable") {
   description={seo.description}
   canonicalPath={seo.canonicalPath}
   robots={seo.robots}
+  jsonLd={jsonLd}
 >
   <Breadcrumbs items={breadcrumbItems} />
 
@@ -171,7 +193,7 @@ if (props.kind === "printable") {
                   title={topic.title}
                   description={topic.description}
                   href={getTopicPath(topic)}
-                  eyebrow={`${getPrintablesForTopic(topic.id).length} PDF${getPrintablesForTopic(topic.id).length === 1 ? "" : "s"}`}
+                  eyebrow={`${getPrintablesForTopic(topic.id).length} PDF${getPrintablesForTopic(topic.id) === 1 ? "" : "s"}`}
                   action="Open collection"
                 />
               ))}
