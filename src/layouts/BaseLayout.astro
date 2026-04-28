@@ -1,4 +1,5 @@
 ---
+import Analytics from "@components/Analytics.astro";
 import { topNav } from "@lib/catalog";
 import { jsonLd, robotsForIndexable } from "@lib/seo";
 
@@ -38,6 +39,7 @@ const absoluteImage = image ? new URL(image, site).toString() : undefined;
     <meta name="theme-color" content="#FAF7F2" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     {jsonLdItems.map((item) => <script type="application/ld+json" set:html={jsonLd(item)} />)}
+    <Analytics />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
