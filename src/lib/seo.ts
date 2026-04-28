@@ -16,6 +16,11 @@ import {
   type Topic,
 } from "./catalog";
 
+export type FaqItem = {
+  question: string;
+  answer: string;
+};
+
 export function jsonLd(data: unknown): string {
   return JSON.stringify(data).replace(/</g, "\\u003c");
 }
@@ -33,6 +38,21 @@ export function breadcrumbJsonLd(crumbs: Crumb[], site: URL | string) {
       position: index + 1,
       name: crumb.name,
       item: asAbsoluteUrl(crumb.href, site),
+    })),
+  };
+}
+
+export function faqJsonLd(items: FaqItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
     })),
   };
 }
