@@ -2,7 +2,7 @@
 import PrintableCard from "@/components/PrintableCard.astro";
 import CollectionCard from "@/components/CollectionCard.astro";
 import type { Topic } from "@/lib/catalog";
-import { getPrintablesForTopic, getRelatedTopics, getTopicPath } from "@/lib/catalog";
+import { getPrintablesForTopic, getPublicRelatedTopics, getTopicPath } from "@/lib/catalog";
 
 interface Props {
   topic: Topic;
@@ -10,7 +10,7 @@ interface Props {
 
 const { topic } = Astro.props;
 const printables = getPrintablesForTopic(topic.id);
-const relatedTopics = getRelatedTopics(topic);
+const relatedTopics = getPublicRelatedTopics(topic);
 const topicLower = topic.title.toLowerCase();
 const isCalendar = topic.tags.includes("calendar") || topicLower.includes("calendar");
 const isAdult = topic.tags.includes("adult coloring") || topic.tags.includes("relaxing") || topicLower.includes("mandala") || topicLower.includes("adult");
@@ -19,6 +19,7 @@ const useCase = isCalendar
   : isAdult
     ? "quiet creative breaks, mindful coloring, evening relaxation, and screen-free downtime"
     : "early finishers, rainy days, classroom packets, weekend crafts, and screen-free creative time";
+const contentSections = topic.sections || [];
 ---
 
 <section class="container-page py-8">
@@ -31,6 +32,7 @@ const useCase = isCalendar
         <div class="mt-3 flex flex-wrap justify-center gap-3 text-xs font-black">
           <a href="#printable-grid" class="rounded-full border border-sky bg-white px-4 py-2 text-sky-dark">View pages</a>
           <a href="#how-to-use" class="rounded-full border border-line bg-white px-4 py-2 text-muted">Printing tips</a>
+          {contentSections.length > 0 && <a href="#collection-guide" class="rounded-full border border-line bg-white px-4 py-2 text-muted">Ideas</a>}
           <a href="#faq" class="rounded-full border border-line bg-white px-4 py-2 text-muted">FAQ</a>
         </div>
       </div>
@@ -118,6 +120,26 @@ const useCase = isCalendar
     </div>
   </div>
 </section>
+
+{
+  contentSections.length > 0 && (
+    <section id="collection-guide" class="content-page py-10">
+      <div class="grid gap-5">
+        <p class="eyebrow">Collection guide</p>
+        <h2 class="font-serif text-3xl font-black text-ink">Ideas for using {topicLower}</h2>
+        <div class="grid gap-4 md:grid-cols-2">
+          {contentSections.map((section) => (
+            <article class="sidebar-box p-5">
+              {section.eyebrow && <p class="eyebrow">{section.eyebrow}</p>}
+              <h3 class="mt-2 font-serif text-2xl font-black text-ink">{section.title}</h3>
+              <p class="mt-3 text-sm leading-7 text-muted">{section.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
 
 <section id="faq" class="content-page py-10">
   <div class="grid gap-5">
