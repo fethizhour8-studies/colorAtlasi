@@ -35,6 +35,14 @@ const printableCount = allTopics.reduce(
   (total, topic) => total + getPrintablesForTopic(topic.id).length,
   0,
 );
+const pageIntro =
+  contentType.id === "coloring-pages"
+    ? "Start with broad, safe collections like kids coloring pages, animals, mandalas, and calm adult printables. Each collection is built around original ideas rather than protected characters or brand names."
+    : contentType.id === "calendars"
+      ? "Use these calendar pages for monthly planning, classroom schedules, desk organization, and family routines. Keep the year and month pages clean, printable, and easy to update."
+      : contentType.id === "worksheets"
+        ? "Worksheets should stay useful for early learners, parents, and teachers: simple instructions, readable practice areas, and classroom-friendly topics."
+        : "Planner pages should feel calm, useful, and printable, with clear sections for routines, notes, priorities, and simple organization.";
 ---
 
 <BaseLayout
@@ -52,11 +60,32 @@ const printableCount = allTopics.reduce(
         {contentType.title}
       </h1>
       <p class="mt-5 text-base leading-7 text-muted">{contentType.description}</p>
+      <p class="mx-auto mt-4 max-w-2xl text-sm leading-7 text-muted">{pageIntro}</p>
     </div>
   </section>
 
   <section class="container-page py-8">
-    <div class="container-page">
+    <div class="grid gap-4 md:grid-cols-3">
+      <div class="sidebar-box bg-ivory p-4">
+        <p class="eyebrow">Browse</p>
+        <h2 class="mt-2 font-serif text-2xl font-black text-ink">Choose a shelf</h2>
+        <p class="mt-3 text-sm leading-6 text-muted">Start with a hub or collection, then use the printable grid to choose the exact PDF you want.</p>
+      </div>
+      <div class="sidebar-box bg-mint/50 p-4">
+        <p class="eyebrow">Print</p>
+        <h2 class="mt-2 font-serif text-2xl font-black text-ink">Use simple PDFs</h2>
+        <p class="mt-3 text-sm leading-6 text-muted">Pages are organized around direct PDF downloads, visible previews, and short printing tips.</p>
+      </div>
+      <div class="sidebar-box bg-sun/20 p-4">
+        <p class="eyebrow">Trust</p>
+        <h2 class="mt-2 font-serif text-2xl font-black text-ink">Keep topics safe</h2>
+        <p class="mt-3 text-sm leading-6 text-muted">Expansion should prioritize evergreen, non-copyright topics before chasing high-risk character searches.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-page py-8">
+    <div>
       <div class="flex flex-col justify-between gap-4 md:flex-row md:items-end">
         <div>
           <p class="eyebrow">Browse shelves</p>
