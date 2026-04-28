@@ -1,6 +1,6 @@
 # Coloring Atlas
 
-Static multilingual website for downloadable coloring pages, coloring sheets, mandalas, seasonal printables, and simple printable calendars.
+This is Static multilingual website for downloadable coloring pages, coloring sheets, mandalas, seasonal printables, and simple printable calendars.
 
 ## Quick Start
 
