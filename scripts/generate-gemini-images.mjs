@@ -5,7 +5,7 @@ import slugify from "slugify";
 
 const [, , promptManifestPath = "incoming/image-prompts.example.json"] = process.argv;
 const apiKey = process.env.GEMINI_API_KEY;
-const model = process.env.GEMINI_IMAGE_MODEL || "gemini-3.1-flash-image-preview";
+const model = process.env.GEMINI_IMAGE_MODEL || "gemini-2.5-flash-image";
 const outputDir = process.env.GENERATED_IMAGE_DIR || "incoming/generated";
 const manifestOutputPath = process.env.GENERATED_MANIFEST_PATH || "incoming/manifest.generated.json";
 
