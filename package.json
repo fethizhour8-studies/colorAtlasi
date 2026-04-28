@@ -1,0 +1,22 @@
+{
+  "name": "coloring-atlas",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "prebuild": "node scripts/generate-security-headers.mjs",
+    "build": "astro build",
+    "build:production": "node scripts/validate-production.mjs --env && npm run build && node scripts/validate-production.mjs --dist",
+    "check:production": "node scripts/validate-production.mjs --env --dist",
+    "preview": "astro preview --host 127.0.0.1",
+    "seed:samples": "node scripts/seed-samples.mjs",
+    "ingest": "node scripts/ingest-assets.mjs"
+  },
+  "dependencies": {
+    "astro": "^6.1.9",
+    "pdfkit": "^0.17.2",
+    "sharp": "^0.34.5",
+    "slugify": "^1.6.6"
+  }
+}

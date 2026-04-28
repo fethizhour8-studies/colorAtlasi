@@ -1,0 +1,34 @@
+---
+import PrintableCard from "@components/PrintableCard.astro";
+import type { PrintablePage } from "@lib/catalog";
+
+interface Props {
+  pages: PrintablePage[];
+}
+
+const { pages } = Astro.props;
+---
+
+<div class="printable-grid">
+  {pages.map((page) => <PrintableCard page={page} />)}
+</div>
+
+<style>
+  .printable-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  @media (min-width: 1180px) {
+    .printable-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 560px) {
+    .printable-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

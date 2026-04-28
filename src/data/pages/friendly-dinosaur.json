@@ -1,0 +1,38 @@
+{
+  "id": "friendly-dinosaur",
+  "categoryId": "coloring-pages-for-kids",
+  "primaryTopicId": "dinosaur-coloring-pages",
+  "audience": "kids",
+  "difficulty": "easy",
+  "license": "Free for personal, classroom, and non-commercial use.",
+  "disclosure": "Created with an AI-assisted workflow and manually reviewed before publishing.",
+  "slugs": {
+    "en": "friendly-dinosaur-coloring-page",
+    "fr": "coloriage-dinosaure-gentil",
+    "es": "dinosaurio-amable-para-colorear",
+    "pt": "dinossauro-amigavel-para-colorir",
+    "de": "freundlicher-dinosaurier-ausmalbild"
+  },
+  "titles": {
+    "en": "Friendly Dinosaur Coloring Page",
+    "fr": "Coloriage dinosaure gentil",
+    "es": "Dinosaurio amable para colorear",
+    "pt": "Dinossauro amigavel para colorir",
+    "de": "Freundlicher Dinosaurier Ausmalbild"
+  },
+  "descriptions": {
+    "en": "A cute dinosaur printable with simple shapes for preschool and kindergarten.",
+    "fr": "Un dinosaure mignon a imprimer avec des formes simples pour les jeunes enfants.",
+    "es": "Un dinosaurio tierno imprimible con formas simples para preescolar.",
+    "pt": "Um dinossauro fofo imprimivel com formas simples para pre-escola.",
+    "de": "Ein niedlicher Dinosaurier zum Ausdrucken mit einfachen Formen."
+  },
+  "keywords": ["dinosaur coloring pages", "cute coloring pages", "preschool coloring pages"],
+  "tags": ["dinosaur", "preschool", "kids", "easy"],
+  "files": {
+    "preview": "/downloads/kids/friendly-dinosaur/friendly-dinosaur-coloring-page-preview.webp",
+    "thumbnail": "/downloads/kids/friendly-dinosaur/friendly-dinosaur-coloring-page-thumbnail.webp",
+    "png": "/downloads/kids/friendly-dinosaur/friendly-dinosaur-coloring-page-printable.png",
+    "pdf": "/downloads/kids/friendly-dinosaur/friendly-dinosaur-coloring-page-printable.pdf"
+  }
+}

@@ -1,0 +1,25 @@
+---
+import PrintablePage from "@templates/PrintablePage.astro";
+import { getContentType, getHub, getTopic, pages, text } from "@lib/catalog";
+
+export function getStaticPaths() {
+  return pages.map((page) => {
+    const topic = getTopic(page.primaryTopicId);
+    const hub = getHub(topic.hubId);
+    return {
+      params: {
+        locale: "en",
+        category: getContentType(topic.contentTypeId).slug,
+        hub: hub.slug,
+        topic: topic.slug,
+        slug: text(page.slugs),
+      },
+      props: { page },
+    };
+  });
+}
+
+const { page } = Astro.props;
+---
+
+<PrintablePage page={page} />

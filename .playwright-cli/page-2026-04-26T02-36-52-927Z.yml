@@ -1,0 +1,96 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Home" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e6]: CA
+        - generic [ref=e7]:
+          - strong [ref=e8]: Coloring Atlas
+          - generic [ref=e9]: Printable coloring pages and simple classroom sheets.
+      - navigation "Categories" [ref=e10]:
+        - link "Kids" [ref=e11] [cursor=pointer]:
+          - /url: /coloring-pages-for-kids/
+        - link "Adults" [ref=e12] [cursor=pointer]:
+          - /url: /adult-coloring-pages/
+        - link "Mandalas" [ref=e13] [cursor=pointer]:
+          - /url: /mandala-coloring-pages/
+        - link "Calendars" [ref=e14] [cursor=pointer]:
+          - /url: /printable-calendars/
+        - group [ref=e15]:
+          - generic "More" [ref=e16] [cursor=pointer]
+      - group [ref=e17]:
+        - generic "Language" [ref=e18] [cursor=pointer]:
+          - generic [ref=e19]: EN
+  - main [ref=e20]:
+    - generic [ref=e21]:
+      - navigation "Breadcrumb" [ref=e22]:
+        - link "Home" [ref=e23] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e24]: /
+        - link "Seasonal Coloring Pages" [ref=e25] [cursor=pointer]:
+          - /url: /seasonal-coloring-pages/
+        - generic [ref=e26]: /
+        - generic [ref=e27]: Christmas Ornaments Coloring Page
+      - generic [ref=e28]:
+        - generic [ref=e29]:
+          - paragraph [ref=e30]: Seasonal Coloring Pages
+          - heading "Christmas Ornaments Coloring Page" [level=1] [ref=e31]
+          - paragraph [ref=e32]: A festive printable coloring sheet with ornaments, bows, and winter stars.
+          - img "Christmas Ornaments Coloring Page" [ref=e34]
+        - complementary [ref=e35]:
+          - link "Download PDF" [ref=e37] [cursor=pointer]:
+            - /url: /downloads/seasonal/christmas-ornaments/christmas-ornaments-coloring-page-printable.pdf
+          - generic [ref=e38]:
+            - generic [ref=e39]:
+              - term [ref=e40]: Difficulty
+              - definition [ref=e41]: medium
+            - generic [ref=e42]:
+              - term [ref=e43]: Audience
+              - definition [ref=e44]: kids
+            - generic [ref=e45]:
+              - term [ref=e46]: License
+              - definition [ref=e47]: Free for personal, classroom, and non-commercial use.
+          - generic [ref=e48]:
+            - paragraph [ref=e49]: Share
+            - generic "Share" [ref=e50]:
+              - link "Pinterest" [ref=e51] [cursor=pointer]:
+                - /url: https://www.pinterest.com/pin/create/button/?url=https%3A%2F%2Fexample.com%2Fseasonal-coloring-pages%2Fchristmas-ornaments-coloring-page%2F&description=Christmas%20Ornaments%20Coloring%20Page
+              - link "Facebook" [ref=e52] [cursor=pointer]:
+                - /url: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.com%2Fseasonal-coloring-pages%2Fchristmas-ornaments-coloring-page%2F
+              - link "WhatsApp" [ref=e53] [cursor=pointer]:
+                - /url: https://api.whatsapp.com/send?text=Christmas%20Ornaments%20Coloring%20Page%20https%3A%2F%2Fexample.com%2Fseasonal-coloring-pages%2Fchristmas-ornaments-coloring-page%2F
+              - button "Copy link" [ref=e54]
+  - contentinfo [ref=e55]:
+    - generic [ref=e56]:
+      - generic [ref=e57]:
+        - strong [ref=e58]: Coloring Atlas
+        - paragraph [ref=e59]: Printable coloring pages and simple classroom sheets.
+      - generic [ref=e60]:
+        - strong [ref=e61]: Language
+        - paragraph [ref=e62]: English
+      - generic [ref=e63]:
+        - strong [ref=e64]: SEO
+        - paragraph [ref=e65]:
+          - link "Sitemap" [ref=e66] [cursor=pointer]:
+            - /url: /sitemap.xml
+          - text: ·
+          - link "Robots" [ref=e67] [cursor=pointer]:
+            - /url: /robots.txt
+          - text: ·
+          - link "LLMs" [ref=e68] [cursor=pointer]:
+            - /url: /llms.txt
+  - generic [ref=e71]:
+    - button "Menu" [ref=e72]:
+      - img [ref=e74]
+      - generic: Menu
+    - button "Inspect" [ref=e78]:
+      - img [ref=e80]
+      - generic: Inspect
+    - button "Audit" [ref=e82]:
+      - img [ref=e84]
+      - generic: Audit
+    - button "Settings" [ref=e87]:
+      - img [ref=e89]
+      - generic: Settings

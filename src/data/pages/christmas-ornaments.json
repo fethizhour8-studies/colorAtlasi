@@ -1,0 +1,38 @@
+{
+  "id": "christmas-ornaments",
+  "categoryId": "seasonal-coloring-pages",
+  "primaryTopicId": "christmas-coloring-pages",
+  "audience": "kids",
+  "difficulty": "medium",
+  "license": "Free for personal, classroom, and non-commercial use.",
+  "disclosure": "Created with an AI-assisted workflow and manually reviewed before publishing.",
+  "slugs": {
+    "en": "christmas-ornaments-coloring-page",
+    "fr": "coloriage-boules-noel",
+    "es": "adornos-navidad-para-colorear",
+    "pt": "enfeites-natal-para-colorir",
+    "de": "weihnachtsschmuck-ausmalbild"
+  },
+  "titles": {
+    "en": "Christmas Ornaments Coloring Page",
+    "fr": "Coloriage boules de Noel",
+    "es": "Adornos de Navidad para colorear",
+    "pt": "Enfeites de Natal para colorir",
+    "de": "Weihnachtsschmuck Ausmalbild"
+  },
+  "descriptions": {
+    "en": "A festive printable coloring sheet with ornaments, bows, and winter stars.",
+    "fr": "Un coloriage festif a imprimer avec boules, rubans et etoiles d'hiver.",
+    "es": "Una lamina festiva para imprimir con adornos, lazos y estrellas de invierno.",
+    "pt": "Uma folha festiva para imprimir com enfeites, lacos e estrelas de inverno.",
+    "de": "Eine festliche Druckvorlage mit Schmuck, Schleifen und Wintersternen."
+  },
+  "keywords": ["christmas coloring pages", "seasonal coloring pages", "holiday printables"],
+  "tags": ["christmas", "holiday", "ornaments", "seasonal", "kids"],
+  "files": {
+    "preview": "/downloads/seasonal/christmas-ornaments/christmas-ornaments-coloring-page-preview.webp",
+    "thumbnail": "/downloads/seasonal/christmas-ornaments/christmas-ornaments-coloring-page-thumbnail.webp",
+    "png": "/downloads/seasonal/christmas-ornaments/christmas-ornaments-coloring-page-printable.png",
+    "pdf": "/downloads/seasonal/christmas-ornaments/christmas-ornaments-coloring-page-printable.pdf"
+  }
+}

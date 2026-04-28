@@ -1,0 +1,188 @@
+---
+import CollectionCard from "@components/CollectionCard.astro";
+import PrintableGrid from "@components/PrintableGrid.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import {
+  contentTypes,
+  getContentTypePath,
+  getHubPath,
+  getPagesForHub,
+  getPagesForTopic,
+  getTopicPath,
+  getTopicsForHub,
+  hubs,
+  pages,
+  topics,
+} from "@lib/catalog";
+import { websiteJsonLd } from "@lib/seo";
+
+const site = Astro.site || new URL("https://example.com");
+const featuredTopics = topics.slice(0, 6);
+const newPrintables = pages.slice(0, 6);
+---
+
+<BaseLayout
+  title="Free Printable Coloring Pages, Sheets, Calendars and PDFs | Coloring Atlas"
+  description="Browse warm, organized, print-ready PDF coloring pages, coloring sheets, calendars, worksheets, mandalas, and simple classroom printables."
+  canonicalPath="/en/"
+  image={newPrintables[0]?.files.preview}
+  jsonLdItems={[websiteJsonLd(site)]}
+>
+  <section class="hero">
+    <div class="section hero-grid">
+      <div>
+        <p class="eyebrow">Free PDF printables</p>
+        <h1>Printable coloring pages and simple sheets for real life</h1>
+        <p class="lead">Browse clean PDF coloring pages, calendars, worksheets, mandalas, and classroom-friendly printables that are easy to download and print.</p>
+        <div class="button-row hero-actions">
+          <a class="button" href="/en/coloring-pages/">Browse coloring pages</a>
+          <a class="ghost-button" href="#collections">Explore collections</a>
+        </div>
+      </div>
+      <div class="hero-preview" aria-label="Printable previews">
+        {newPrintables.slice(0, 4).map((page) => (
+          <span>
+            <img src={page.files.thumbnail} alt="" />
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight" id="collections">
+    <p class="eyebrow">Start browsing</p>
+    <h2>Popular printable areas</h2>
+    <div class="grid grid-3 card-grid">
+      {contentTypes.map((contentType) => (
+        <CollectionCard
+          title={contentType.title}
+          description={contentType.description}
+          href={getContentTypePath(contentType)}
+          count={contentType.id === "coloring-pages" ? pages.length : undefined}
+          accent={contentType.accent}
+          cta="Browse"
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="eyebrow">Featured hubs</p>
+    <h2>Simple paths for parents and teachers</h2>
+    <div class="grid grid-4 card-grid">
+      {hubs.slice(0, 6).map((hub) => (
+        <CollectionCard
+          title={hub.title}
+          description={hub.description}
+          href={getHubPath(hub)}
+          count={getPagesForHub(hub.id).length}
+          accent={hub.accent}
+          cta="Browse hub"
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="eyebrow">Featured collections</p>
+    <h2>Printable collections with PDFs</h2>
+    <div class="grid grid-3 card-grid">
+      {featuredTopics.map((topic) => (
+        <CollectionCard
+          title={topic.title}
+          description={topic.description}
+          href={getTopicPath(topic)}
+          count={getPagesForTopic(topic.id).length}
+          accent={topic.hubId === "mandalas" ? "adult-lavender" : "kids-peach"}
+          cta="Open collection"
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="eyebrow">New PDFs</p>
+    <h2>Latest printable pages</h2>
+    <PrintableGrid pages={newPrintables} />
+  </section>
+
+  <section class="section trust-strip">
+    <div class="panel trust-panel">
+      <div>
+        <strong>Print-ready PDFs</strong>
+        <p>Each download is prepared as a PDF so parents and teachers can print without editing software.</p>
+      </div>
+      <div>
+        <strong>Human-reviewed</strong>
+        <p>AI-assisted source images are checked, cleaned, framed for previews, and formatted before publishing.</p>
+      </div>
+      <div>
+        <strong>Personal and classroom use</strong>
+        <p>Pages are made for simple home use, classroom packets, quiet activities, and creative breaks.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    border-bottom: 1px solid var(--border);
+    background:
+      radial-gradient(circle at 84% 22%, rgba(244, 201, 93, 0.3), transparent 28%),
+      linear-gradient(180deg, #fff, var(--paper));
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.75fr);
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .hero-actions {
+    margin-top: 1.35rem;
+  }
+
+  .hero-preview {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+  }
+
+  .hero-preview span {
+    display: grid;
+    aspect-ratio: 4 / 3;
+    place-items: center;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--yellow-soft), var(--mint));
+    box-shadow: var(--shadow);
+  }
+
+  .hero-preview img {
+    width: 86%;
+    height: 86%;
+    object-fit: contain;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 10px 20px rgba(26, 26, 46, 0.12);
+  }
+
+  .card-grid {
+    margin-top: 1rem;
+  }
+
+  .trust-panel {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    padding: 1.2rem;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid,
+    .trust-panel {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

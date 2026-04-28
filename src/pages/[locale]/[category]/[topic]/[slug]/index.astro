@@ -1,0 +1,18 @@
+---
+import TopicPage from "@templates/TopicPage.astro";
+import { getContentType, getHub, topics } from "@lib/catalog";
+
+export function getStaticPaths() {
+  return topics.map((topic) => {
+    const hub = getHub(topic.hubId);
+    return {
+      params: { locale: "en", category: getContentType(topic.contentTypeId).slug, topic: hub.slug, slug: topic.slug },
+      props: { topic },
+    };
+  });
+}
+
+const { topic } = Astro.props;
+---
+
+<TopicPage topic={topic} />

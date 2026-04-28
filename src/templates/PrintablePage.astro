@@ -1,0 +1,151 @@
+---
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import PrintableGrid from "@components/PrintableGrid.astro";
+import QuickFacts from "@components/QuickFacts.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import {
+  asAbsoluteUrl,
+  getBreadcrumbsForPrintable,
+  getPrintablePath,
+  getRelatedPages,
+  getTopic,
+  getTopicPath,
+  text,
+  type PrintablePage,
+} from "@lib/catalog";
+import { breadcrumbJsonLd, printableJsonLd, robotsForIndexable } from "@lib/seo";
+
+interface Props {
+  page: PrintablePage;
+}
+
+const { page } = Astro.props;
+const site = Astro.site || new URL("https://example.com");
+const topic = getTopic(page.primaryTopicId);
+const pagePath = getPrintablePath(page);
+const crumbs = getBreadcrumbsForPrintable(page);
+const related = getRelatedPages(page);
+const canonicalPath = page.seo?.indexable ? pagePath : getTopicPath(topic);
+const facts = [
+  { label: "Format", value: "PDF" },
+  { label: "Paper", value: topic.quickFacts.paperSize },
+  { label: "Difficulty", value: page.difficulty },
+  { label: "Audience", value: page.audience },
+];
+---
+
+<BaseLayout
+  title={`${text(page.titles)} | Coloring Atlas`}
+  description={text(page.descriptions)}
+  canonicalPath={canonicalPath}
+  robots={robotsForIndexable(Boolean(page.seo?.indexable))}
+  image={page.files.preview}
+  jsonLdItems={[printableJsonLd(page, site), breadcrumbJsonLd(crumbs, site)]}
+>
+  <section class="section">
+    <Breadcrumbs crumbs={crumbs} />
+    <div class="detail-grid">
+      <div>
+        <p class="eyebrow">{topic.title}</p>
+        <h1>{text(page.titles)}</h1>
+        <p class="lead">{text(page.descriptions)}</p>
+        <div class="preview-panel">
+          <img src={page.files.preview} alt={text(page.titles)} width="1200" height="1553" />
+        </div>
+      </div>
+      <aside class="panel info-panel">
+        <a class="button" href={page.files.pdf} download>Download PDF</a>
+        <a class="ghost-button" href={page.files.pdf}>Print PDF</a>
+        <QuickFacts facts={facts} />
+        <div class="share-note">
+          <strong>Share</strong>
+          <p>Copy this page URL for Pinterest, Facebook, WhatsApp, or classroom planning.</p>
+          <code>{asAbsoluteUrl(pagePath, site)}</code>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="panel guide-panel">
+      <h2>How to use this printable</h2>
+      <p>Download the PDF, open it in your browser or PDF viewer, and print at actual size for US Letter. If you use A4, choose fit to page.</p>
+      <p>{page.license}</p>
+      {page.disclosure && <p>Some printables are created with digital illustration tools, AI-assisted drafting, and human review before publication.</p>}
+    </div>
+  </section>
+
+  {related.length > 0 && (
+    <section class="section">
+      <p class="eyebrow">Related</p>
+      <h2>More from this area</h2>
+      <PrintableGrid pages={related} />
+    </section>
+  )}
+</BaseLayout>
+
+<style>
+  .detail-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 330px;
+    gap: 1.2rem;
+    align-items: start;
+  }
+
+  .preview-panel {
+    margin-top: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background:
+      radial-gradient(circle at 15% 10%, rgba(244, 201, 93, 0.26), transparent 24%),
+      linear-gradient(135deg, var(--mint), var(--yellow-soft));
+    padding: 1rem;
+  }
+
+  .preview-panel img {
+    width: 100%;
+    max-height: 820px;
+    object-fit: contain;
+    border: 1px solid rgba(26, 26, 46, 0.12);
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 18px 34px rgba(26, 26, 46, 0.15);
+  }
+
+  .info-panel,
+  .guide-panel {
+    display: grid;
+    gap: 0.85rem;
+    padding: 1rem;
+  }
+
+  .info-panel {
+    position: sticky;
+    top: 98px;
+  }
+
+  .info-panel :global(.quick-facts) {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 0;
+  }
+
+  code {
+    display: block;
+    overflow-wrap: anywhere;
+    border-radius: 8px;
+    background: var(--paper);
+    padding: 0.65rem;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  @media (max-width: 980px) {
+    .detail-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .info-panel {
+      position: static;
+    }
+  }
+</style>

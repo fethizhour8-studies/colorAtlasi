@@ -1,0 +1,38 @@
+[
+  {
+    "id": "coloring-pages",
+    "slug": "coloring-pages",
+    "title": "Coloring Pages",
+    "description": "Free printable coloring pages for kids, adults, teachers, parents, classrooms, and calm creative time.",
+    "accent": "teal",
+    "sortOrder": 1,
+    "seo": {
+      "title": "Free Printable Coloring Pages | Coloring Atlas",
+      "metaDescription": "Browse free printable coloring pages with clean PDF downloads, kid-friendly topics, adult coloring pages, animal sheets, and seasonal collections."
+    }
+  },
+  {
+    "id": "printables",
+    "slug": "printables",
+    "title": "Printables",
+    "description": "Simple printable activities, classroom sheets, planners, and family-friendly PDF resources.",
+    "accent": "teacher-blue",
+    "sortOrder": 2,
+    "seo": {
+      "title": "Free Printables for Home and Classroom | Coloring Atlas",
+      "metaDescription": "Find free printable worksheets, activity pages, planners, and classroom PDF resources prepared for easy home or school printing."
+    }
+  },
+  {
+    "id": "calendars",
+    "slug": "calendars",
+    "title": "Calendars",
+    "description": "Printable calendars and simple planning sheets for home, classroom, and office organization.",
+    "accent": "mint",
+    "sortOrder": 3,
+    "seo": {
+      "title": "Free Printable Calendars | Coloring Atlas",
+      "metaDescription": "Download clean printable calendars and simple planning sheets as print-ready PDFs."
+    }
+  }
+]

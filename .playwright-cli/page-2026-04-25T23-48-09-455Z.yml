@@ -1,0 +1,112 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Home" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e6]: CA
+        - generic [ref=e7]:
+          - strong [ref=e8]: Coloring Atlas
+          - generic [ref=e9]: Printable coloring pages and simple classroom sheets.
+      - navigation "Categories" [ref=e10]:
+        - link "Coloring Pages for Kids" [ref=e11] [cursor=pointer]:
+          - /url: /coloring-pages-for-kids/
+        - link "Adult Coloring Pages" [ref=e12] [cursor=pointer]:
+          - /url: /adult-coloring-pages/
+        - link "Mandala Coloring Pages" [ref=e13] [cursor=pointer]:
+          - /url: /mandala-coloring-pages/
+        - link "Cute Coloring Pages" [ref=e14] [cursor=pointer]:
+          - /url: /cute-coloring-pages/
+        - link "Animal Coloring Pages" [ref=e15] [cursor=pointer]:
+          - /url: /animal-coloring-pages/
+      - navigation "Language" [ref=e16]:
+        - link "English" [ref=e17] [cursor=pointer]:
+          - /url: /coloring-pages-for-kids/friendly-dinosaur-coloring-page/
+        - link "Francais" [ref=e18] [cursor=pointer]:
+          - /url: /fr/coloriages-enfants/coloriage-dinosaure-gentil/
+        - link "Espanol" [ref=e19] [cursor=pointer]:
+          - /url: /es/dibujos-para-colorear-ninos/dinosaurio-amable-para-colorear/
+        - link "Portugues" [ref=e20] [cursor=pointer]:
+          - /url: /pt/desenhos-para-colorir-criancas/dinossauro-amigavel-para-colorir/
+        - link "Deutsch" [ref=e21] [cursor=pointer]:
+          - /url: /de/ausmalbilder-kinder/freundlicher-dinosaurier-ausmalbild/
+  - main [ref=e22]:
+    - generic [ref=e23]:
+      - navigation "Breadcrumb" [ref=e24]:
+        - link "Home" [ref=e25] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e26]: /
+        - link "Coloring Pages for Kids" [ref=e27] [cursor=pointer]:
+          - /url: /coloring-pages-for-kids/
+        - generic [ref=e28]: /
+        - generic [ref=e29]: Friendly Dinosaur Coloring Page
+      - generic [ref=e30]:
+        - generic [ref=e31]:
+          - paragraph [ref=e32]: Coloring Pages for Kids
+          - heading "Friendly Dinosaur Coloring Page" [level=1] [ref=e33]
+          - paragraph [ref=e34]: A cute dinosaur printable with simple shapes for preschool and kindergarten.
+          - img "Friendly Dinosaur Coloring Page" [ref=e36]
+        - complementary [ref=e37]:
+          - generic [ref=e38]:
+            - link "Download PDF" [ref=e39] [cursor=pointer]:
+              - /url: /downloads/kids/friendly-dinosaur/friendly-dinosaur-coloring-page-printable.pdf
+            - link "Download PNG" [ref=e40] [cursor=pointer]:
+              - /url: /downloads/kids/friendly-dinosaur/friendly-dinosaur-coloring-page-printable.png
+          - generic [ref=e41]:
+            - generic [ref=e42]:
+              - term [ref=e43]: Difficulty
+              - definition [ref=e44]: easy
+            - generic [ref=e45]:
+              - term [ref=e46]: Audience
+              - definition [ref=e47]: kids
+            - generic [ref=e48]:
+              - term [ref=e49]: License
+              - definition [ref=e50]: Free for personal, classroom, and non-commercial use.
+            - generic [ref=e51]:
+              - term [ref=e52]: Production note
+              - definition [ref=e53]: Created with an AI-assisted workflow and manually reviewed before publishing.
+          - generic [ref=e54]:
+            - paragraph [ref=e55]: Share
+            - generic "Share" [ref=e56]:
+              - link "Pinterest" [ref=e57] [cursor=pointer]:
+                - /url: https://www.pinterest.com/pin/create/button/?url=https%3A%2F%2Fexample.com%2Fcoloring-pages-for-kids%2Ffriendly-dinosaur-coloring-page%2F&description=Friendly%20Dinosaur%20Coloring%20Page
+              - link "Facebook" [ref=e58] [cursor=pointer]:
+                - /url: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.com%2Fcoloring-pages-for-kids%2Ffriendly-dinosaur-coloring-page%2F
+              - link "WhatsApp" [ref=e59] [cursor=pointer]:
+                - /url: https://api.whatsapp.com/send?text=Friendly%20Dinosaur%20Coloring%20Page%20https%3A%2F%2Fexample.com%2Fcoloring-pages-for-kids%2Ffriendly-dinosaur-coloring-page%2F
+              - button "Copy link" [ref=e60]
+  - contentinfo [ref=e61]:
+    - generic [ref=e62]:
+      - generic [ref=e63]:
+        - strong [ref=e64]: Coloring Atlas
+        - paragraph [ref=e65]: Printable coloring pages and simple classroom sheets.
+      - generic [ref=e66]:
+        - strong [ref=e67]: Language
+        - paragraph [ref=e68]: English
+      - generic [ref=e69]:
+        - strong [ref=e70]: SEO
+        - paragraph [ref=e71]:
+          - link "Sitemap" [ref=e72] [cursor=pointer]:
+            - /url: /sitemap.xml
+          - text: ·
+          - link "Robots" [ref=e73] [cursor=pointer]:
+            - /url: /robots.txt
+          - text: ·
+          - link "LLMs" [ref=e74] [cursor=pointer]:
+            - /url: /llms.txt
+  - generic [ref=e77]:
+    - button "Menu" [ref=e78]:
+      - img [ref=e80]
+      - generic: Menu
+    - button "Inspect" [ref=e84]:
+      - img [ref=e86]
+      - generic: Inspect
+    - button "Audit" [ref=e88]:
+      - generic [ref=e89]:
+        - img [ref=e90]
+        - img [ref=e93]
+      - generic: Audit
+    - button "Settings" [ref=e96]:
+      - img [ref=e98]
+      - generic: Settings

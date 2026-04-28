@@ -1,0 +1,79 @@
+---
+interface Props {
+  id: string;
+  size?: "leaderboard" | "rectangle" | "sidebar";
+}
+
+const { id, size = "rectangle" } = Astro.props;
+const adsEnabled = import.meta.env.PUBLIC_ADSENSE_ENABLED === "true";
+const client = import.meta.env.PUBLIC_ADSENSE_CLIENT;
+const slotMap = {
+  leaderboard: import.meta.env.PUBLIC_ADSENSE_SLOT_LEADERBOARD,
+  rectangle: import.meta.env.PUBLIC_ADSENSE_SLOT_RECTANGLE,
+  sidebar: import.meta.env.PUBLIC_ADSENSE_SLOT_SIDEBAR,
+};
+const slot = slotMap[size];
+const showAd = adsEnabled && /^ca-pub-\d+$/.test(client || "") && /^\d+$/.test(slot || "");
+const showPlaceholder = import.meta.env.PUBLIC_SHOW_AD_PLACEHOLDERS === "true";
+---
+
+{showAd && (
+  <aside class={`ad-slot ad-slot-${size} ad-slot-live`} aria-label="Advertisement" data-ad-slot={id}>
+    <span>Advertisement</span>
+    <ins
+      class="adsbygoogle"
+      style="display:block"
+      data-ad-client={client}
+      data-ad-slot={slot}
+      data-ad-format={size === "leaderboard" ? "horizontal" : "auto"}
+      data-full-width-responsive="true"
+    ></ins>
+    <script is:inline>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </aside>
+)}
+
+{!showAd && showPlaceholder && (
+  <aside class={`ad-slot ad-slot-${size}`} aria-label="Advertisement" data-ad-slot={id}>
+    <span>Advertisement</span>
+  </aside>
+)}
+
+<style>
+  .ad-slot {
+    display: grid;
+    place-items: center;
+    border: 1px dashed var(--line);
+    border-radius: 8px;
+    background: #f7faf7;
+    color: var(--muted);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+  }
+
+  .ad-slot-live {
+    align-content: start;
+    gap: 0.45rem;
+    padding: 0.35rem;
+  }
+
+  .ad-slot-live .adsbygoogle {
+    width: 100%;
+  }
+
+  .ad-slot-leaderboard {
+    min-height: 96px;
+  }
+
+  .ad-slot-rectangle,
+  .ad-slot-sidebar {
+    min-height: 250px;
+  }
+
+  @media (max-width: 760px) {
+    .ad-slot-sidebar {
+      display: none;
+    }
+  }
+</style>

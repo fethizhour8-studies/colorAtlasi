@@ -1,0 +1,88 @@
+---
+import { getPrintablePath, getTopic, text, type PrintablePage } from "@lib/catalog";
+
+interface Props {
+  page: PrintablePage;
+  showViewLink?: boolean;
+}
+
+const { page, showViewLink = true } = Astro.props;
+const topic = getTopic(page.primaryTopicId);
+const href = getPrintablePath(page);
+---
+
+<article class="printable-card">
+  <a class="preview-link" href={href} aria-label={text(page.titles)}>
+    <figure>
+      <span class="paper-sheet">
+        <img src={page.files.thumbnail} alt={text(page.titles)} loading="lazy" width="640" height="480" />
+      </span>
+    </figure>
+  </a>
+  <div class="printable-body">
+    <div class="meta-row">
+      <span class="pill">PDF</span>
+      <span class="pill">{page.difficulty}</span>
+      <span class="pill">{topic.title.replace(" Coloring Pages", "")}</span>
+    </div>
+    <h3><a href={href}>{text(page.titles)}</a></h3>
+    <p>{text(page.descriptions)}</p>
+    <div class="button-row">
+      <a class="button" href={page.files.pdf} download>Download PDF</a>
+      {showViewLink && <a class="ghost-button" href={href}>View page</a>}
+    </div>
+  </div>
+</article>
+
+<style>
+  .printable-card {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    overflow: hidden;
+  }
+
+  .preview-link {
+    display: block;
+  }
+
+  figure {
+    margin: 0;
+    padding: 1rem;
+    background:
+      radial-gradient(circle at 18% 18%, rgba(244, 201, 93, 0.28), transparent 28%),
+      linear-gradient(135deg, #fff2b8, #ddf5e7 58%, #bfe7f5);
+  }
+
+  .paper-sheet {
+    display: grid;
+    aspect-ratio: 4 / 3;
+    place-items: center;
+    border: 1px solid rgba(26, 26, 46, 0.14);
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 14px 24px rgba(26, 26, 46, 0.14);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 0.65rem;
+  }
+
+  .printable-body {
+    display: grid;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .button-row {
+    margin-top: auto;
+  }
+</style>

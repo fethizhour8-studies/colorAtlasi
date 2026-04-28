@@ -1,0 +1,38 @@
+{
+  "id": "one-page-calendar-2026",
+  "categoryId": "printable-calendars",
+  "primaryTopicId": "2026-printable-calendars",
+  "audience": "all",
+  "difficulty": "simple",
+  "license": "Free for personal, classroom, and non-commercial use.",
+  "disclosure": "Designed as a clean printable template.",
+  "slugs": {
+    "en": "2026-one-page-printable-calendar",
+    "fr": "calendrier-2026-une-page-a-imprimer",
+    "es": "calendario-2026-una-pagina-para-imprimir",
+    "pt": "calendario-2026-uma-pagina-para-imprimir",
+    "de": "kalender-2026-eine-seite-zum-ausdrucken"
+  },
+  "titles": {
+    "en": "2026 One-Page Printable Calendar",
+    "fr": "Calendrier 2026 une page a imprimer",
+    "es": "Calendario 2026 de una pagina para imprimir",
+    "pt": "Calendario 2026 de uma pagina para imprimir",
+    "de": "Kalender 2026 auf einer Seite zum Ausdrucken"
+  },
+  "descriptions": {
+    "en": "A clean 2026 printable calendar on one letter-size page.",
+    "fr": "Un calendrier 2026 clair a imprimer sur une page.",
+    "es": "Un calendario 2026 limpio para imprimir en una pagina.",
+    "pt": "Um calendario 2026 limpo para imprimir em uma pagina.",
+    "de": "Ein klarer Kalender 2026 zum Ausdrucken auf einer Seite."
+  },
+  "keywords": ["2026 calendar", "printable calendar", "free printable calendar"],
+  "tags": ["2026", "calendar", "planner", "one page"],
+  "files": {
+    "preview": "/downloads/calendars/one-page-calendar-2026/2026-one-page-printable-calendar-preview.webp",
+    "thumbnail": "/downloads/calendars/one-page-calendar-2026/2026-one-page-printable-calendar-thumbnail.webp",
+    "png": "/downloads/calendars/one-page-calendar-2026/2026-one-page-printable-calendar-printable.png",
+    "pdf": "/downloads/calendars/one-page-calendar-2026/2026-one-page-printable-calendar-printable.pdf"
+  }
+}

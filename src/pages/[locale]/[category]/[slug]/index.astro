@@ -1,0 +1,15 @@
+---
+import CategoryPage from "@templates/CategoryPage.astro";
+import { getContentType, hubs } from "@lib/catalog";
+
+export function getStaticPaths() {
+  return hubs.map((hub) => ({
+    params: { locale: "en", category: getContentType(hub.contentTypeId).slug, slug: hub.slug },
+    props: { hub },
+  }));
+}
+
+const { hub } = Astro.props;
+---
+
+<CategoryPage hub={hub} />

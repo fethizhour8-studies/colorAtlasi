@@ -1,0 +1,156 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Home" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e6]: CA
+        - generic [ref=e7]:
+          - strong [ref=e8]: Coloring Atlas
+          - generic [ref=e9]: Printable coloring pages and simple classroom sheets.
+      - navigation "Categories" [ref=e10]:
+        - link "Kids" [ref=e11] [cursor=pointer]:
+          - /url: /coloring-pages-for-kids/
+        - link "Adults" [ref=e12] [cursor=pointer]:
+          - /url: /adult-coloring-pages/
+        - link "Mandalas" [ref=e13] [cursor=pointer]:
+          - /url: /mandala-coloring-pages/
+        - link "Calendars" [ref=e14] [cursor=pointer]:
+          - /url: /printable-calendars/
+        - group [ref=e15]:
+          - generic "More" [ref=e16] [cursor=pointer]
+      - group [ref=e17]:
+        - generic "Language" [ref=e18] [cursor=pointer]:
+          - generic [ref=e19]: EN
+          - generic [ref=e20]: English
+  - main [ref=e21]:
+    - generic [ref=e22]:
+      - navigation "Breadcrumb" [ref=e23]:
+        - link "Home" [ref=e24] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e25]: /
+        - generic [ref=e26]: Coloring Pages for Kids
+      - paragraph [ref=e27]: Categories
+      - heading "Coloring Pages for Kids" [level=1] [ref=e28]
+      - paragraph [ref=e29]: Simple printable coloring pages for preschool, kindergarten, classrooms, and calm home activities.
+    - generic [ref=e31]:
+      - generic [ref=e32]:
+        - paragraph [ref=e33]: All printables
+        - heading "Coloring Pages for Kids PDFs" [level=2] [ref=e34]
+        - article [ref=e36]:
+          - link "Friendly Dinosaur Coloring Page" [ref=e37] [cursor=pointer]:
+            - /url: /coloring-pages-for-kids/friendly-dinosaur-coloring-page/
+            - figure [ref=e38]:
+              - img "Friendly Dinosaur Coloring Page" [ref=e39]
+          - generic [ref=e40]:
+            - generic [ref=e41]:
+              - generic [ref=e42]: Coloring Pages for Kids
+              - generic [ref=e43]: easy
+            - heading "Friendly Dinosaur Coloring Page" [level=3] [ref=e44]:
+              - link "Friendly Dinosaur Coloring Page" [ref=e45] [cursor=pointer]:
+                - /url: /coloring-pages-for-kids/friendly-dinosaur-coloring-page/
+            - paragraph [ref=e46]: A cute dinosaur printable with simple shapes for preschool and kindergarten.
+            - generic [ref=e47]:
+              - link "Download PDF" [ref=e48] [cursor=pointer]:
+                - /url: /downloads/kids/friendly-dinosaur/friendly-dinosaur-coloring-page-printable.pdf
+              - link "Browse more" [ref=e49] [cursor=pointer]:
+                - /url: /coloring-pages-for-kids/friendly-dinosaur-coloring-page/
+        - generic [ref=e50]:
+          - heading "How to use these printables" [level=2] [ref=e51]
+          - list [ref=e52]:
+            - listitem [ref=e53]: Open a printable page and download the PDF.
+            - listitem [ref=e54]: Print at actual size for US Letter, or choose fit to page for A4.
+            - listitem [ref=e55]: Use crayons, markers, pencils, or classroom packets depending on the activity.
+        - generic [ref=e56]:
+          - heading "Questions" [level=2] [ref=e57]
+          - generic [ref=e58]:
+            - group [ref=e59]:
+              - generic "Are these coloring pages for kids free to print?" [ref=e60] [cursor=pointer]
+            - group [ref=e61]:
+              - generic "Do the PDFs work on A4 paper?" [ref=e62] [cursor=pointer]
+            - group [ref=e63]:
+              - generic "Can teachers use these pages in class?" [ref=e64] [cursor=pointer]
+      - complementary [ref=e65]:
+        - generic [ref=e66]:
+          - heading "Popular searches" [level=2] [ref=e67]
+          - generic [ref=e68]:
+            - generic [ref=e69]: dinosaur coloring pages
+            - generic [ref=e70]: cute coloring pages
+            - generic [ref=e71]: preschool coloring pages
+            - generic [ref=e72]: coloring pages for kids
+            - generic [ref=e73]: free coloring pages for kids
+            - generic [ref=e74]: printable coloring pages for kids
+        - generic [ref=e75]:
+          - heading "Printing notes" [level=2] [ref=e76]
+          - paragraph [ref=e77]: Every download is prepared as a simple PDF so parents and teachers can print without editing software.
+    - generic [ref=e78]:
+      - paragraph [ref=e79]: Browse more
+      - heading "Categories" [level=2] [ref=e80]
+      - generic [ref=e81]:
+        - link "1 all printables Adult Coloring Pages Detailed printable sheets with relaxing line art for quiet creative time." [ref=e82] [cursor=pointer]:
+          - /url: /adult-coloring-pages/
+          - generic [ref=e83]: 1 all printables
+          - heading "Adult Coloring Pages" [level=3] [ref=e84]
+          - paragraph [ref=e85]: Detailed printable sheets with relaxing line art for quiet creative time.
+        - link "1 all printables Mandala Coloring Pages Printable mandalas from simple circles to intricate geometric designs." [ref=e86] [cursor=pointer]:
+          - /url: /mandala-coloring-pages/
+          - generic [ref=e87]: 1 all printables
+          - heading "Mandala Coloring Pages" [level=3] [ref=e88]
+          - paragraph [ref=e89]: Printable mandalas from simple circles to intricate geometric designs.
+        - link "1 all printables Cute Coloring Pages Friendly printable designs with soft shapes, stars, sweets, and cheerful characters." [ref=e90] [cursor=pointer]:
+          - /url: /cute-coloring-pages/
+          - generic [ref=e91]: 1 all printables
+          - heading "Cute Coloring Pages" [level=3] [ref=e92]
+          - paragraph [ref=e93]: Friendly printable designs with soft shapes, stars, sweets, and cheerful characters.
+        - link "1 all printables Animal Coloring Pages Printable animals for school themes, nature units, and weekend coloring time." [ref=e94] [cursor=pointer]:
+          - /url: /animal-coloring-pages/
+          - generic [ref=e95]: 1 all printables
+          - heading "Animal Coloring Pages" [level=3] [ref=e96]
+          - paragraph [ref=e97]: Printable animals for school themes, nature units, and weekend coloring time.
+  - contentinfo [ref=e98]:
+    - generic [ref=e99]:
+      - generic [ref=e100]:
+        - strong [ref=e101]: Coloring Atlas
+        - paragraph [ref=e102]: Printable coloring pages and simple classroom sheets.
+        - paragraph [ref=e103]: Free print-ready PDFs for home, classrooms, and calm creative time.
+      - generic [ref=e104]:
+        - strong [ref=e105]: Company
+        - paragraph [ref=e106]:
+          - link "About" [ref=e107] [cursor=pointer]:
+            - /url: /about/
+          - link "Contact" [ref=e108] [cursor=pointer]:
+            - /url: /contact/
+          - link "Privacy Policy" [ref=e109] [cursor=pointer]:
+            - /url: /privacy-policy/
+      - generic [ref=e110]:
+        - strong [ref=e111]: Policies
+        - paragraph [ref=e112]:
+          - link "Terms and Conditions" [ref=e113] [cursor=pointer]:
+            - /url: /terms/
+          - link "Takedown Policy" [ref=e114] [cursor=pointer]:
+            - /url: /takedown-policy/
+          - link "Licensing" [ref=e115] [cursor=pointer]:
+            - /url: /licensing/
+        - paragraph [ref=e116]:
+          - link "Sitemap" [ref=e117] [cursor=pointer]:
+            - /url: /sitemap.xml
+          - generic [ref=e118]: "|"
+          - link "Robots" [ref=e119] [cursor=pointer]:
+            - /url: /robots.txt
+          - generic [ref=e120]: "|"
+          - link "LLMs" [ref=e121] [cursor=pointer]:
+            - /url: /llms.txt
+  - generic [ref=e124]:
+    - button "Menu" [ref=e125]:
+      - img [ref=e127]
+      - generic: Menu
+    - button "Inspect" [ref=e131]:
+      - img [ref=e133]
+      - generic: Inspect
+    - button "Audit" [ref=e135]:
+      - img [ref=e137]
+      - generic: Audit
+    - button "Settings" [ref=e140]:
+      - img [ref=e142]
+      - generic: Settings

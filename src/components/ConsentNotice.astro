@@ -1,0 +1,96 @@
+---
+const enabled = import.meta.env.PUBLIC_CONSENT_NOTICE_ENABLED === "true";
+---
+
+{enabled && (
+  <section class="consent-notice" data-consent-notice hidden aria-label="Privacy preferences">
+    <div>
+      <strong>Privacy choices</strong>
+      <p>
+        We use essential site storage for this preference. Analytics or ads should only be enabled after the
+        production privacy and consent setup is ready.
+      </p>
+    </div>
+    <div class="consent-actions">
+      <button type="button" data-consent-choice="reject">Reject optional</button>
+      <button type="button" data-consent-choice="accept">Accept optional</button>
+    </div>
+  </section>
+  <script>
+    const notice = document.querySelector("[data-consent-notice]");
+    const stored = localStorage.getItem("optional-consent");
+
+    if (notice && !stored) {
+      notice.removeAttribute("hidden");
+    }
+
+    document.querySelectorAll("[data-consent-choice]").forEach((button) => {
+      button.addEventListener("click", () => {
+        localStorage.setItem("optional-consent", button.dataset.consentChoice || "reject");
+        notice?.setAttribute("hidden", "");
+      });
+    });
+  </script>
+)}
+
+<style>
+  .consent-notice {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 50;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1rem;
+    width: min(680px, calc(100% - 2rem));
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--paper);
+    box-shadow: var(--shadow);
+    padding: 1rem;
+  }
+
+  .consent-notice[hidden] {
+    display: none;
+  }
+
+  .consent-notice strong {
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  .consent-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .consent-actions button {
+    min-height: 40px;
+    border: 1px solid var(--ink);
+    border-radius: 8px;
+    background: var(--paper);
+    color: var(--ink);
+    cursor: pointer;
+    font-weight: 750;
+    padding: 0.55rem 0.75rem;
+  }
+
+  .consent-actions button:last-child {
+    background: var(--ink);
+    color: #fff;
+  }
+
+  @media (max-width: 640px) {
+    .consent-notice {
+      grid-template-columns: 1fr;
+    }
+
+    .consent-actions,
+    .consent-actions button {
+      width: 100%;
+    }
+  }
+</style>

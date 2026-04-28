@@ -1,0 +1,38 @@
+{
+  "id": "geometric-flower-mandala",
+  "categoryId": "adult-coloring-pages",
+  "primaryTopicId": "mandala-coloring-pages",
+  "audience": "adults",
+  "difficulty": "detailed",
+  "license": "Free for personal, classroom, and non-commercial use.",
+  "disclosure": "Created with an AI-assisted workflow and manually reviewed before publishing.",
+  "slugs": {
+    "en": "geometric-flower-mandala-coloring-page",
+    "fr": "coloriage-mandala-fleur-geometrique",
+    "es": "mandala-flor-geometrica-para-colorear",
+    "pt": "mandala-flor-geometrica-para-colorir",
+    "de": "geometrische-blume-mandala-ausmalbild"
+  },
+  "titles": {
+    "en": "Geometric Flower Mandala Coloring Page",
+    "fr": "Coloriage mandala fleur geometrique",
+    "es": "Mandala de flor geometrica para colorear",
+    "pt": "Mandala de flor geometrica para colorir",
+    "de": "Geometrische Blume Mandala Ausmalbild"
+  },
+  "descriptions": {
+    "en": "A printable mandala with flower petals, symmetry, and clean geometric line art.",
+    "fr": "Un mandala a imprimer avec petales, symetrie et lignes geometriques nettes.",
+    "es": "Un mandala imprimible con petalos, simetria y lineas geometricas limpias.",
+    "pt": "Um mandala imprimivel com petalas, simetria e linhas geometricas limpas.",
+    "de": "Ein druckbares Mandala mit Bluetenblaettern, Symmetrie und klarer Linienkunst."
+  },
+  "keywords": ["mandala", "mandalas", "mandala coloring pages"],
+  "tags": ["mandala", "geometric", "flowers", "adults", "detailed"],
+  "files": {
+    "preview": "/downloads/mandalas/geometric-flower-mandala/geometric-flower-mandala-coloring-page-preview.webp",
+    "thumbnail": "/downloads/mandalas/geometric-flower-mandala/geometric-flower-mandala-coloring-page-thumbnail.webp",
+    "png": "/downloads/mandalas/geometric-flower-mandala/geometric-flower-mandala-coloring-page-printable.png",
+    "pdf": "/downloads/mandalas/geometric-flower-mandala/geometric-flower-mandala-coloring-page-printable.pdf"
+  }
+}

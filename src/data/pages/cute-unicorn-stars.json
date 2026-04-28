@@ -1,0 +1,38 @@
+{
+  "id": "cute-unicorn-stars",
+  "categoryId": "coloring-pages-for-kids",
+  "primaryTopicId": "cute-coloring-pages",
+  "audience": "kids",
+  "difficulty": "easy",
+  "license": "Free for personal, classroom, and non-commercial use.",
+  "disclosure": "Created with an AI-assisted workflow and manually reviewed before publishing.",
+  "slugs": {
+    "en": "cute-unicorn-stars-coloring-page",
+    "fr": "coloriage-licorne-etoiles-mignon",
+    "es": "unicornio-tierno-estrellas-para-colorear",
+    "pt": "unicornio-fofo-estrelas-para-colorir",
+    "de": "niedliches-einhorn-sterne-ausmalbild"
+  },
+  "titles": {
+    "en": "Cute Unicorn Stars Coloring Page",
+    "fr": "Coloriage licorne mignonne avec etoiles",
+    "es": "Unicornio tierno con estrellas para colorear",
+    "pt": "Unicornio fofo com estrelas para colorir",
+    "de": "Niedliches Einhorn mit Sternen Ausmalbild"
+  },
+  "descriptions": {
+    "en": "A cheerful unicorn printable with stars and open spaces for easy coloring.",
+    "fr": "Une licorne joyeuse a imprimer avec des etoiles et de grands espaces.",
+    "es": "Un unicornio alegre imprimible con estrellas y espacios amplios.",
+    "pt": "Um unicornio alegre imprimivel com estrelas e espacos amplos.",
+    "de": "Ein froehliches Einhorn zum Ausdrucken mit Sternen und grossen Flaechen."
+  },
+  "keywords": ["cute coloring pages", "unicorn coloring pages", "coloring pages for kids"],
+  "tags": ["unicorn", "cute", "stars", "kids", "easy"],
+  "files": {
+    "preview": "/downloads/cute/cute-unicorn-stars/cute-unicorn-stars-coloring-page-preview.webp",
+    "thumbnail": "/downloads/cute/cute-unicorn-stars/cute-unicorn-stars-coloring-page-thumbnail.webp",
+    "png": "/downloads/cute/cute-unicorn-stars/cute-unicorn-stars-coloring-page-printable.png",
+    "pdf": "/downloads/cute/cute-unicorn-stars/cute-unicorn-stars-coloring-page-printable.pdf"
+  }
+}

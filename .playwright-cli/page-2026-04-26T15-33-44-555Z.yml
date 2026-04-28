@@ -1,0 +1,273 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Home" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e6]: CA
+        - generic [ref=e7]:
+          - strong [ref=e8]: Coloring Atlas
+          - generic [ref=e9]: Printable coloring pages and simple classroom sheets.
+      - navigation "Categories" [ref=e10]:
+        - link "Kids" [ref=e11] [cursor=pointer]:
+          - /url: /coloring-pages-for-kids/
+        - link "Adults" [ref=e12] [cursor=pointer]:
+          - /url: /adult-coloring-pages/
+        - link "Mandalas" [ref=e13] [cursor=pointer]:
+          - /url: /mandala-coloring-pages/
+        - link "Calendars" [ref=e14] [cursor=pointer]:
+          - /url: /printable-calendars/
+        - group [ref=e15]:
+          - generic "More" [ref=e16] [cursor=pointer]
+      - group [ref=e17]:
+        - generic "Language" [ref=e18] [cursor=pointer]:
+          - generic [ref=e19]: EN
+          - generic [ref=e20]: English
+  - main [ref=e21]:
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - paragraph [ref=e25]: Free download · Print-ready PDF
+        - heading "Free printable coloring pages for kids and adults" [level=1] [ref=e26]
+        - paragraph [ref=e27]: Download clean print-ready PDF coloring sheets with simple categories for teachers, parents, kids, and adults.
+        - generic [ref=e28]:
+          - link "All printables" [ref=e29] [cursor=pointer]:
+            - /url: "#printables"
+          - link "Categories" [ref=e30] [cursor=pointer]:
+            - /url: "#categories"
+      - generic "Latest printables" [ref=e31]:
+        - link "Christmas Ornaments Coloring Page" [ref=e32] [cursor=pointer]:
+          - /url: /seasonal-coloring-pages/christmas-ornaments-coloring-page/
+          - img "Christmas Ornaments Coloring Page" [ref=e33]
+        - link "Cozy Cottage Mandala Coloring Page" [ref=e34] [cursor=pointer]:
+          - /url: /adult-coloring-pages/cozy-cottage-mandala-coloring-page/
+          - img "Cozy Cottage Mandala Coloring Page" [ref=e35]
+        - link "Cute Unicorn Stars Coloring Page" [ref=e36] [cursor=pointer]:
+          - /url: /cute-coloring-pages/cute-unicorn-stars-coloring-page/
+          - img "Cute Unicorn Stars Coloring Page" [ref=e37]
+        - link "Friendly Dinosaur Coloring Page" [ref=e38] [cursor=pointer]:
+          - /url: /coloring-pages-for-kids/friendly-dinosaur-coloring-page/
+          - img "Friendly Dinosaur Coloring Page" [ref=e39]
+    - region "All printables" [ref=e41]:
+      - searchbox "Search animals, mandalas, calendars..." [ref=e42]
+      - generic [ref=e43]:
+        - link "Christmas Ornaments Coloring Page Christmas Ornaments Coloring Page Seasonal Coloring Pages" [ref=e44] [cursor=pointer]:
+          - /url: /seasonal-coloring-pages/christmas-ornaments-coloring-page/
+          - img "Christmas Ornaments Coloring Page" [ref=e45]
+          - generic [ref=e46]:
+            - strong [ref=e47]: Christmas Ornaments Coloring Page
+            - generic [ref=e48]: Seasonal Coloring Pages
+        - link "Cozy Cottage Mandala Coloring Page Cozy Cottage Mandala Coloring Page Adult Coloring Pages" [ref=e49] [cursor=pointer]:
+          - /url: /adult-coloring-pages/cozy-cottage-mandala-coloring-page/
+          - img "Cozy Cottage Mandala Coloring Page" [ref=e50]
+          - generic [ref=e51]:
+            - strong [ref=e52]: Cozy Cottage Mandala Coloring Page
+            - generic [ref=e53]: Adult Coloring Pages
+        - link "Cute Unicorn Stars Coloring Page Cute Unicorn Stars Coloring Page Cute Coloring Pages" [ref=e54] [cursor=pointer]:
+          - /url: /cute-coloring-pages/cute-unicorn-stars-coloring-page/
+          - img "Cute Unicorn Stars Coloring Page" [ref=e55]
+          - generic [ref=e56]:
+            - strong [ref=e57]: Cute Unicorn Stars Coloring Page
+            - generic [ref=e58]: Cute Coloring Pages
+        - link "Friendly Dinosaur Coloring Page Friendly Dinosaur Coloring Page Coloring Pages for Kids" [ref=e59] [cursor=pointer]:
+          - /url: /coloring-pages-for-kids/friendly-dinosaur-coloring-page/
+          - img "Friendly Dinosaur Coloring Page" [ref=e60]
+          - generic [ref=e61]:
+            - strong [ref=e62]: Friendly Dinosaur Coloring Page
+            - generic [ref=e63]: Coloring Pages for Kids
+        - link "Geometric Flower Mandala Coloring Page Geometric Flower Mandala Coloring Page Mandala Coloring Pages" [ref=e64] [cursor=pointer]:
+          - /url: /mandala-coloring-pages/geometric-flower-mandala-coloring-page/
+          - img "Geometric Flower Mandala Coloring Page" [ref=e65]
+          - generic [ref=e66]:
+            - strong [ref=e67]: Geometric Flower Mandala Coloring Page
+            - generic [ref=e68]: Mandala Coloring Pages
+        - link "2026 One-Page Printable Calendar 2026 One-Page Printable Calendar Printable Calendars" [ref=e69] [cursor=pointer]:
+          - /url: /printable-calendars/2026-one-page-printable-calendar/
+          - img "2026 One-Page Printable Calendar" [ref=e70]
+          - generic [ref=e71]:
+            - strong [ref=e72]: 2026 One-Page Printable Calendar
+            - generic [ref=e73]: Printable Calendars
+    - generic [ref=e74]:
+      - paragraph [ref=e75]: Categories
+      - heading "Categories" [level=2] [ref=e76]
+      - generic [ref=e77]:
+        - link "1 all printables Coloring Pages for Kids Simple printable coloring pages for preschool, kindergarten, classrooms, and calm home activities." [ref=e78] [cursor=pointer]:
+          - /url: /coloring-pages-for-kids/
+          - generic [ref=e79]: 1 all printables
+          - heading "Coloring Pages for Kids" [level=3] [ref=e80]
+          - paragraph [ref=e81]: Simple printable coloring pages for preschool, kindergarten, classrooms, and calm home activities.
+        - link "1 all printables Adult Coloring Pages Detailed printable sheets with relaxing line art for quiet creative time." [ref=e82] [cursor=pointer]:
+          - /url: /adult-coloring-pages/
+          - generic [ref=e83]: 1 all printables
+          - heading "Adult Coloring Pages" [level=3] [ref=e84]
+          - paragraph [ref=e85]: Detailed printable sheets with relaxing line art for quiet creative time.
+        - link "1 all printables Mandala Coloring Pages Printable mandalas from simple circles to intricate geometric designs." [ref=e86] [cursor=pointer]:
+          - /url: /mandala-coloring-pages/
+          - generic [ref=e87]: 1 all printables
+          - heading "Mandala Coloring Pages" [level=3] [ref=e88]
+          - paragraph [ref=e89]: Printable mandalas from simple circles to intricate geometric designs.
+        - link "1 all printables Cute Coloring Pages Friendly printable designs with soft shapes, stars, sweets, and cheerful characters." [ref=e90] [cursor=pointer]:
+          - /url: /cute-coloring-pages/
+          - generic [ref=e91]: 1 all printables
+          - heading "Cute Coloring Pages" [level=3] [ref=e92]
+          - paragraph [ref=e93]: Friendly printable designs with soft shapes, stars, sweets, and cheerful characters.
+        - link "1 all printables Animal Coloring Pages Printable animals for school themes, nature units, and weekend coloring time." [ref=e94] [cursor=pointer]:
+          - /url: /animal-coloring-pages/
+          - generic [ref=e95]: 1 all printables
+          - heading "Animal Coloring Pages" [level=3] [ref=e96]
+          - paragraph [ref=e97]: Printable animals for school themes, nature units, and weekend coloring time.
+        - link "1 all printables Seasonal Coloring Pages Holiday and seasonal printables for classroom packets, family tables, and craft days." [ref=e98] [cursor=pointer]:
+          - /url: /seasonal-coloring-pages/
+          - generic [ref=e99]: 1 all printables
+          - heading "Seasonal Coloring Pages" [level=3] [ref=e100]
+          - paragraph [ref=e101]: Holiday and seasonal printables for classroom packets, family tables, and craft days.
+        - link "1 all printables Printable Calendars Clean one-page calendars and simple planning sheets, kept separate from the coloring catalogue." [ref=e102] [cursor=pointer]:
+          - /url: /printable-calendars/
+          - generic [ref=e103]: 1 all printables
+          - heading "Printable Calendars" [level=3] [ref=e104]
+          - paragraph [ref=e105]: Clean one-page calendars and simple planning sheets, kept separate from the coloring catalogue.
+    - generic [ref=e106]:
+      - paragraph [ref=e107]: Latest printables
+      - heading "Latest printables" [level=2] [ref=e108]
+      - generic [ref=e109]:
+        - article [ref=e110]:
+          - link "Christmas Ornaments Coloring Page" [ref=e111] [cursor=pointer]:
+            - /url: /seasonal-coloring-pages/christmas-ornaments-coloring-page/
+            - figure [ref=e112]:
+              - img "Christmas Ornaments Coloring Page" [ref=e113]
+          - generic [ref=e114]:
+            - generic [ref=e115]:
+              - generic [ref=e116]: Seasonal Coloring Pages
+              - generic [ref=e117]: medium
+            - heading "Christmas Ornaments Coloring Page" [level=3] [ref=e118]:
+              - link "Christmas Ornaments Coloring Page" [ref=e119] [cursor=pointer]:
+                - /url: /seasonal-coloring-pages/christmas-ornaments-coloring-page/
+            - paragraph [ref=e120]: A festive printable coloring sheet with ornaments, bows, and winter stars.
+            - generic [ref=e121]:
+              - link "Download PDF" [ref=e122] [cursor=pointer]:
+                - /url: /downloads/seasonal/christmas-ornaments/christmas-ornaments-coloring-page-printable.pdf
+              - link "Browse more" [ref=e123] [cursor=pointer]:
+                - /url: /seasonal-coloring-pages/christmas-ornaments-coloring-page/
+        - article [ref=e124]:
+          - link "Cozy Cottage Mandala Coloring Page" [ref=e125] [cursor=pointer]:
+            - /url: /adult-coloring-pages/cozy-cottage-mandala-coloring-page/
+            - figure [ref=e126]:
+              - img "Cozy Cottage Mandala Coloring Page" [ref=e127]
+          - generic [ref=e128]:
+            - generic [ref=e129]:
+              - generic [ref=e130]: Adult Coloring Pages
+              - generic [ref=e131]: detailed
+            - heading "Cozy Cottage Mandala Coloring Page" [level=3] [ref=e132]:
+              - link "Cozy Cottage Mandala Coloring Page" [ref=e133] [cursor=pointer]:
+                - /url: /adult-coloring-pages/cozy-cottage-mandala-coloring-page/
+            - paragraph [ref=e134]: A relaxing cottage-themed adult coloring page with ornamental details.
+            - generic [ref=e135]:
+              - link "Download PDF" [ref=e136] [cursor=pointer]:
+                - /url: /downloads/adults/cozy-cottage-mandala/cozy-cottage-mandala-coloring-page-printable.pdf
+              - link "Browse more" [ref=e137] [cursor=pointer]:
+                - /url: /adult-coloring-pages/cozy-cottage-mandala-coloring-page/
+        - article [ref=e138]:
+          - link "Cute Unicorn Stars Coloring Page" [ref=e139] [cursor=pointer]:
+            - /url: /cute-coloring-pages/cute-unicorn-stars-coloring-page/
+            - figure [ref=e140]:
+              - img "Cute Unicorn Stars Coloring Page" [ref=e141]
+          - generic [ref=e142]:
+            - generic [ref=e143]:
+              - generic [ref=e144]: Cute Coloring Pages
+              - generic [ref=e145]: easy
+            - heading "Cute Unicorn Stars Coloring Page" [level=3] [ref=e146]:
+              - link "Cute Unicorn Stars Coloring Page" [ref=e147] [cursor=pointer]:
+                - /url: /cute-coloring-pages/cute-unicorn-stars-coloring-page/
+            - paragraph [ref=e148]: A cheerful unicorn printable with stars and open spaces for easy coloring.
+            - generic [ref=e149]:
+              - link "Download PDF" [ref=e150] [cursor=pointer]:
+                - /url: /downloads/cute/cute-unicorn-stars/cute-unicorn-stars-coloring-page-printable.pdf
+              - link "Browse more" [ref=e151] [cursor=pointer]:
+                - /url: /cute-coloring-pages/cute-unicorn-stars-coloring-page/
+        - article [ref=e152]:
+          - link "Friendly Dinosaur Coloring Page" [ref=e153] [cursor=pointer]:
+            - /url: /coloring-pages-for-kids/friendly-dinosaur-coloring-page/
+            - figure [ref=e154]:
+              - img "Friendly Dinosaur Coloring Page" [ref=e155]
+          - generic [ref=e156]:
+            - generic [ref=e157]:
+              - generic [ref=e158]: Coloring Pages for Kids
+              - generic [ref=e159]: easy
+            - heading "Friendly Dinosaur Coloring Page" [level=3] [ref=e160]:
+              - link "Friendly Dinosaur Coloring Page" [ref=e161] [cursor=pointer]:
+                - /url: /coloring-pages-for-kids/friendly-dinosaur-coloring-page/
+            - paragraph [ref=e162]: A cute dinosaur printable with simple shapes for preschool and kindergarten.
+            - generic [ref=e163]:
+              - link "Download PDF" [ref=e164] [cursor=pointer]:
+                - /url: /downloads/kids/friendly-dinosaur/friendly-dinosaur-coloring-page-printable.pdf
+              - link "Browse more" [ref=e165] [cursor=pointer]:
+                - /url: /coloring-pages-for-kids/friendly-dinosaur-coloring-page/
+        - article [ref=e166]:
+          - link "Geometric Flower Mandala Coloring Page" [ref=e167] [cursor=pointer]:
+            - /url: /mandala-coloring-pages/geometric-flower-mandala-coloring-page/
+            - figure [ref=e168]:
+              - img "Geometric Flower Mandala Coloring Page" [ref=e169]
+          - generic [ref=e170]:
+            - generic [ref=e171]:
+              - generic [ref=e172]: Mandala Coloring Pages
+              - generic [ref=e173]: detailed
+            - heading "Geometric Flower Mandala Coloring Page" [level=3] [ref=e174]:
+              - link "Geometric Flower Mandala Coloring Page" [ref=e175] [cursor=pointer]:
+                - /url: /mandala-coloring-pages/geometric-flower-mandala-coloring-page/
+            - paragraph [ref=e176]: A printable mandala with flower petals, symmetry, and clean geometric line art.
+            - generic [ref=e177]:
+              - link "Download PDF" [ref=e178] [cursor=pointer]:
+                - /url: /downloads/mandalas/geometric-flower-mandala/geometric-flower-mandala-coloring-page-printable.pdf
+              - link "Browse more" [ref=e179] [cursor=pointer]:
+                - /url: /mandala-coloring-pages/geometric-flower-mandala-coloring-page/
+        - article [ref=e180]:
+          - link "2026 One-Page Printable Calendar" [ref=e181] [cursor=pointer]:
+            - /url: /printable-calendars/2026-one-page-printable-calendar/
+            - figure [ref=e182]:
+              - img "2026 One-Page Printable Calendar" [ref=e183]
+          - generic [ref=e184]:
+            - generic [ref=e185]:
+              - generic [ref=e186]: Printable Calendars
+              - generic [ref=e187]: simple
+            - heading "2026 One-Page Printable Calendar" [level=3] [ref=e188]:
+              - link "2026 One-Page Printable Calendar" [ref=e189] [cursor=pointer]:
+                - /url: /printable-calendars/2026-one-page-printable-calendar/
+            - paragraph [ref=e190]: A clean 2026 printable calendar on one letter-size page.
+            - generic [ref=e191]:
+              - link "Download PDF" [ref=e192] [cursor=pointer]:
+                - /url: /downloads/calendars/one-page-calendar-2026/2026-one-page-printable-calendar-printable.pdf
+              - link "Browse more" [ref=e193] [cursor=pointer]:
+                - /url: /printable-calendars/2026-one-page-printable-calendar/
+  - contentinfo [ref=e194]:
+    - generic [ref=e195]:
+      - generic [ref=e196]:
+        - strong [ref=e197]: Coloring Atlas
+        - paragraph [ref=e198]: Printable coloring pages and simple classroom sheets.
+        - paragraph [ref=e199]: Free print-ready PDFs for home, classrooms, and calm creative time.
+      - generic [ref=e200]:
+        - strong [ref=e201]: Company
+        - paragraph [ref=e202]:
+          - link "About" [ref=e203] [cursor=pointer]:
+            - /url: /about/
+          - link "Contact" [ref=e204] [cursor=pointer]:
+            - /url: /contact/
+          - link "Privacy Policy" [ref=e205] [cursor=pointer]:
+            - /url: /privacy-policy/
+      - generic [ref=e206]:
+        - strong [ref=e207]: Policies
+        - paragraph [ref=e208]:
+          - link "Terms and Conditions" [ref=e209] [cursor=pointer]:
+            - /url: /terms/
+          - link "Takedown Policy" [ref=e210] [cursor=pointer]:
+            - /url: /takedown-policy/
+          - link "Licensing" [ref=e211] [cursor=pointer]:
+            - /url: /licensing/
+        - paragraph [ref=e212]:
+          - link "Sitemap" [ref=e213] [cursor=pointer]:
+            - /url: /sitemap.xml
+          - generic [ref=e214]: "|"
+          - link "Robots" [ref=e215] [cursor=pointer]:
+            - /url: /robots.txt
+          - generic [ref=e216]: "|"
+          - link "LLMs" [ref=e217] [cursor=pointer]:
+            - /url: /llms.txt

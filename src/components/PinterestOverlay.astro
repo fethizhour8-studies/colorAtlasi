@@ -1,0 +1,76 @@
+---
+interface Props {
+  href: string;
+  media: string;
+  title: string;
+  label?: string;
+  className?: string;
+}
+
+const { href, media, title, label = "Pinterest", className = "" } = Astro.props;
+---
+
+<button
+  class={`pin-overlay ${className}`.trim()}
+  type="button"
+  data-pin-overlay
+  data-pin-href={href}
+  data-pin-media={media}
+  data-pin-title={title}
+  aria-label={label}
+  title={label}
+>
+  <span aria-hidden="true">P</span>
+</button>
+
+<script>
+  document.querySelectorAll("[data-pin-overlay]").forEach((button) => {
+    if (button.dataset.pinBound === "true") return;
+    button.dataset.pinBound = "true";
+
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+
+      const href = button.getAttribute("data-pin-href") || window.location.pathname;
+      const media = button.getAttribute("data-pin-media") || "";
+      const title = button.getAttribute("data-pin-title") || document.title;
+      const pageUrl = new URL(href, window.location.origin).toString();
+      const mediaUrl = media ? new URL(media, window.location.origin).toString() : "";
+      const target = new URL("https://www.pinterest.com/pin/create/button/");
+      target.searchParams.set("url", pageUrl);
+      target.searchParams.set("description", title);
+      if (mediaUrl) target.searchParams.set("media", mediaUrl);
+      window.open(target.toString(), "_blank", "noopener,noreferrer");
+    });
+  });
+</script>
+
+<style>
+  .pin-overlay {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 999px;
+    background: rgba(189, 24, 49, 0.92);
+    color: white;
+    box-shadow: 0 12px 24px rgba(23, 33, 43, 0.2);
+    cursor: pointer;
+    transition: transform 150ms ease, box-shadow 150ms ease, opacity 150ms ease;
+  }
+
+  .pin-overlay span {
+    font-weight: 800;
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .pin-overlay:hover,
+  .pin-overlay:focus-visible {
+    transform: translateY(-1px);
+    box-shadow: 0 16px 30px rgba(23, 33, 43, 0.28);
+  }
+</style>

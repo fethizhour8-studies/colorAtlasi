@@ -1,0 +1,53 @@
+---
+interface Fact {
+  label: string;
+  value: string | number;
+}
+
+interface Props {
+  facts: Fact[];
+}
+
+const { facts } = Astro.props;
+---
+
+<dl class="quick-facts">
+  {facts.map((fact) => (
+    <div>
+      <dt>{fact.label}</dt>
+      <dd>{fact.value}</dd>
+    </div>
+  ))}
+</dl>
+
+<style>
+  .quick-facts {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.65rem;
+    margin: 1.2rem 0 0;
+  }
+
+  .quick-facts div {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+    padding: 0.75rem;
+  }
+
+  dt {
+    color: var(--muted);
+    font-size: 0.78rem;
+  }
+
+  dd {
+    margin: 0.15rem 0 0;
+    font-weight: 800;
+  }
+
+  @media (max-width: 760px) {
+    .quick-facts {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>

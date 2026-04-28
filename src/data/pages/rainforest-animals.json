@@ -1,0 +1,38 @@
+{
+  "id": "rainforest-animals",
+  "categoryId": "animal-coloring-pages",
+  "primaryTopicId": "rainforest-animals-coloring-pages",
+  "audience": "kids",
+  "difficulty": "easy",
+  "license": "Free for personal, classroom, and non-commercial use.",
+  "disclosure": "Created with an AI-assisted workflow and manually reviewed before publishing.",
+  "slugs": {
+    "en": "rainforest-animals-coloring-page",
+    "fr": "coloriage-animaux-foret-tropicale",
+    "es": "animales-selva-para-colorear",
+    "pt": "animais-floresta-tropical-para-colorir",
+    "de": "regenwald-tiere-ausmalbild"
+  },
+  "titles": {
+    "en": "Rainforest Animals Coloring Page",
+    "fr": "Coloriage animaux de la foret tropicale",
+    "es": "Animales de la selva para colorear",
+    "pt": "Animais da floresta tropical para colorir",
+    "de": "Regenwald Tiere Ausmalbild"
+  },
+  "descriptions": {
+    "en": "A simple printable rainforest animal coloring sheet with broad outlines for kids.",
+    "fr": "Un coloriage simple d'animaux de la foret tropicale avec de grands contours.",
+    "es": "Una lamina sencilla de animales de la selva con contornos amplios para ninos.",
+    "pt": "Uma folha simples de animais da floresta tropical com contornos largos para criancas.",
+    "de": "Ein einfaches Regenwald-Ausmalbild mit klaren Linien fur Kinder."
+  },
+  "keywords": ["animal coloring pages", "coloring pages for kids", "rainforest coloring page"],
+  "tags": ["animals", "rainforest", "nature", "kids", "easy"],
+  "files": {
+    "preview": "/downloads/animals/rainforest-animals/rainforest-animals-coloring-page-preview.webp",
+    "thumbnail": "/downloads/animals/rainforest-animals/rainforest-animals-coloring-page-thumbnail.webp",
+    "png": "/downloads/animals/rainforest-animals/rainforest-animals-coloring-page-printable.png",
+    "pdf": "/downloads/animals/rainforest-animals/rainforest-animals-coloring-page-printable.pdf"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "cozy-cottage-mandala",
+  "categoryId": "adult-coloring-pages",
+  "primaryTopicId": "relaxing-coloring-pages",
+  "audience": "adults",
+  "difficulty": "detailed",
+  "license": "Free for personal, classroom, and non-commercial use.",
+  "disclosure": "Created with an AI-assisted workflow and manually reviewed before publishing.",
+  "slugs": {
+    "en": "cozy-cottage-mandala-coloring-page",
+    "fr": "coloriage-mandala-maison-cosy",
+    "es": "mandala-casa-acogedora-para-colorear",
+    "pt": "mandala-casa-aconchegante-para-colorir",
+    "de": "gemuetliches-haus-mandala-ausmalbild"
+  },
+  "titles": {
+    "en": "Cozy Cottage Mandala Coloring Page",
+    "fr": "Coloriage mandala maison cosy",
+    "es": "Mandala de casa acogedora para colorear",
+    "pt": "Mandala de casa aconchegante para colorir",
+    "de": "Gemuetliches Haus Mandala Ausmalbild"
+  },
+  "descriptions": {
+    "en": "A relaxing cottage-themed adult coloring page with ornamental details.",
+    "fr": "Un coloriage adulte relaxant autour d'une petite maison avec des details decoratifs.",
+    "es": "Una pagina relajante para adultos con una casa acogedora y detalles ornamentales.",
+    "pt": "Uma pagina relaxante para adultos com casa aconchegante e detalhes ornamentais.",
+    "de": "Eine entspannende Ausmalvorlage fur Erwachsene mit Hausmotiv und Details."
+  },
+  "keywords": ["adult coloring pages", "mandala coloring pages", "relaxing coloring sheets"],
+  "tags": ["cottage", "relaxing", "adults", "detailed"],
+  "files": {
+    "preview": "/downloads/adults/cozy-cottage-mandala/cozy-cottage-mandala-coloring-page-preview.webp",
+    "thumbnail": "/downloads/adults/cozy-cottage-mandala/cozy-cottage-mandala-coloring-page-thumbnail.webp",
+    "png": "/downloads/adults/cozy-cottage-mandala/cozy-cottage-mandala-coloring-page-printable.png",
+    "pdf": "/downloads/adults/cozy-cottage-mandala/cozy-cottage-mandala-coloring-page-printable.pdf"
+  }
+}

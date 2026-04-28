@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Coloring Atlas">
+  <rect width="64" height="64" rx="10" fill="#f2c85b"/>
+  <rect x="7" y="7" width="50" height="50" rx="7" fill="none" stroke="#17212b" stroke-width="4"/>
+  <path d="M18 42c8-20 20-20 28 0M19 22h26M22 31h20" fill="none" stroke="#17212b" stroke-width="4" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,78 @@
+---
+import CollectionCard from "@components/CollectionCard.astro";
+import PrintableGrid from "@components/PrintableGrid.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import {
+  getBreadcrumbsForContentType,
+  getContentTypePath,
+  getHubPath,
+  getHubsForContentType,
+  getPagesForContentType,
+  getPagesForHub,
+  getTopicPath,
+  getTopicsForContentType,
+  type ContentType,
+} from "@lib/catalog";
+import { breadcrumbJsonLd, collectionJsonLd } from "@lib/seo";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+
+interface Props {
+  contentType: ContentType;
+}
+
+const { contentType } = Astro.props;
+const site = Astro.site || new URL("https://example.com");
+const hubs = getHubsForContentType(contentType.id);
+const topics = getTopicsForContentType(contentType.id);
+const printables = getPagesForContentType(contentType.id);
+const crumbs = getBreadcrumbsForContentType(contentType);
+---
+
+<BaseLayout
+  title={contentType.seo.title}
+  description={contentType.seo.metaDescription}
+  canonicalPath={getContentTypePath(contentType)}
+  image={printables[0]?.files.preview}
+  jsonLdItems={[collectionJsonLd(contentType, getContentTypePath(contentType), site), breadcrumbJsonLd(crumbs, site)]}
+>
+  <section class="section">
+    <Breadcrumbs crumbs={crumbs} />
+    <p class="eyebrow">Browse</p>
+    <h1>{contentType.title}</h1>
+    <p class="lead">{contentType.description}</p>
+  </section>
+
+  <section class="section section-tight">
+    <p class="eyebrow">Hubs</p>
+    <h2>Choose a printable area</h2>
+    <div class="grid grid-3 card-grid">
+      {hubs.map((hub) => (
+        <CollectionCard title={hub.title} description={hub.description} href={getHubPath(hub)} count={getPagesForHub(hub.id).length} accent={hub.accent} cta="Browse hub" />
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="eyebrow">Collections</p>
+    <h2>Popular collections</h2>
+    <div class="grid grid-3 card-grid">
+      {topics.map((topic) => (
+        <CollectionCard title={topic.title} description={topic.description} href={getTopicPath(topic)} count={printables.filter((page) => page.primaryTopicId === topic.id).length} cta="Open collection" />
+      ))}
+    </div>
+  </section>
+
+  {printables.length > 0 && (
+    <section class="section">
+      <p class="eyebrow">New PDFs</p>
+      <h2>Latest {contentType.title.toLowerCase()}</h2>
+      <PrintableGrid pages={printables.slice(0, 9)} />
+    </section>
+  )}
+</BaseLayout>
+
+<style>
+  .card-grid {
+    margin-top: 1rem;
+  }
+</style>

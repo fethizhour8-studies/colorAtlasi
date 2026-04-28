@@ -1,0 +1,107 @@
+[
+  {
+    "id": "kids",
+    "contentTypeId": "coloring-pages",
+    "slug": "kids",
+    "title": "Kids Coloring Pages",
+    "navTitle": "Kids",
+    "description": "Easy printable coloring pages for preschool, kindergarten, home activities, and classroom packets.",
+    "audiences": ["kids", "parents", "teachers"],
+    "accent": "kids-peach",
+    "indexable": true,
+    "seo": {
+      "title": "Kids Coloring Pages | Free Printable PDFs",
+      "metaDescription": "Browse free printable kids coloring pages with easy designs, clean PDF downloads, and classroom-friendly topics."
+    }
+  },
+  {
+    "id": "adults",
+    "contentTypeId": "coloring-pages",
+    "slug": "adults",
+    "title": "Adult Coloring Pages",
+    "navTitle": "Adults",
+    "description": "Relaxing adult coloring pages with mandalas, cozy scenes, patterns, and calming printable PDFs.",
+    "audiences": ["adults"],
+    "accent": "adult-lavender",
+    "indexable": true,
+    "seo": {
+      "title": "Adult Coloring Pages | Free Printable PDFs",
+      "metaDescription": "Download relaxing adult coloring pages, mandalas, patterns, and detailed printable PDF sheets."
+    }
+  },
+  {
+    "id": "animals",
+    "contentTypeId": "coloring-pages",
+    "slug": "animals",
+    "title": "Animal Coloring Pages",
+    "navTitle": "Animals",
+    "description": "Animal coloring pages for nature lessons, classroom themes, weekend crafts, and kids activities.",
+    "audiences": ["kids", "parents", "teachers"],
+    "accent": "soft-green",
+    "indexable": true,
+    "seo": {
+      "title": "Animal Coloring Pages | Free Printable PDFs",
+      "metaDescription": "Find free animal coloring pages with print-ready PDFs for kids, classrooms, nature units, and home activities."
+    }
+  },
+  {
+    "id": "seasonal",
+    "contentTypeId": "coloring-pages",
+    "slug": "seasonal",
+    "title": "Seasonal Coloring Pages",
+    "navTitle": "Seasonal",
+    "description": "Holiday and seasonal coloring pages for classroom packets, family tables, and craft days.",
+    "audiences": ["kids", "parents", "teachers"],
+    "accent": "coral",
+    "indexable": true,
+    "seo": {
+      "title": "Seasonal Coloring Pages | Free Printable PDFs",
+      "metaDescription": "Browse seasonal and holiday coloring pages with free PDF downloads for classrooms, families, and craft activities."
+    }
+  },
+  {
+    "id": "mandalas",
+    "contentTypeId": "coloring-pages",
+    "slug": "mandalas",
+    "title": "Mandala Coloring Pages",
+    "navTitle": "Mandalas",
+    "description": "Printable mandala coloring pages for calm creative breaks, mindful coloring, and detailed pattern practice.",
+    "audiences": ["adults", "teens"],
+    "accent": "adult-lavender",
+    "indexable": true,
+    "seo": {
+      "title": "Mandala Coloring Pages | Free Printable PDFs",
+      "metaDescription": "Download free printable mandala coloring pages with geometric, floral, and relaxing adult coloring designs."
+    }
+  },
+  {
+    "id": "worksheets",
+    "contentTypeId": "printables",
+    "slug": "worksheets",
+    "title": "Printable Worksheets",
+    "navTitle": "Worksheets",
+    "description": "Simple printable worksheets and activity pages for early learning, classroom packets, and practice time.",
+    "audiences": ["kids", "teachers", "parents"],
+    "accent": "teacher-blue",
+    "indexable": true,
+    "seo": {
+      "title": "Printable Worksheets | Free PDF Activity Sheets",
+      "metaDescription": "Browse simple printable worksheets and activity sheets for preschool, classroom use, and home practice."
+    }
+  },
+  {
+    "id": "2026-calendars",
+    "contentTypeId": "calendars",
+    "slug": "2026-calendars",
+    "title": "2026 Printable Calendars",
+    "navTitle": "2026 Calendars",
+    "description": "Clean 2026 printable calendars and one-page planning sheets for home, school, and office use.",
+    "audiences": ["parents", "teachers", "adults"],
+    "accent": "mint",
+    "indexable": true,
+    "seo": {
+      "title": "2026 Printable Calendars | Free PDF Downloads",
+      "metaDescription": "Download free 2026 printable calendars and simple planning sheets as clean print-ready PDFs."
+    }
+  }
+]

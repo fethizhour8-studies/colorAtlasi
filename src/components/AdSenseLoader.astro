@@ -1,0 +1,13 @@
+---
+const adsEnabled = import.meta.env.PUBLIC_ADSENSE_ENABLED === "true";
+const client = import.meta.env.PUBLIC_ADSENSE_CLIENT;
+const canLoad = adsEnabled && /^ca-pub-\d+$/.test(client || "");
+---
+
+{canLoad && (
+  <script
+    async
+    src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${client}`}
+    crossorigin="anonymous"
+  ></script>
+)}

@@ -1,0 +1,15 @@
+---
+import ContentTypePage from "@templates/ContentTypePage.astro";
+import { contentTypes } from "@lib/catalog";
+
+export function getStaticPaths() {
+  return contentTypes.map((contentType) => ({
+    params: { locale: "en", category: contentType.slug },
+    props: { contentType },
+  }));
+}
+
+const { contentType } = Astro.props;
+---
+
+<ContentTypePage contentType={contentType} />

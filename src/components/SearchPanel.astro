@@ -1,0 +1,80 @@
+---
+import { getSearchIndex } from "@lib/catalog";
+import { t, type Locale } from "@lib/i18n";
+
+interface Props {
+  locale: Locale;
+  categoryId?: string;
+  topicId?: string;
+}
+
+const { locale, categoryId, topicId } = Astro.props;
+const items = getSearchIndex(locale).filter((item) => {
+  if (topicId) return item.topicId === topicId;
+  if (categoryId) return item.categoryId === categoryId;
+  return true;
+});
+const placeholder = t(locale, "searchPlaceholder");
+const noResults = t(locale, "noResults");
+---
+
+<section class="search-panel panel" aria-label={t(locale, "allPrintables")}>
+  <input class="search-field" type="search" placeholder={placeholder} aria-label={placeholder} data-search-input />
+  <div class="search-results" data-search-results>
+    {items.slice(0, 6).map((item) => (
+      <a class="mini-result" href={item.href}>
+        <img src={item.image} alt={item.title} loading="lazy" width="148" height="116" />
+        <span>
+          <strong>{item.title}</strong>
+          <small>{item.topic}</small>
+        </span>
+      </a>
+    ))}
+  </div>
+</section>
+
+<script define:vars={{ items, noResults }}>
+  const input = document.querySelector("[data-search-input]");
+  const results = document.querySelector("[data-search-results]");
+
+  function render(list) {
+    if (!results) return;
+    if (list.length === 0) {
+      results.innerHTML = `<p>${noResults}</p>`;
+      return;
+    }
+
+    results.innerHTML = list
+      .slice(0, 8)
+      .map(
+        (item) => `
+          <a class="mini-result" href="${item.href}">
+            <img src="${item.image}" alt="${item.title}" loading="lazy" width="148" height="116" />
+          <span><strong>${item.title}</strong><small>${item.topic}</small></span>
+          </a>
+        `,
+      )
+      .join("");
+  }
+
+  input?.addEventListener("input", () => {
+    const query = input.value.trim().toLowerCase();
+    if (!query) {
+      render(items);
+      return;
+    }
+
+    render(
+      items.filter((item) =>
+        `${item.title} ${item.description} ${item.category} ${item.topic} ${item.keywords}`.toLowerCase().includes(query),
+      ),
+    );
+  });
+</script>
+
+<style>
+  small {
+    display: block;
+    color: var(--muted);
+  }
+</style>

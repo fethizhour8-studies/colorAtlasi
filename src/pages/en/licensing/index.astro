@@ -1,0 +1,8 @@
+---
+import TrustPage from "@templates/TrustPage.astro";
+import { getTrustPage } from "@lib/trustPages";
+
+const page = getTrustPage("licensing")!;
+---
+
+<TrustPage page={page} />

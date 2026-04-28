@@ -1,0 +1,97 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  href: string;
+  count?: number;
+  accent?: string;
+  cta?: string;
+}
+
+const { title, description, href, count, accent = "teal", cta = "Browse collection" } = Astro.props;
+---
+
+<a class={`collection-card accent-${accent}`} href={href}>
+  <span class="stack" aria-hidden="true"></span>
+  {typeof count === "number" && <span class="count">{count} printables</span>}
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <strong>{cta}</strong>
+</a>
+
+<style>
+  .collection-card {
+    position: relative;
+    display: grid;
+    min-height: 190px;
+    gap: 0.65rem;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+    padding: 1rem;
+    box-shadow: var(--shadow);
+  }
+
+  .collection-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(244, 201, 93, 0.24), rgba(221, 245, 231, 0.46));
+    z-index: 0;
+  }
+
+  .collection-card > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .stack {
+    width: 70px;
+    height: 52px;
+    border: 1px solid rgba(26, 26, 46, 0.14);
+    border-radius: 7px;
+    background:
+      linear-gradient(#fff, #fff) 12px 8px / 46px 34px no-repeat,
+      var(--sunshine);
+    box-shadow:
+      8px 8px 0 rgba(255, 255, 255, 0.65),
+      14px 14px 0 rgba(26, 26, 46, 0.06);
+  }
+
+  .count {
+    width: fit-content;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.76);
+    padding: 0.28rem 0.56rem;
+    color: var(--teal-dark);
+    font-size: 0.82rem;
+    font-weight: 750;
+  }
+
+  strong {
+    align-self: end;
+    color: var(--teal-dark);
+  }
+
+  .accent-teacher-blue::before {
+    background: linear-gradient(135deg, rgba(91, 127, 214, 0.2), rgba(191, 231, 245, 0.42));
+  }
+
+  .accent-adult-lavender::before {
+    background: linear-gradient(135deg, rgba(139, 127, 199, 0.22), rgba(255, 225, 232, 0.38));
+  }
+
+  .accent-kids-peach::before {
+    background: linear-gradient(135deg, rgba(255, 179, 138, 0.32), rgba(255, 242, 184, 0.5));
+  }
+
+  .accent-coral::before {
+    background: linear-gradient(135deg, rgba(240, 107, 82, 0.2), rgba(255, 242, 184, 0.48));
+  }
+
+  .accent-mint::before,
+  .accent-soft-green::before {
+    background: linear-gradient(135deg, rgba(76, 175, 125, 0.2), rgba(221, 245, 231, 0.52));
+  }
+</style>

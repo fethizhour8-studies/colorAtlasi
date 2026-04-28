@@ -1,0 +1,59 @@
+---
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { breadcrumbJsonLd } from "@lib/seo";
+import { getHomePath, type Crumb } from "@lib/catalog";
+import type { TrustPage } from "@lib/trustPages";
+
+interface Props {
+  page: TrustPage;
+}
+
+const { page } = Astro.props;
+const site = Astro.site || new URL("https://example.com");
+const canonicalPath = `/en/${page.slug}/`;
+const crumbs: Crumb[] = [
+  { name: "Home", href: getHomePath() },
+  { name: page.title, href: canonicalPath },
+];
+---
+
+<BaseLayout
+  title={`${page.title} | Coloring Atlas`}
+  description={page.description}
+  canonicalPath={canonicalPath}
+  jsonLdItems={[breadcrumbJsonLd(crumbs, site)]}
+>
+  <section class="section trust-page">
+    <Breadcrumbs crumbs={crumbs} />
+    <p class="eyebrow">Coloring Atlas</p>
+    <h1>{page.title}</h1>
+    <p class="lead">{page.description}</p>
+    <div class="trust-content">
+      {page.sections.map((section) => (
+        <section class="panel trust-section">
+          <h2>{section.heading}</h2>
+          {section.body.map((paragraph) => <p>{paragraph}</p>)}
+        </section>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .trust-page {
+    max-width: 920px;
+  }
+
+  .trust-content {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .trust-section {
+    display: grid;
+    gap: 0.8rem;
+    padding: 1.1rem;
+  }
+</style>

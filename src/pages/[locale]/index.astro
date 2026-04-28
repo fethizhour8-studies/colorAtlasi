@@ -1,0 +1,9 @@
+---
+import HomePage from "@templates/HomePage.astro";
+
+export function getStaticPaths() {
+  return [{ params: { locale: "en" } }];
+}
+---
+
+<HomePage />

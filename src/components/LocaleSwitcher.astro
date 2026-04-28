@@ -1,0 +1,32 @@
+---
+import { asAbsoluteUrl, type RouteAlternate } from "@lib/catalog";
+import { localeNames, type Locale } from "@lib/i18n";
+
+interface Props {
+  locale: Locale;
+  alternates: RouteAlternate[];
+}
+
+const { locale, alternates } = Astro.props;
+const site = Astro.site || new URL("https://example.com");
+const visibleAlternates = alternates.filter((alternate) => alternate.locale !== "x-default");
+---
+
+<details class="language-switcher disclosure-menu">
+  <summary aria-label="Language">
+    <span class="language-icon" aria-hidden="true">{locale.toUpperCase()}</span>
+    <span>{localeNames[locale]}</span>
+  </summary>
+  <div class="language-menu">
+    {visibleAlternates.map((alternate) => (
+      <a
+        href={asAbsoluteUrl(alternate.path, site).replace(String(site).replace(/\/$/, ""), "")}
+        aria-current={alternate.locale === locale ? "true" : undefined}
+        lang={alternate.locale}
+      >
+        <span>{String(alternate.locale).toUpperCase()}</span>
+        {localeNames[alternate.locale as Locale]}
+      </a>
+    ))}
+  </div>
+</details>

@@ -1,0 +1,163 @@
+[
+  {
+    "id": "dinosaur-coloring-pages",
+    "contentTypeId": "coloring-pages",
+    "hubId": "kids",
+    "slug": "dinosaur-coloring-pages",
+    "title": "Dinosaur Coloring Pages",
+    "intro": "Browse friendly dinosaur coloring sheets with simple outlines, big shapes, and print-ready PDFs for young kids. These pages work well for preschool activities, classroom packets, quiet time, and weekend coloring.",
+    "description": "Printable dinosaur coloring pages for kids, preschool activities, classroom packets, and weekend coloring time.",
+    "audiences": ["kids", "parents", "teachers"],
+    "difficulty": "easy",
+    "tags": ["dinosaurs", "preschool", "easy", "classroom"],
+    "printableType": "coloring_page",
+    "indexable": true,
+    "quickFacts": {
+      "format": "PDF",
+      "paperSize": "US Letter",
+      "license": "Free for personal and classroom use"
+    },
+    "seo": {
+      "title": "Dinosaur Coloring Pages | Free Printable PDFs",
+      "metaDescription": "Download free dinosaur coloring pages for kids with easy outlines, classroom-friendly PDFs, and simple printable sheets."
+    }
+  },
+  {
+    "id": "cute-coloring-pages",
+    "contentTypeId": "coloring-pages",
+    "hubId": "kids",
+    "slug": "cute-coloring-pages",
+    "title": "Cute Coloring Pages",
+    "intro": "This cute coloring collection is built for quick, friendly downloads parents and teachers can print without editing. Expect cheerful characters, stars, soft shapes, and easy designs for young colorers.",
+    "description": "Cute printable coloring pages with cheerful characters, stars, soft shapes, and easy designs for kids.",
+    "audiences": ["kids", "parents", "teachers"],
+    "difficulty": "easy",
+    "tags": ["cute", "easy", "unicorn", "stars"],
+    "printableType": "coloring_page",
+    "indexable": true,
+    "quickFacts": {
+      "format": "PDF",
+      "paperSize": "US Letter",
+      "license": "Free for personal and classroom use"
+    },
+    "seo": {
+      "title": "Cute Coloring Pages | Free Printable PDFs",
+      "metaDescription": "Find cute coloring pages with easy designs, cheerful printable sheets, and free PDF downloads for kids."
+    }
+  },
+  {
+    "id": "mandala-coloring-pages",
+    "contentTypeId": "coloring-pages",
+    "hubId": "mandalas",
+    "slug": "mandala-coloring-pages",
+    "title": "Mandala Coloring Pages",
+    "intro": "Use these mandala PDFs for calm coloring sessions, mindful breaks, and detailed creative practice. The collection includes printable geometric patterns and relaxing designs.",
+    "description": "Printable mandala coloring pages for adults, including geometric patterns, flowers, and relaxing designs.",
+    "audiences": ["adults", "teens"],
+    "difficulty": "medium",
+    "tags": ["mandala", "adult coloring", "geometric", "relaxing"],
+    "printableType": "coloring_page",
+    "indexable": true,
+    "quickFacts": {
+      "format": "PDF",
+      "paperSize": "US Letter",
+      "license": "Free for personal use"
+    },
+    "seo": {
+      "title": "Mandala Coloring Pages | Free Printable PDFs",
+      "metaDescription": "Download free printable mandala coloring pages with geometric, floral, and relaxing designs for adults and teens."
+    }
+  },
+  {
+    "id": "relaxing-coloring-pages",
+    "contentTypeId": "coloring-pages",
+    "hubId": "adults",
+    "slug": "relaxing-coloring-pages",
+    "title": "Relaxing Coloring Pages",
+    "intro": "Find calming printable sheets with detailed but approachable line art for adult coloring time. These PDFs are designed for quiet evenings, mindful breaks, and cozy creative sessions.",
+    "description": "Relaxing printable coloring sheets for quiet creative time, cozy scenes, and adult coloring breaks.",
+    "audiences": ["adults"],
+    "difficulty": "medium",
+    "tags": ["relaxing", "cozy", "adult coloring", "detailed"],
+    "printableType": "coloring_page",
+    "indexable": true,
+    "quickFacts": {
+      "format": "PDF",
+      "paperSize": "US Letter",
+      "license": "Free for personal use"
+    },
+    "seo": {
+      "title": "Relaxing Coloring Pages | Free Printable PDFs",
+      "metaDescription": "Browse relaxing adult coloring pages with cozy scenes, detailed line art, and free print-ready PDF downloads."
+    }
+  },
+  {
+    "id": "rainforest-animals-coloring-pages",
+    "contentTypeId": "coloring-pages",
+    "hubId": "animals",
+    "slug": "rainforest-animals-coloring-pages",
+    "title": "Rainforest Animals Coloring Pages",
+    "intro": "Use these rainforest animal PDFs for nature lessons, animal activities, and easy home printing. They are useful for classroom nature units and animal-themed coloring time.",
+    "description": "Rainforest animal coloring pages for nature units, animal themes, and classroom printable packets.",
+    "audiences": ["kids", "teachers", "parents"],
+    "difficulty": "easy",
+    "tags": ["animals", "rainforest", "nature", "classroom"],
+    "printableType": "coloring_page",
+    "indexable": true,
+    "quickFacts": {
+      "format": "PDF",
+      "paperSize": "US Letter",
+      "license": "Free for personal and classroom use"
+    },
+    "seo": {
+      "title": "Rainforest Animals Coloring Pages | Free Printable PDFs",
+      "metaDescription": "Download rainforest animal coloring pages with free PDF sheets for nature lessons, animal activities, and classroom packets."
+    }
+  },
+  {
+    "id": "christmas-coloring-pages",
+    "contentTypeId": "coloring-pages",
+    "hubId": "seasonal",
+    "slug": "christmas-coloring-pages",
+    "title": "Christmas Coloring Pages",
+    "intro": "Print Christmas coloring PDFs for holiday packets, quiet activities, and seasonal craft tables. These pages are organized for family use, classroom activities, and winter break printables.",
+    "description": "Christmas coloring pages and holiday printables for classroom packets, family tables, and winter crafts.",
+    "audiences": ["kids", "parents", "teachers"],
+    "difficulty": "easy",
+    "tags": ["christmas", "holiday", "seasonal", "classroom"],
+    "printableType": "coloring_page",
+    "indexable": true,
+    "quickFacts": {
+      "format": "PDF",
+      "paperSize": "US Letter",
+      "license": "Free for personal and classroom use"
+    },
+    "seo": {
+      "title": "Christmas Coloring Pages | Free Printable PDFs",
+      "metaDescription": "Find free Christmas coloring pages and holiday printable PDFs for classrooms, family activities, and winter crafts."
+    }
+  },
+  {
+    "id": "2026-printable-calendars",
+    "contentTypeId": "calendars",
+    "hubId": "2026-calendars",
+    "slug": "2026-printable-calendars",
+    "title": "2026 Printable Calendars",
+    "intro": "Download clean 2026 calendar PDFs for quick printing, planning, and classroom organization. These one-page calendars are made for simple home, school, and office use.",
+    "description": "Printable 2026 calendars, one-page templates, and simple planning sheets for home or classroom use.",
+    "audiences": ["parents", "teachers", "adults"],
+    "difficulty": "easy",
+    "tags": ["2026 calendar", "calendar", "planner", "printable"],
+    "printableType": "calendar",
+    "indexable": true,
+    "quickFacts": {
+      "format": "PDF",
+      "paperSize": "US Letter",
+      "license": "Free for personal and classroom use"
+    },
+    "seo": {
+      "title": "2026 Printable Calendars | Free PDF Downloads",
+      "metaDescription": "Download clean 2026 printable calendars and one-page planning sheets as free print-ready PDFs."
+    }
+  }
+]
