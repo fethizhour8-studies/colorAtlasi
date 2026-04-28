@@ -17,13 +17,24 @@ import {
 import { websiteJsonLd } from "@lib/seo";
 
 const site = Astro.site || new URL("https://example.com");
-const featuredTopics = topics.slice(0, 6);
+const safeLaunchTopicIds = [
+  "dinosaur-coloring-pages",
+  "cute-coloring-pages",
+  "rainforest-animals-coloring-pages",
+  "mandala-coloring-pages",
+  "relaxing-coloring-pages",
+  "christmas-coloring-pages",
+  "2026-printable-calendars",
+];
+const featuredTopics = safeLaunchTopicIds.map((id) => topics.find((topic) => topic.id === id)).filter(Boolean).slice(0, 6);
 const newPrintables = pages.slice(0, 6);
+const seasonalTopics = topics.filter((topic) => topic.hubId === "seasonal" || topic.tags.some((tag) => ["seasonal", "holiday", "christmas"].includes(tag))).slice(0, 4);
+const calendarTopics = topics.filter((topic) => topic.contentTypeId === "calendars").slice(0, 4);
 ---
 
 <BaseLayout
   title="Free Printable Coloring Pages, Sheets, Calendars and PDFs | Coloring Atlas"
-  description="Browse warm, organized, print-ready PDF coloring pages, coloring sheets, calendars, worksheets, mandalas, and simple classroom printables."
+  description="Browse organized, print-ready PDF coloring pages, coloring sheets, calendars, worksheets, mandalas, and safe classroom printables."
   canonicalPath="/en/"
   image={newPrintables[0]?.files.preview}
   jsonLdItems={[websiteJsonLd(site)]}
@@ -34,6 +45,13 @@ const newPrintables = pages.slice(0, 6);
         <p class="eyebrow">Free PDF printables</p>
         <h1>Printable coloring pages and simple sheets for real life</h1>
         <p class="lead">Browse clean PDF coloring pages, calendars, worksheets, mandalas, and classroom-friendly printables that are easy to download and print.</p>
+        <form class="search-box" action="/en/coloring-pages/" method="get" role="search">
+          <label for="home-search">Find printable collections</label>
+          <div>
+            <input id="home-search" name="q" type="search" placeholder="Try dinosaurs, mandalas, animals, calendars..." />
+            <button type="submit">Search</button>
+          </div>
+        </form>
         <div class="button-row hero-actions">
           <a class="button" href="/en/coloring-pages/">Browse coloring pages</a>
           <a class="ghost-button" href="#collections">Explore collections</a>
@@ -45,6 +63,27 @@ const newPrintables = pages.slice(0, 6);
             <img src={page.files.thumbnail} alt="" />
           </span>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight trust-strip">
+    <div class="trust-panel">
+      <div>
+        <strong>Free PDF downloads</strong>
+        <p>No sign-up required for standard printable pages.</p>
+      </div>
+      <div>
+        <strong>Rights-safe topics</strong>
+        <p>Built around original, generic, classroom-safe themes.</p>
+      </div>
+      <div>
+        <strong>Print-first layout</strong>
+        <p>US Letter PDFs with clean previews and simple instructions.</p>
+      </div>
+      <div>
+        <strong>Made for real use</strong>
+        <p>Parents, teachers, kids, adults, quiet time, and class packets.</p>
       </div>
     </div>
   </section>
@@ -67,25 +106,8 @@ const newPrintables = pages.slice(0, 6);
   </section>
 
   <section class="section">
-    <p class="eyebrow">Featured hubs</p>
-    <h2>Simple paths for parents and teachers</h2>
-    <div class="grid grid-4 card-grid">
-      {hubs.slice(0, 6).map((hub) => (
-        <CollectionCard
-          title={hub.title}
-          description={hub.description}
-          href={getHubPath(hub)}
-          count={getPagesForHub(hub.id).length}
-          accent={hub.accent}
-          cta="Browse hub"
-        />
-      ))}
-    </div>
-  </section>
-
-  <section class="section">
-    <p class="eyebrow">Featured collections</p>
-    <h2>Printable collections with PDFs</h2>
+    <p class="eyebrow">Safe launch picks</p>
+    <h2>Popular collections without character or brand risk</h2>
     <div class="grid grid-3 card-grid">
       {featuredTopics.map((topic) => (
         <CollectionCard
@@ -93,34 +115,65 @@ const newPrintables = pages.slice(0, 6);
           description={topic.description}
           href={getTopicPath(topic)}
           count={getPagesForTopic(topic.id).length}
-          accent={topic.hubId === "mandalas" ? "adult-lavender" : "kids-peach"}
+          accent={topic.hubId === "mandalas" || topic.hubId === "adults" ? "adult-lavender" : "kids-peach"}
           cta="Open collection"
         />
       ))}
     </div>
   </section>
 
+  <section class="section split-section">
+    <div>
+      <p class="eyebrow">Featured hubs</p>
+      <h2>Simple paths for parents and teachers</h2>
+      <div class="grid grid-2 card-grid">
+        {hubs.slice(0, 4).map((hub) => (
+          <CollectionCard
+            title={hub.title}
+            description={hub.description}
+            href={getHubPath(hub)}
+            count={getPagesForHub(hub.id).length}
+            accent={hub.accent}
+            cta="Browse hub"
+          />
+        ))}
+      </div>
+    </div>
+    <aside class="panel idea-panel">
+      <p class="eyebrow">Quick activity ideas</p>
+      <h2>Use printables fast</h2>
+      <ul>
+        <li>Print a mini packet for early finishers.</li>
+        <li>Pair animal pages with nature lessons.</li>
+        <li>Use mandalas for calm creative breaks.</li>
+        <li>Keep calendars for home and classroom planning.</li>
+      </ul>
+    </aside>
+  </section>
+
+  {(seasonalTopics.length > 0 || calendarTopics.length > 0) && (
+    <section class="section section-tight">
+      <p class="eyebrow">Timely printables</p>
+      <h2>Seasonal and calendar pages</h2>
+      <div class="grid grid-4 card-grid">
+        {[...seasonalTopics, ...calendarTopics].slice(0, 8).map((topic) => (
+          <CollectionCard
+            title={topic.title}
+            description={topic.description}
+            href={getTopicPath(topic)}
+            count={getPagesForTopic(topic.id).length}
+            accent={topic.contentTypeId === "calendars" ? "mint" : "coral"}
+            cta="View PDFs"
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
   <section class="section">
     <p class="eyebrow">New PDFs</p>
     <h2>Latest printable pages</h2>
     <PrintableGrid pages={newPrintables} />
-  </section>
-
-  <section class="section trust-strip">
-    <div class="panel trust-panel">
-      <div>
-        <strong>Print-ready PDFs</strong>
-        <p>Each download is prepared as a PDF so parents and teachers can print without editing software.</p>
-      </div>
-      <div>
-        <strong>Human-reviewed</strong>
-        <p>AI-assisted source images are checked, cleaned, framed for previews, and formatted before publishing.</p>
-      </div>
-      <div>
-        <strong>Personal and classroom use</strong>
-        <p>Pages are made for simple home use, classroom packets, quiet activities, and creative breaks.</p>
-      </div>
-    </div>
   </section>
 </BaseLayout>
 
@@ -139,8 +192,47 @@ const newPrintables = pages.slice(0, 6);
     align-items: center;
   }
 
-  .hero-actions {
-    margin-top: 1.35rem;
+  .hero-actions,
+  .card-grid {
+    margin-top: 1rem;
+  }
+
+  .search-box {
+    display: grid;
+    gap: 0.45rem;
+    max-width: 680px;
+    margin-top: 1.25rem;
+  }
+
+  .search-box label {
+    font-weight: 800;
+  }
+
+  .search-box div {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.55rem;
+  }
+
+  .search-box input,
+  .search-box button {
+    min-height: 48px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font: inherit;
+  }
+
+  .search-box input {
+    padding: 0 0.9rem;
+    background: #fff;
+  }
+
+  .search-box button {
+    border-color: var(--ink);
+    background: var(--ink);
+    color: #fff;
+    padding: 0 1rem;
+    font-weight: 850;
   }
 
   .hero-preview {
@@ -168,20 +260,49 @@ const newPrintables = pages.slice(0, 6);
     box-shadow: 0 10px 20px rgba(26, 26, 46, 0.12);
   }
 
-  .card-grid {
-    margin-top: 1rem;
-  }
-
   .trust-panel {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 1rem;
-    padding: 1.2rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #fff;
+    padding: 1rem;
+    box-shadow: var(--shadow);
+  }
+
+  .split-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 330px;
+    gap: 1.2rem;
+    align-items: start;
+  }
+
+  .idea-panel {
+    display: grid;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #fff, var(--mint));
+  }
+
+  .idea-panel ul {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0;
+    padding-left: 1.1rem;
+    color: var(--muted);
   }
 
   @media (max-width: 900px) {
     .hero-grid,
-    .trust-panel {
+    .trust-panel,
+    .split-section {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .search-box div {
       grid-template-columns: 1fr;
     }
   }
