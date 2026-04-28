@@ -37,13 +37,18 @@ const getTopicCount = (topicId: string) => getPrintablesForTopic(topicId).length
   canonicalPath="/en/"
 >
   <section class="content-page py-10 text-center">
-    <h1 class="font-serif text-[clamp(2.4rem,7vw,4.8rem)] font-black leading-none text-ink">
+    <p class="eyebrow">Free PDF printables</p>
+    <h1 class="mt-4 font-serif text-[clamp(2.4rem,7vw,4.8rem)] font-black leading-none text-ink">
       Free printable coloring pages and PDF activities.
     </h1>
     <p class="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted">
       Browse original coloring pages, worksheets, calendars, planners, and classroom-friendly
       printables. Large enough to inspect, simple enough to download quickly.
     </p>
+    <div class="mt-6 flex flex-wrap justify-center gap-3 text-sm font-black">
+      <a href="/en/coloring-pages/" class="button-primary">Browse coloring pages</a>
+      <a href="#popular" class="button-secondary">View popular collections</a>
+    </div>
   </section>
 
   <section class="container-page pb-10">
@@ -67,6 +72,27 @@ const getTopicCount = (topicId: string) => getPrintablesForTopic(topicId).length
     </div>
   </section>
 
+  <section class="container-page py-10">
+    <div class="grid gap-4 md:grid-cols-4">
+      <div class="sidebar-box bg-ivory p-4">
+        <h2 class="font-serif text-xl font-black text-ink">Print-ready PDFs</h2>
+        <p class="mt-3 text-sm leading-6 text-muted">Every item is organized around a clear preview and a direct PDF download.</p>
+      </div>
+      <div class="sidebar-box bg-mint/50 p-4">
+        <h2 class="font-serif text-xl font-black text-ink">Safe topic strategy</h2>
+        <p class="mt-3 text-sm leading-6 text-muted">Collections focus on original, generic ideas instead of copyrighted characters or brand names.</p>
+      </div>
+      <div class="sidebar-box bg-sun/20 p-4">
+        <h2 class="font-serif text-xl font-black text-ink">For classrooms</h2>
+        <p class="mt-3 text-sm leading-6 text-muted">Useful for early finishers, packets, calm activities, and simple lesson add-ons.</p>
+      </div>
+      <div class="sidebar-box bg-sky/20 p-4">
+        <h2 class="font-serif text-xl font-black text-ink">Easy to expand</h2>
+        <p class="mt-3 text-sm leading-6 text-muted">The catalogue structure supports more topics, future languages, and better internal linking.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="container-page py-12">
     <div class="mb-6 text-center">
       <h2 class="font-serif text-3xl font-black text-coral-dark">New printable pages</h2>
@@ -79,9 +105,10 @@ const getTopicCount = (topicId: string) => getPrintablesForTopic(topicId).length
     </div>
   </section>
 
-  <section class="container-page py-10">
+  <section id="popular" class="container-page py-10">
     <div class="mb-6 text-center">
-      <h2 class="font-serif text-3xl font-black text-coral-dark">Popular collections</h2>
+      <p class="eyebrow">Safe launch picks</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-coral-dark">Popular collections</h2>
       <p class="mx-auto mt-2 max-w-2xl text-sm leading-6 text-muted">
         Collection pages are the main SEO and browsing experience: helpful intro, printable grid,
         related topics, FAQ, and trust notes.
