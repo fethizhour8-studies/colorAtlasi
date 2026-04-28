@@ -11,7 +11,9 @@
     "check:production": "node scripts/validate-production.mjs --env --dist",
     "preview": "astro preview --host 127.0.0.1",
     "seed:samples": "node scripts/seed-samples.mjs",
-    "ingest": "node scripts/ingest-assets.mjs"
+    "ingest": "node scripts/ingest-assets.mjs",
+    "generate:images": "node scripts/generate-gemini-images.mjs",
+    "pipeline:sample": "npm run generate:images -- incoming/image-prompts.example.json && npm run ingest incoming/manifest.generated.json"
   },
   "dependencies": {
     "astro": "^6.1.9",
