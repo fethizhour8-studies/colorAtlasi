@@ -15,6 +15,7 @@ import {
   getHubById,
   getHubPath,
   getPrintablesForTopic,
+  getPublicTopicsForHub,
   getTopicPath,
   getTopicsForHub,
   hubs,
@@ -161,7 +162,7 @@ if (props.kind === "printable") {
       <>
         <section class="content-page py-10 text-center">
           <div>
-            <p class="eyebrow">{getTopicsForHub(props.hub.id).length} collection{getTopicsForHub(props.hub.id).length === 1 ? "" : "s"}</p>
+            <p class="eyebrow">{getPublicTopicsForHub(props.hub.id).length} live collection{getPublicTopicsForHub(props.hub.id).length === 1 ? "" : "s"}</p>
             <h1 class="mt-4 font-serif text-[clamp(2.4rem,6vw,4.2rem)] font-black leading-none text-ink">
               {props.hub.title}
             </h1>
@@ -194,7 +195,7 @@ if (props.kind === "printable") {
             <p class="eyebrow">Browse collections</p>
             <h2 class="mt-3 font-serif text-3xl font-black text-coral-dark">Topics in this hub</h2>
             <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {getTopicsForHub(props.hub.id).map((topic) => (
+              {getPublicTopicsForHub(props.hub.id).map((topic) => (
                 <CollectionCard
                   title={topic.title}
                   description={topic.description}
@@ -251,7 +252,7 @@ if (props.kind === "printable") {
                 </a>
               </div>
             </div>
-            <PrintableCard printable={props.printable} />
+            <PrintableCard printable={props.printable} mode="detail" />
           </div>
         </section>
       </>
