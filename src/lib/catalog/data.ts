@@ -47,5 +47,16 @@ export const getRootTopicsForContentType = (contentTypeId: ContentTypeId): Topic
 export const getPrintablesForTopic = (topicId: string): Printable[] =>
   printables.filter((printable) => printable.topicId === topicId);
 
+export const hasPrintables = (topic: Topic): boolean => getPrintablesForTopic(topic.id).length > 0;
+
+export const getPublicTopics = (items: Topic[]): Topic[] => items.filter(hasPrintables);
+
+export const getPublicTopicsForHub = (hubId: string): Topic[] => getPublicTopics(getTopicsForHub(hubId));
+
+export const getPublicRootTopicsForContentType = (contentTypeId: ContentTypeId): Topic[] =>
+  getPublicTopics(getRootTopicsForContentType(contentTypeId));
+
 export const getRelatedTopics = (topic: Topic): Topic[] =>
   topic.relatedTopicIds.map((id) => getTopicById(id));
+
+export const getPublicRelatedTopics = (topic: Topic): Topic[] => getPublicTopics(getRelatedTopics(topic));
