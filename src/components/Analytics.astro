@@ -1,0 +1,30 @@
+---
+const plausibleDomain = import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN;
+const plausibleSrc = import.meta.env.PUBLIC_PLAUSIBLE_SRC || "https://plausible.io/js/script.file-downloads.outbound-links.js";
+---
+
+{plausibleDomain && <script defer data-domain={plausibleDomain} src={plausibleSrc}></script>}
+
+<script is:inline>
+  window.caTrack = function caTrack(eventName, props) {
+    if (window.plausible) {
+      window.plausible(eventName, { props: props || {} });
+    }
+  };
+
+  document.addEventListener("click", function (event) {
+    var link = event.target && event.target.closest ? event.target.closest("a") : null;
+    if (!link) return;
+
+    var href = link.getAttribute("href") || "";
+    var isDownload = link.hasAttribute("download") || /\.(pdf|png|webp|jpg|jpeg)$/i.test(href);
+
+    if (isDownload && window.caTrack) {
+      window.caTrack("Download", {
+        file: href,
+        label: (link.textContent || "download").trim(),
+        page: window.location.pathname
+      });
+    }
+  });
+</script>
