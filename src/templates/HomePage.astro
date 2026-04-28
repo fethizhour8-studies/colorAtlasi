@@ -9,10 +9,10 @@ import {
   getPagesForHub,
   getPagesForTopic,
   getTopicPath,
-  getTopicsForHub,
   hubs,
   pages,
   topics,
+  type Topic,
 } from "@lib/catalog";
 import { websiteJsonLd } from "@lib/seo";
 
@@ -26,7 +26,8 @@ const safeLaunchTopicIds = [
   "christmas-coloring-pages",
   "2026-printable-calendars",
 ];
-const featuredTopics = safeLaunchTopicIds.map((id) => topics.find((topic) => topic.id === id)).filter(Boolean).slice(0, 6);
+const isTopic = (topic: Topic | undefined): topic is Topic => Boolean(topic);
+const featuredTopics = safeLaunchTopicIds.map((id) => topics.find((topic) => topic.id === id)).filter(isTopic).slice(0, 6);
 const newPrintables = pages.slice(0, 6);
 const seasonalTopics = topics.filter((topic) => topic.hubId === "seasonal" || topic.tags.some((tag) => ["seasonal", "holiday", "christmas"].includes(tag))).slice(0, 4);
 const calendarTopics = topics.filter((topic) => topic.contentTypeId === "calendars").slice(0, 4);
