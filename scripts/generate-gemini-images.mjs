@@ -5,7 +5,7 @@ import slugify from "slugify";
 
 const [, , promptManifestPath = "incoming/image-prompts.example.json"] = process.argv;
 const apiKey = process.env.GEMINI_API_KEY;
-const model = process.env.GEMINI_IMAGE_MODEL || "gemini-2.5-flash-image-preview";
+const model = process.env.GEMINI_IMAGE_MODEL || "gemini-3.1-flash-image-preview";
 const outputDir = process.env.GENERATED_IMAGE_DIR || "incoming/generated";
 const manifestOutputPath = process.env.GENERATED_MANIFEST_PATH || "incoming/manifest.generated.json";
 
@@ -25,7 +25,7 @@ if (!Array.isArray(jobs) || jobs.length === 0) {
 mkdirSync(outputDir, { recursive: true });
 mkdirSync(dirname(manifestOutputPath), { recursive: true });
 
-const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
 
 function slug(value) {
   return slugify(value, { lower: true, strict: true, trim: true });
@@ -57,15 +57,15 @@ function buildPrompt(job) {
 async function generateImage(job, index) {
   const prompt = buildPrompt(job);
   const body = {
-    contents: [{ role: "user", parts: [{ text: prompt }] }],
-    generationConfig: {
-      responseModalities: ["TEXT", "IMAGE"],
-    },
+    contents: [{ parts: [{ text: prompt }] }],
   };
 
   const response = await fetch(endpoint, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      "x-goog-api-key": apiKey,
+    },
     body: JSON.stringify(body),
   });
 
