@@ -124,19 +124,25 @@ if (props.kind === "printable") {
 }
 
 const jsonLd = [breadcrumbJsonLd(breadcrumbItems)];
+let shareImage: string | undefined;
 
 if (props.kind === "hub") {
-  const count = getTopicsForHub(props.hub.id).reduce((total, topic) => total + getPrintablesForTopic(topic.id).length, 0);
+  const hubTopics = getTopicsForHub(props.hub.id);
+  const count = hubTopics.reduce((total, topic) => total + getPrintablesForTopic(topic.id).length, 0);
   jsonLd.push(collectionJsonLd(props.hub, getHubPath(props.hub), count));
+  shareImage = hubTopics.flatMap((topic) => getPrintablesForTopic(topic.id))[0]?.previewImage;
 }
 
 if (props.kind === "topic") {
-  jsonLd.push(collectionJsonLd(props.topic, getTopicPath(props.topic), getPrintablesForTopic(props.topic.id).length));
+  const topicPrintables = getPrintablesForTopic(props.topic.id);
+  jsonLd.push(collectionJsonLd(props.topic, getTopicPath(props.topic), topicPrintables.length));
   jsonLd.push(topicFaqJsonLd(props.topic));
+  shareImage = topicPrintables[0]?.previewImage;
 }
 
 if (props.kind === "printable") {
   jsonLd.push(printableJsonLd(props.printable));
+  shareImage = props.printable.previewImage;
 }
 ---
 
@@ -145,6 +151,7 @@ if (props.kind === "printable") {
   description={seo.description}
   canonicalPath={seo.canonicalPath}
   robots={seo.robots}
+  image={shareImage}
   jsonLd={jsonLd}
 >
   <Breadcrumbs items={breadcrumbItems} />
