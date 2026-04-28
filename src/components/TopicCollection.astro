@@ -20,180 +20,182 @@ const useCase = isCalendar
     ? "quiet creative breaks, mindful coloring, evening relaxation, and screen-free downtime"
     : "early finishers, rainy days, classroom packets, weekend crafts, and screen-free creative time";
 const contentSections = topic.sections || [];
+const featuredPrintable = printables[0];
 ---
 
-<section class="container-page py-8">
-  <div class="grid gap-8 lg:grid-cols-[1fr_280px] lg:items-start">
-    <div>
-      <div class="mb-4 rounded-2xl border-2 border-coral/35 bg-ivory p-4 text-center shadow-soft">
-        <p class="text-sm font-black text-ink">
-          {printables.length > 0 ? "Choose a printable, preview it, then download the PDF." : "This collection is ready for printables from the asset pipeline."}
-        </p>
-        <div class="mt-3 flex flex-wrap justify-center gap-3 text-xs font-black">
-          <a href="#printable-grid" class="rounded-full border border-sky bg-white px-4 py-2 text-sky-dark">View pages</a>
-          <a href="#how-to-use" class="rounded-full border border-line bg-white px-4 py-2 text-muted">Printing tips</a>
-          {contentSections.length > 0 && <a href="#collection-guide" class="rounded-full border border-line bg-white px-4 py-2 text-muted">Ideas</a>}
-          <a href="#faq" class="rounded-full border border-line bg-white px-4 py-2 text-muted">FAQ</a>
-        </div>
-      </div>
+<article class="content-page py-8">
+  <section class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_260px] lg:items-start">
+    <div class="prose-block">
+      <p class="eyebrow">Printable collection</p>
+      <h2 class="mt-3 font-serif text-3xl font-black leading-tight text-ink">About these {topicLower}</h2>
+      <p class="mt-4 text-base leading-8 text-muted">
+        {topic.intro} This collection is organized as a simple printable pack: read the overview,
+        jump to the PDF preview grid, download a page directly, or open an individual printable page
+        if you want to share a single file.
+      </p>
+    </div>
 
-      <div id="printable-grid" class={printables.length > 0 ? "grid grid-cols-2 gap-4 sm:grid-cols-3" : ""}>
-        {printables.length > 0 ? (
-          printables.map((printable) => <PrintableCard printable={printable} />)
-        ) : (
-          <div class="rounded-3xl border-2 border-dashed border-line bg-paper p-8 text-center">
-            <p class="eyebrow">Coming soon</p>
-            <h2 class="mt-3 font-serif text-3xl font-black text-ink">Printable pages are being prepared</h2>
-            <p class="mx-auto mt-4 max-w-xl text-sm leading-7 text-muted">
-              This safe collection page is already part of the catalogue so internal links, SEO planning,
-              and future PDF uploads have a clear home. Add approved assets through the pipeline when
-              the printables are ready.
-            </p>
+    {featuredPrintable && (
+      <a href={featuredPrintable.downloadPdf} download class="rounded-2xl border border-line bg-white p-3 shadow-soft">
+        <div class="paper-preview p-3">
+          <div class="relative h-full overflow-hidden rounded border border-ink/20">
+            <span class="absolute left-[16%] top-[13%] size-14 rounded-full border-2 border-ink/38"></span>
+            <span class="absolute right-[14%] top-[23%] size-9 rounded-full border-2 border-ink/28"></span>
+            <span class="absolute bottom-[20%] left-[14%] h-20 w-[72%] rounded-t-full border-2 border-b-0 border-ink/34"></span>
+            <span class="absolute bottom-[11%] left-[11%] h-11 w-[78%] rounded-b-2xl border-2 border-ink/34"></span>
+            <span class="absolute left-[20%] top-[48%] h-1.5 w-[60%] rounded-full bg-pencil/55"></span>
+            <span class="absolute left-[28%] top-[56%] h-1.5 w-[44%] rounded-full bg-sage/22"></span>
           </div>
-        )}
-      </div>
+        </div>
+        <p class="mt-2 text-center text-xs font-black text-sky-dark">Featured printable preview</p>
+      </a>
+    )}
+  </section>
+
+  <nav class="my-8 rounded-2xl border border-coral/35 bg-ivory p-5 shadow-soft" aria-label="Collection page sections">
+    <p class="text-sm font-black text-ink">
+      {printables.length > 0 ? "Jump to the preview grid or read the guide before printing." : "This collection is ready for printables from the asset pipeline."}
+    </p>
+    <div class="mt-3 flex flex-wrap gap-3 text-xs font-black">
+      <a href="#printable-grid" class="rounded-full border border-sky bg-white px-4 py-2 text-sky-dark">Printable pages</a>
+      <a href="#how-to-use" class="rounded-full border border-line bg-white px-4 py-2 text-muted">How to use</a>
+      <a href="#printing-tips" class="rounded-full border border-line bg-white px-4 py-2 text-muted">Printing tips</a>
+      {contentSections.length > 0 && <a href="#collection-guide" class="rounded-full border border-line bg-white px-4 py-2 text-muted">Ideas</a>}
+      {relatedTopics.length > 0 && <a href="#related" class="rounded-full border border-line bg-white px-4 py-2 text-muted">Related</a>}
+      <a href="#faq" class="rounded-full border border-line bg-white px-4 py-2 text-muted">FAQ</a>
+    </div>
+  </nav>
+
+  <section id="printable-grid" class="py-3">
+    <div class="mb-5">
+      <p class="eyebrow">Free PDF downloads</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-ink">Printable pages in this pack</h2>
+      <p class="mt-3 text-sm leading-7 text-muted">
+        Click a preview or title to download the PDF directly. Use the View page link only when you
+        want the individual noindex page for one printable.
+      </p>
     </div>
 
-    <aside class="grid gap-4 lg:sticky lg:top-24">
-      <div class="sidebar-box p-4">
-        <h2 class="font-serif text-xl font-black text-ink">Quick facts</h2>
-        <dl class="mt-4 grid gap-3">
-          {
-            topic.quickFacts.map((fact) => (
-              <div>
-                <dt class="text-[0.68rem] font-black uppercase text-muted">{fact.label}</dt>
-                <dd class="mt-1 text-sm font-bold leading-5 text-ink">{fact.value}</dd>
-              </div>
-            ))
-          }
-        </dl>
+    {printables.length > 0 ? (
+      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-3">
+        {printables.map((printable) => <PrintableCard printable={printable} />)}
       </div>
-      <div class="sidebar-box p-4">
-        <h2 class="font-serif text-xl font-black text-ink">Browse tags</h2>
-        <div class="mt-3 flex flex-wrap gap-2">
-          {
-            topic.tags.map((tag) => (
-              <span class="rounded-full border border-line bg-paper px-2 py-1 text-xs font-bold text-muted">
-                {tag}
-              </span>
-            ))
-          }
-        </div>
-      </div>
-      <div class="sidebar-box bg-mint/50 p-4">
-        <h2 class="font-serif text-xl font-black text-ink">Safe topic note</h2>
-        <p class="mt-3 text-sm leading-6 text-muted">
-          This collection is built around original printable ideas rather than protected characters,
-          brand mascots, logos, or franchise designs.
+    ) : (
+      <div class="rounded-3xl border-2 border-dashed border-line bg-paper p-8 text-center">
+        <p class="eyebrow">Coming soon</p>
+        <h2 class="mt-3 font-serif text-3xl font-black text-ink">Printable pages are being prepared</h2>
+        <p class="mx-auto mt-4 max-w-xl text-sm leading-7 text-muted">
+          This safe collection page is already part of the catalogue so internal links, SEO planning,
+          and future PDF uploads have a clear home. Add approved assets through the pipeline when
+          the printables are ready.
         </p>
       </div>
-    </aside>
-  </div>
-</section>
+    )}
+  </section>
 
-<section id="how-to-use" class="section-rule content-page py-10">
-  <div class="grid gap-6 md:grid-cols-3">
-    <div>
-      <p class="eyebrow">What is included</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-ink">Printable PDFs for {topicLower}</h2>
-      <p class="mt-4 text-sm leading-7 text-muted">
-        This collection includes individual PDF printables with large previews, clear titles, and
-        direct download buttons. The printable grid appears near the top so you can choose a page
-        quickly before reading extra tips.
-      </p>
-    </div>
-    <div>
-      <p class="eyebrow">Best for</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-ink">Simple real-life uses</h2>
-      <p class="mt-4 text-sm leading-7 text-muted">
-        Use these pages for {useCase}. Print one page for a quick activity or save a few favorites
-        for repeat use.
-      </p>
-    </div>
-    <div>
-      <p class="eyebrow">How to print</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-ink">Clean print settings</h2>
-      <p class="mt-4 text-sm leading-7 text-muted">
-        Open the PDF, print at actual size on US Letter paper, or choose fit to page for A4. Plain
-        copy paper works for crayons and pencils; heavier paper is better for markers.
-      </p>
-    </div>
-  </div>
-</section>
+  {relatedTopics.length > 0 && (
+    <section id="related" class="section-rule py-10">
+      <div class="mb-5">
+        <p class="eyebrow">Related printables</p>
+        <h2 class="mt-3 font-serif text-3xl font-black text-coral-dark">More collections to try</h2>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {relatedTopics.map((relatedTopic) => (
+          <CollectionCard
+            title={relatedTopic.title}
+            description={relatedTopic.description}
+            href={getTopicPath(relatedTopic)}
+            eyebrow="Related"
+          />
+        ))}
+      </div>
+    </section>
+  )}
 
-{
-  contentSections.length > 0 && (
-    <section id="collection-guide" class="content-page py-10">
+  <section id="how-to-use" class="section-rule py-10">
+    <div class="grid gap-6 md:grid-cols-2">
+      <div>
+        <p class="eyebrow">How to use</p>
+        <h2 class="mt-3 font-serif text-3xl font-black text-ink">Best ways to use {topicLower}</h2>
+        <p class="mt-4 text-sm leading-8 text-muted">
+          Use these pages for {useCase}. Print one page for a quick activity or save a few favorites
+          for repeat use. For a classroom or home packet, choose several pages with different difficulty
+          levels so every child can find a page that feels approachable.
+        </p>
+      </div>
+      <div id="printing-tips">
+        <p class="eyebrow">Printing tips</p>
+        <h2 class="mt-3 font-serif text-3xl font-black text-ink">Clean print settings</h2>
+        <p class="mt-4 text-sm leading-8 text-muted">
+          Open the PDF, print at actual size on US Letter paper, or choose fit to page for A4. Plain
+          copy paper works for crayons and pencils; heavier paper is better for markers. Print one
+          test page before printing a full pack.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {contentSections.length > 0 && (
+    <section id="collection-guide" class="py-10">
       <div class="grid gap-5">
         <p class="eyebrow">Collection guide</p>
         <h2 class="font-serif text-3xl font-black text-ink">Ideas for using {topicLower}</h2>
-        <div class="grid gap-4 md:grid-cols-2">
+        <div class="grid gap-5">
           {contentSections.map((section) => (
-            <article class="sidebar-box p-5">
+            <section class="rounded-2xl border border-line bg-white p-5 shadow-soft">
               {section.eyebrow && <p class="eyebrow">{section.eyebrow}</p>}
               <h3 class="mt-2 font-serif text-2xl font-black text-ink">{section.title}</h3>
-              <p class="mt-3 text-sm leading-7 text-muted">{section.body}</p>
-            </article>
+              <p class="mt-3 text-sm leading-8 text-muted">{section.body}</p>
+            </section>
           ))}
         </div>
       </div>
     </section>
-  )
-}
+  )}
 
-<section id="faq" class="content-page py-10">
-  <div class="grid gap-5">
-    <p class="eyebrow">FAQ</p>
-    <h2 class="font-serif text-3xl font-black text-ink">Common questions</h2>
-    <div class="grid gap-4 md:grid-cols-2">
-      <div class="sidebar-box p-4">
-        <h3 class="font-serif text-xl font-black text-ink">Can I use these in a classroom?</h3>
-        <p class="mt-3 text-sm leading-6 text-muted">
-          Yes, these printables are intended for personal, home, and classroom use unless a page
-          says otherwise.
-        </p>
-      </div>
-      <div class="sidebar-box p-4">
-        <h3 class="font-serif text-xl font-black text-ink">Do I need special software?</h3>
-        <p class="mt-3 text-sm leading-6 text-muted">
-          No. Open the PDF in your browser or PDF viewer, then print it with your normal printer
-          settings.
-        </p>
-      </div>
-      <div class="sidebar-box p-4">
-        <h3 class="font-serif text-xl font-black text-ink">Why are individual pages noindex?</h3>
-        <p class="mt-3 text-sm leading-6 text-muted">
-          Thin printable pages point search engines back to the stronger collection page, where
-          visitors can compare previews and find related PDFs.
-        </p>
-      </div>
-      <div class="sidebar-box p-4">
-        <h3 class="font-serif text-xl font-black text-ink">Can I share a download link?</h3>
-        <p class="mt-3 text-sm leading-6 text-muted">
-          Share the collection page whenever possible so people can see the preview, license notes,
-          related pages, and printing tips.
-        </p>
+  <section id="faq" class="section-rule py-10">
+    <div class="grid gap-5">
+      <p class="eyebrow">FAQ</p>
+      <h2 class="font-serif text-3xl font-black text-ink">Common questions</h2>
+      <div class="grid gap-4 md:grid-cols-2">
+        <div class="rounded-2xl border border-line bg-white p-4 shadow-soft">
+          <h3 class="font-serif text-xl font-black text-ink">Can I use these in a classroom?</h3>
+          <p class="mt-3 text-sm leading-6 text-muted">
+            Yes, these printables are intended for personal, home, and classroom use unless a page says otherwise.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-line bg-white p-4 shadow-soft">
+          <h3 class="font-serif text-xl font-black text-ink">Do I need special software?</h3>
+          <p class="mt-3 text-sm leading-6 text-muted">
+            No. Open the PDF in your browser or PDF viewer, then print it with your normal printer settings.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-line bg-white p-4 shadow-soft">
+          <h3 class="font-serif text-xl font-black text-ink">Why are individual pages noindex?</h3>
+          <p class="mt-3 text-sm leading-6 text-muted">
+            Thin printable pages point search engines back to the stronger collection page, where visitors can compare previews and find related PDFs.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-line bg-white p-4 shadow-soft">
+          <h3 class="font-serif text-xl font-black text-ink">Can I share a download link?</h3>
+          <p class="mt-3 text-sm leading-6 text-muted">
+            Share the collection page whenever possible so people can see the preview, license notes, related pages, and printing tips.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-{
-  relatedTopics.length > 0 && (
-    <section class="container-page section-rule py-10">
-      <h2 class="mb-5 text-center font-serif text-3xl font-black text-coral-dark">More printable collections</h2>
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {
-          relatedTopics.map((relatedTopic) => (
-            <CollectionCard
-              title={relatedTopic.title}
-              description={relatedTopic.description}
-              href={getTopicPath(relatedTopic)}
-              eyebrow="Related"
-            />
-          ))
-        }
+  {featuredPrintable && (
+    <section class="py-8">
+      <div class="rounded-3xl border border-line bg-mint/40 p-6 text-center shadow-soft">
+        <p class="eyebrow">Before you print</p>
+        <h2 class="mt-3 font-serif text-3xl font-black text-ink">Save this collection for later</h2>
+        <p class="mx-auto mt-3 max-w-2xl text-sm leading-7 text-muted">
+          Download your favorite PDFs now, then return to this collection when you need more related printable pages.
+          New designs can be added to the same pack without changing the overall workflow.
+        </p>
       </div>
     </section>
-  )
-}
+  )}
+</article>
