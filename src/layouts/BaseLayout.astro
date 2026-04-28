@@ -9,9 +9,11 @@ interface Props {
   description: string;
   canonicalPath?: string;
   robots?: "index,follow" | "noindex,follow";
+  jsonLd?: Array<Record<string, unknown>>;
 }
 
-const { title, description, canonicalPath, robots = "index,follow" } = Astro.props;
+const { title, description, canonicalPath, robots = "index,follow", jsonLd = [] } = Astro.props;
+const safeJsonLd = (item: Record<string, unknown>) => JSON.stringify(item).replace(/</g, "\\u003c");
 ---
 
 <!doctype html>
@@ -30,6 +32,7 @@ const { title, description, canonicalPath, robots = "index,follow" } = Astro.pro
       href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Nunito+Sans:wght@700;800;900&display=swap"
       rel="stylesheet"
     />
+    {jsonLd.map((item) => <script type="application/ld+json" set:html={safeJsonLd(item)} />)}
     <Analytics />
   </head>
   <body>
