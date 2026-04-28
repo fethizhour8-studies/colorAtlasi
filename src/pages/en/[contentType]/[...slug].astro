@@ -123,7 +123,7 @@ if (props.kind === "printable") {
   breadcrumbItems.push({ label: props.printable.title });
 }
 
-const jsonLd = [breadcrumbJsonLd(breadcrumbItems)];
+const jsonLd: Array<Record<string, unknown>> = [breadcrumbJsonLd(breadcrumbItems)];
 let shareImage: string | undefined;
 
 if (props.kind === "hub") {
