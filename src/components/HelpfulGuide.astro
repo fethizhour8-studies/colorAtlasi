@@ -1,0 +1,95 @@
+---
+interface Props {
+  title: string;
+  audience?: string[];
+  license?: string;
+  variant?: "topic" | "hub" | "contentType";
+}
+
+const { title, audience = [], license = "Free for personal and classroom use", variant = "topic" } = Astro.props;
+const titleLower = title.toLowerCase();
+const audienceText = audience.length > 0 ? audience.join(", ") : "parents, teachers, kids, and adults";
+const isCalendar = titleLower.includes("calendar");
+const isMandala = titleLower.includes("mandala");
+const isAdult = titleLower.includes("adult") || titleLower.includes("relaxing") || isMandala;
+const printableNoun = isCalendar ? "calendar PDFs" : "printable coloring pages";
+const bestFor = isAdult
+  ? "quiet creative breaks, mindful coloring, cozy evenings, and screen-free relaxation"
+  : isCalendar
+    ? "planning, classroom organization, home schedules, and simple printable reminders"
+    : "classroom packets, rainy days, early finishers, weekend activities, and screen-free creative time";
+---
+
+<div class={`helpful-guide ${variant}`}>
+  <section class="panel guide-block">
+    <p class="eyebrow">What is included</p>
+    <h2>About these {titleLower}</h2>
+    <p>These {titleLower} are organized as easy-to-browse {printableNoun} with clear previews and direct PDF downloads. The page is designed for {audienceText} who want printable files without extra editing software.</p>
+    <ul>
+      <li>Print-ready PDF downloads with preview cards.</li>
+      <li>Simple topic organization so related pages are easy to find.</li>
+      <li>Clean metadata, canonical URLs, and internal links for search clarity.</li>
+    </ul>
+  </section>
+
+  <section class="panel guide-block">
+    <p class="eyebrow">Best for</p>
+    <h2>Ways to use this collection</h2>
+    <p>This collection works well for {bestFor}. Keep a few printed sheets ready for quick activities, substitute plans, calm-down corners, or simple creative breaks.</p>
+    <ul>
+      <li>Choose easy pages for younger children or fast activities.</li>
+      <li>Use detailed pages for older kids, teens, or adults who enjoy longer coloring sessions.</li>
+      <li>Save favorite PDFs locally so they are quick to reprint later.</li>
+    </ul>
+  </section>
+
+  <section class="panel guide-block">
+    <p class="eyebrow">How to print</p>
+    <h2>Printing tips</h2>
+    <p>Open the PDF in your browser or PDF viewer, then print at actual size for US Letter. If you use A4 paper, choose fit to page. Plain copy paper is fine for crayons and colored pencils; heavier paper is better for markers.</p>
+    <ul>
+      <li>Use black-and-white printing for line art pages.</li>
+      <li>Preview one test page before printing a classroom set.</li>
+      <li>Avoid scale settings that crop page edges.</li>
+    </ul>
+  </section>
+
+  <section class="panel guide-block trust-note">
+    <p class="eyebrow">License and trust</p>
+    <h2>Use and quality note</h2>
+    <p>{license}. Some pages may be made with digital illustration tools and AI-assisted drafting, then reviewed for clean line art, printable margins, and rights-safe subject matter before publication.</p>
+  </section>
+</div>
+
+<style>
+  .helpful-guide {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .guide-block {
+    display: grid;
+    align-content: start;
+    gap: 0.7rem;
+    padding: 1rem;
+  }
+
+  .guide-block ul {
+    display: grid;
+    gap: 0.45rem;
+    margin: 0;
+    padding-left: 1.15rem;
+    color: var(--muted);
+  }
+
+  .trust-note {
+    background: linear-gradient(135deg, #fff, var(--mint));
+  }
+
+  @media (max-width: 820px) {
+    .helpful-guide {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
