@@ -31,7 +31,7 @@ $env:PUBLIC_CONTACT_EMAIL="contact@your-real-domain.com"
 npm run build:production
 ```
 
-See `docs/production-launch-checklist.md` before applying for AdSense or uploading `dist/`.
+See `docs/production-launch-checklist.md` and `docs/launch-seo-geo-plan.md` before applying for AdSense or uploading `dist/`.
 
 ## Preview Ad Slots
 
@@ -46,7 +46,7 @@ Keep placeholders disabled on production until the final AdSense publisher ID, c
 
 To enable real AdSense units later, set `PUBLIC_ADSENSE_ENABLED=true`, `PUBLIC_ADSENSE_CLIENT`, the three slot IDs, and `PUBLIC_GOOGLE_CERTIFIED_CMP=true`. The production validator intentionally fails if those values are missing.
 
-## Add New Coloring Pages
+## Add New Coloring Pages Manually
 
 1. Generate original black-and-white line art with your image generator as JPEG or PNG.
 2. Save the source image in `incoming/`.
@@ -67,6 +67,35 @@ npm run ingest incoming/manifest.json
 npm run ingest incoming/manifest.json -- --with-png
 ```
 
+## Generate Coloring Pages With Gemini / Nano Banana
+
+Create a prompt manifest like `incoming/image-prompts.example.json`, then set the API key locally only:
+
+```bash
+$env:GEMINI_API_KEY="your-local-key"
+npm run generate:images -- incoming/image-prompts.example.json
+npm run ingest incoming/manifest.generated.json
+```
+
+The default image model is `gemini-2.5-flash-image`. Override it only when needed:
+
+```bash
+$env:GEMINI_IMAGE_MODEL="gemini-3-pro-image-preview"
+```
+
+Generated files are ignored by git until you ingest the approved assets. Always review generated art before publishing and reject anything with text, logos, watermarks, color, grayscale fills, messy outlines, or copyrighted/trademark-looking characters.
+
+## Analytics
+
+Optional Plausible analytics and PDF download tracking are supported through env vars:
+
+```bash
+$env:PUBLIC_PLAUSIBLE_DOMAIN="your-domain.com"
+$env:PUBLIC_PLAUSIBLE_SRC="https://plausible.io/js/script.file-downloads.outbound-links.js"
+```
+
+The security header generator automatically adds the Plausible origin to CSP when `PUBLIC_PLAUSIBLE_DOMAIN` is set.
+
 ## Keyword Notes
 
-See `docs/keyword-opportunities.md` for the first launch interpretation from the attached Semrush workbook.
+See `docs/keyword-opportunities.md` for the first launch interpretation from the attached Semrush workbook. See `docs/content-pipeline.md` for the generation workflow and `docs/launch-seo-geo-plan.md` for the launch, GEO, multilingual, analytics, security, and branding plan.
