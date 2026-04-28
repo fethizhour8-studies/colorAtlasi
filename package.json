@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "check": "astro check && tsc --noEmit",
+    "prebuild": "node scripts/generate-security-headers.mjs",
     "build": "npm run check && astro build",
     "pipeline:dry-run": "python tools/pipeline/asset_pipeline.py --dry-run",
     "preview": "astro preview"
