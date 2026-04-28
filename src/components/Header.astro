@@ -1,0 +1,47 @@
+---
+const navItems = [
+  { label: "Coloring Pages", href: "/en/coloring-pages/" },
+  { label: "Worksheets", href: "/en/worksheets/" },
+  { label: "Calendars", href: "/en/calendars/" },
+  { label: "Planners", href: "/en/planners/" },
+];
+---
+
+<header class="border-b border-line bg-paper">
+  <div class="container-page flex min-h-16 items-center justify-between gap-4 py-3">
+    <a href="/en/" class="flex items-center gap-3" aria-label="Color Atlas home">
+      <span class="site-logo-mark" aria-hidden="true">
+        <span class="bg-coral"></span>
+        <span class="bg-pencil"></span>
+        <span class="bg-sage"></span>
+        <span class="bg-sky"></span>
+        <span class="bg-coral"></span>
+        <span class="bg-pencil"></span>
+        <span class="bg-sage"></span>
+        <span class="bg-sky"></span>
+        <span class="bg-coral"></span>
+      </span>
+      <span class="leading-tight">
+        <span class="block font-serif text-2xl font-black text-ink">color atlas</span>
+        <span class="block text-xs font-bold text-muted">free printable pages</span>
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-1 md:flex" aria-label="Main navigation">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class="px-2 py-2 text-xs font-black uppercase text-sky-dark transition hover:text-coral-dark"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <a href="/en/coloring-pages/" class="hidden border border-sky px-3 py-1 text-xs font-black uppercase text-sky-dark sm:inline-flex">
+      Browse
+    </a>
+  </div>
+</header>

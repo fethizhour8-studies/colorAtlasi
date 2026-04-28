@@ -1,0 +1,41 @@
+---
+import type { Printable } from "@/lib/catalog";
+import { getPrintablePath } from "@/lib/catalog";
+
+interface Props {
+  printable: Printable;
+}
+
+const { printable } = Astro.props;
+const pagePath = getPrintablePath(printable);
+---
+
+<article class="simple-print-card p-2">
+  <a href={pagePath} class="block" aria-label={`View ${printable.title}`}>
+    <div class="paper-preview p-3">
+      <div class="relative h-full overflow-hidden rounded border border-ink/20">
+        <span class="absolute left-[16%] top-[13%] size-14 rounded-full border-2 border-ink/38"></span>
+        <span class="absolute right-[14%] top-[23%] size-9 rounded-full border-2 border-ink/28"></span>
+        <span class="absolute bottom-[20%] left-[14%] h-20 w-[72%] rounded-t-full border-2 border-b-0 border-ink/34"></span>
+        <span class="absolute bottom-[11%] left-[11%] h-11 w-[78%] rounded-b-2xl border-2 border-ink/34"></span>
+        <span class="absolute left-[20%] top-[48%] h-1.5 w-[60%] rounded-full bg-pencil/55"></span>
+        <span class="absolute left-[28%] top-[56%] h-1.5 w-[44%] rounded-full bg-sage/22"></span>
+      </div>
+    </div>
+  </a>
+
+  <div class="pt-2 text-center">
+    <h3 class="font-serif text-sm font-black leading-tight text-sky-dark">
+      <a href={pagePath}>{printable.title}</a>
+    </h3>
+    <p class="mt-1 text-[0.72rem] font-bold uppercase text-muted">{printable.format} · {printable.difficulty}</p>
+    <div class="mt-2 grid gap-2">
+      <a href={printable.downloadPdf} class="button-primary min-h-9 px-3 py-2 text-xs" download>
+        Download PDF
+      </a>
+      <a href={pagePath} class="text-xs font-black text-sky-dark">
+        View page
+      </a>
+    </div>
+  </div>
+</article>

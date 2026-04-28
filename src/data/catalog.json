@@ -1,0 +1,305 @@
+{
+  "site": {
+    "name": "Color Atlas",
+    "locale": "en",
+    "basePath": "/en"
+  },
+  "contentTypes": [
+    {
+      "id": "coloring-pages",
+      "slug": "coloring-pages",
+      "title": "Coloring Pages",
+      "description": "Free printable coloring pages for kids, adults, classrooms, holidays, animals, mandalas, and quiet creative time.",
+      "seoTitle": "Free Printable Coloring Pages",
+      "seoDescription": "Browse free printable coloring pages with large previews, organized collections, and simple PDF downloads.",
+      "order": 10
+    },
+    {
+      "id": "worksheets",
+      "slug": "worksheets",
+      "title": "Worksheets",
+      "description": "Printable worksheets and activity pages for early learning, classroom packets, and simple home practice.",
+      "seoTitle": "Free Printable Worksheets",
+      "seoDescription": "Browse free printable worksheets and activity pages for early learning, classrooms, and home practice.",
+      "order": 20
+    },
+    {
+      "id": "calendars",
+      "slug": "calendars",
+      "title": "Calendars",
+      "description": "Printable calendars and planning pages for home, classroom, office, and family organization.",
+      "seoTitle": "Free Printable Calendars",
+      "seoDescription": "Browse free printable calendars and simple planning pages with clean PDF downloads.",
+      "order": 30
+    },
+    {
+      "id": "planners",
+      "slug": "planners",
+      "title": "Planners",
+      "description": "Printable planners, trackers, and useful organization pages with a calm stationery feel.",
+      "seoTitle": "Free Printable Planners",
+      "seoDescription": "Browse free printable planners, trackers, and organization pages for home, classroom, and personal planning.",
+      "order": 40
+    }
+  ],
+  "hubs": [
+    {
+      "id": "coloring-pages-kids",
+      "contentTypeId": "coloring-pages",
+      "slug": "kids",
+      "title": "Kids Coloring Pages",
+      "description": "Easy and cheerful printable coloring pages for preschool, kindergarten, home activities, and classrooms.",
+      "seoTitle": "Free Printable Kids Coloring Pages",
+      "seoDescription": "Browse free printable kids coloring pages with large previews and simple PDF downloads.",
+      "order": 10
+    },
+    {
+      "id": "coloring-pages-animals",
+      "contentTypeId": "coloring-pages",
+      "slug": "animals",
+      "title": "Animal Coloring Pages",
+      "description": "Animal coloring pages for nature units, weekend crafts, classroom themes, and kids activities.",
+      "seoTitle": "Free Printable Animal Coloring Pages",
+      "seoDescription": "Browse free printable animal coloring pages for kids, classrooms, nature lessons, and simple crafts.",
+      "order": 20
+    },
+    {
+      "id": "coloring-pages-adults",
+      "contentTypeId": "coloring-pages",
+      "slug": "adults",
+      "title": "Adult Coloring Pages",
+      "description": "Calm adult coloring pages with mandalas, patterns, cozy scenes, and relaxing printable PDFs.",
+      "seoTitle": "Free Printable Adult Coloring Pages",
+      "seoDescription": "Browse relaxing adult coloring pages, mandalas, and detailed printable PDFs.",
+      "order": 30
+    },
+    {
+      "id": "calendars-2026",
+      "contentTypeId": "calendars",
+      "slug": "2026-calendars",
+      "title": "2026 Calendars",
+      "description": "Clean printable 2026 calendars for monthly planning, family schedules, classrooms, and desks.",
+      "seoTitle": "Free Printable 2026 Calendars",
+      "seoDescription": "Browse free printable 2026 calendars with clean layouts and easy PDF downloads.",
+      "order": 10
+    }
+  ],
+  "topics": [
+    {
+      "id": "wizard-school-coloring-pages",
+      "contentTypeId": "coloring-pages",
+      "hubId": "coloring-pages-kids",
+      "slug": "wizard-school-coloring-pages",
+      "title": "Wizard School Coloring Pages",
+      "h1": "Wizard School Coloring Pages",
+      "intro": "A safe original fantasy collection with magic owls, spell books, towers, stars, and classroom-friendly wizard school scenes.",
+      "description": "Free printable wizard school coloring pages for kids who like gentle fantasy, magic classrooms, and imaginative line art.",
+      "quickFacts": [
+        { "label": "Best for", "value": "Kids, classroom activities, fantasy themes" },
+        { "label": "Format", "value": "Letter-size PDF printables" },
+        { "label": "Difficulty", "value": "Easy to medium" }
+      ],
+      "tags": ["fantasy", "magic", "kids", "classroom"],
+      "relatedTopicIds": ["farm-animals-coloring-pages", "mandala-coloring-pages"],
+      "indexable": true,
+      "seoTitle": "Free Printable Wizard School Coloring Pages",
+      "seoDescription": "Browse original wizard school coloring pages with magic owls, spell books, towers, and simple PDF downloads.",
+      "order": 10
+    },
+    {
+      "id": "farm-animals-coloring-pages",
+      "contentTypeId": "coloring-pages",
+      "hubId": "coloring-pages-animals",
+      "slug": "farm-animals",
+      "title": "Farm Animals Coloring Pages",
+      "h1": "Farm Animals Coloring Pages",
+      "intro": "Friendly farm animal coloring pages with cows, barns, fields, chickens, and simple open spaces for young colorers.",
+      "description": "Free printable farm animal coloring pages for kids, classrooms, and easy animal-themed activities.",
+      "quickFacts": [
+        { "label": "Best for", "value": "Preschool, kindergarten, animal units" },
+        { "label": "Format", "value": "Letter-size PDF printables" },
+        { "label": "Difficulty", "value": "Easy" }
+      ],
+      "tags": ["animals", "farm", "kids", "classroom"],
+      "relatedTopicIds": ["wizard-school-coloring-pages"],
+      "indexable": true,
+      "seoTitle": "Free Printable Farm Animals Coloring Pages",
+      "seoDescription": "Browse free printable farm animal coloring pages with friendly cows, barns, fields, and easy PDF downloads.",
+      "order": 20
+    },
+    {
+      "id": "mandala-coloring-pages",
+      "contentTypeId": "coloring-pages",
+      "hubId": "coloring-pages-adults",
+      "slug": "mandala-coloring-pages",
+      "title": "Mandala Coloring Pages",
+      "h1": "Mandala Coloring Pages",
+      "intro": "Relaxing mandala printables with clean geometric petals, soft symmetry, and detailed patterns for calm creative breaks.",
+      "description": "Free printable mandala coloring pages for adults and older kids who enjoy detailed pattern coloring.",
+      "quickFacts": [
+        { "label": "Best for", "value": "Adults, teens, quiet breaks" },
+        { "label": "Format", "value": "Letter-size PDF printables" },
+        { "label": "Difficulty", "value": "Medium to detailed" }
+      ],
+      "tags": ["mandalas", "adult coloring", "relaxing", "patterns"],
+      "relatedTopicIds": ["wizard-school-coloring-pages"],
+      "indexable": true,
+      "seoTitle": "Free Printable Mandala Coloring Pages",
+      "seoDescription": "Browse free printable mandala coloring pages with detailed patterns, calming symmetry, and PDF downloads.",
+      "order": 30
+    },
+    {
+      "id": "january-2026-calendar",
+      "contentTypeId": "calendars",
+      "hubId": "calendars-2026",
+      "slug": "january-2026-calendar",
+      "title": "January 2026 Calendar",
+      "h1": "January 2026 Calendar",
+      "intro": "A clean printable January 2026 calendar for family schedules, classroom planning, desk organization, and simple monthly notes.",
+      "description": "Free printable January 2026 calendar with a clean layout and simple PDF download.",
+      "quickFacts": [
+        { "label": "Month", "value": "January 2026" },
+        { "label": "Format", "value": "Letter-size PDF" },
+        { "label": "Use", "value": "Home, classroom, office" }
+      ],
+      "tags": ["calendar", "2026", "monthly planner"],
+      "relatedTopicIds": ["preschool-counting-worksheets", "weekly-planner-printables"],
+      "indexable": true,
+      "seoTitle": "Free Printable January 2026 Calendar",
+      "seoDescription": "Download a free printable January 2026 calendar with a clean letter-size PDF layout.",
+      "order": 10
+    },
+    {
+      "id": "preschool-counting-worksheets",
+      "contentTypeId": "worksheets",
+      "slug": "preschool-counting-worksheets",
+      "title": "Preschool Counting Worksheets",
+      "h1": "Preschool Counting Worksheets",
+      "intro": "Simple preschool counting worksheets with friendly animals, traceable numbers, and clear practice areas for early learners.",
+      "description": "Free printable preschool counting worksheets for early number practice at home or in the classroom.",
+      "quickFacts": [
+        { "label": "Best for", "value": "Preschool and kindergarten" },
+        { "label": "Skill", "value": "Counting and number recognition" },
+        { "label": "Format", "value": "Letter-size PDF worksheets" }
+      ],
+      "tags": ["worksheets", "preschool", "counting", "animals"],
+      "relatedTopicIds": ["farm-animals-coloring-pages", "january-2026-calendar"],
+      "indexable": true,
+      "seoTitle": "Free Printable Preschool Counting Worksheets",
+      "seoDescription": "Browse free printable preschool counting worksheets with friendly animal themes and simple PDF downloads.",
+      "order": 10
+    },
+    {
+      "id": "weekly-planner-printables",
+      "contentTypeId": "planners",
+      "slug": "weekly-planner-printables",
+      "title": "Weekly Planner Printables",
+      "h1": "Weekly Planner Printables",
+      "intro": "Clean weekly planner printables for simple home routines, classroom planning, family schedules, and quiet desk organization.",
+      "description": "Free printable weekly planner pages with calm layouts for home, classroom, and personal organization.",
+      "quickFacts": [
+        { "label": "Best for", "value": "Home, classroom, desk planning" },
+        { "label": "Layout", "value": "Weekly overview" },
+        { "label": "Format", "value": "Letter-size PDF planner" }
+      ],
+      "tags": ["planner", "weekly", "organization"],
+      "relatedTopicIds": ["january-2026-calendar", "preschool-counting-worksheets"],
+      "indexable": true,
+      "seoTitle": "Free Printable Weekly Planners",
+      "seoDescription": "Browse free printable weekly planner pages with clean layouts and simple PDF downloads.",
+      "order": 10
+    }
+  ],
+  "printables": [
+    {
+      "id": "magic-owl-coloring-page",
+      "topicId": "wizard-school-coloring-pages",
+      "slug": "magic-owl-coloring-page",
+      "title": "Magic Owl Coloring Page",
+      "description": "A gentle fantasy owl coloring page with stars, books, and a wizard school feeling.",
+      "previewImage": "/assets/previews/coloring-pages/kids/wizard-school/magic-owl-coloring-page.webp",
+      "downloadPdf": "/downloads/coloring-pages/kids/wizard-school/magic-owl-coloring-page.pdf",
+      "difficulty": "easy",
+      "format": "PDF",
+      "tags": ["owl", "magic", "fantasy"],
+      "indexing": "noindex",
+      "canonicalTopicId": "wizard-school-coloring-pages",
+      "order": 10
+    },
+    {
+      "id": "cute-cow-coloring-page",
+      "topicId": "farm-animals-coloring-pages",
+      "slug": "cute-cow-coloring-page",
+      "title": "Cute Cow Coloring Page",
+      "description": "A friendly cow coloring page with a barn, grass, and simple shapes for young kids.",
+      "previewImage": "/assets/previews/coloring-pages/animals/farm-animals/cute-cow-coloring-page.webp",
+      "downloadPdf": "/downloads/coloring-pages/animals/farm-animals/cute-cow-coloring-page.pdf",
+      "difficulty": "easy",
+      "format": "PDF",
+      "tags": ["cow", "farm", "animals"],
+      "indexing": "noindex",
+      "canonicalTopicId": "farm-animals-coloring-pages",
+      "order": 10
+    },
+    {
+      "id": "geometric-flower-mandala-coloring-page",
+      "topicId": "mandala-coloring-pages",
+      "slug": "geometric-flower-mandala-coloring-page",
+      "title": "Geometric Flower Mandala Coloring Page",
+      "description": "A clean flower mandala coloring page with layered petals and symmetrical details.",
+      "previewImage": "/assets/previews/coloring-pages/adults/mandalas/geometric-flower-mandala-coloring-page.webp",
+      "downloadPdf": "/downloads/coloring-pages/adults/mandalas/geometric-flower-mandala-coloring-page.pdf",
+      "difficulty": "medium",
+      "format": "PDF",
+      "tags": ["mandala", "flower", "patterns"],
+      "indexing": "noindex",
+      "canonicalTopicId": "mandala-coloring-pages",
+      "order": 10
+    },
+    {
+      "id": "january-2026-monthly-calendar",
+      "topicId": "january-2026-calendar",
+      "slug": "january-2026-monthly-calendar",
+      "title": "January 2026 Monthly Calendar",
+      "description": "A clean January 2026 calendar page with room for simple notes.",
+      "previewImage": "/assets/previews/calendars/2026/january-2026-monthly-calendar.webp",
+      "downloadPdf": "/downloads/calendars/2026/january-2026-monthly-calendar.pdf",
+      "difficulty": "simple",
+      "format": "PDF",
+      "tags": ["calendar", "january", "2026"],
+      "indexing": "noindex",
+      "canonicalTopicId": "january-2026-calendar",
+      "order": 10
+    },
+    {
+      "id": "counting-animals-worksheet",
+      "topicId": "preschool-counting-worksheets",
+      "slug": "counting-animals-worksheet",
+      "title": "Counting Animals Worksheet",
+      "description": "A preschool counting worksheet with friendly animals and simple number practice.",
+      "previewImage": "/assets/previews/worksheets/preschool-counting/counting-animals-worksheet.webp",
+      "downloadPdf": "/downloads/worksheets/preschool-counting/counting-animals-worksheet.pdf",
+      "difficulty": "easy",
+      "format": "PDF",
+      "tags": ["counting", "animals", "preschool"],
+      "indexing": "noindex",
+      "canonicalTopicId": "preschool-counting-worksheets",
+      "order": 10
+    },
+    {
+      "id": "simple-weekly-planner-page",
+      "topicId": "weekly-planner-printables",
+      "slug": "simple-weekly-planner-page",
+      "title": "Simple Weekly Planner Page",
+      "description": "A clean weekly planner page with calm sections for priorities, notes, and daily plans.",
+      "previewImage": "/assets/previews/planners/weekly/simple-weekly-planner-page.webp",
+      "downloadPdf": "/downloads/planners/weekly/simple-weekly-planner-page.pdf",
+      "difficulty": "simple",
+      "format": "PDF",
+      "tags": ["planner", "weekly", "organization"],
+      "indexing": "noindex",
+      "canonicalTopicId": "weekly-planner-printables",
+      "order": 10
+    }
+  ]
+}

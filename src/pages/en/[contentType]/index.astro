@@ -1,0 +1,93 @@
+---
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import CollectionCard from "@/components/CollectionCard.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import {
+  buildContentTypeSeo,
+  contentTypes,
+  getHubPath,
+  getHubsForContentType,
+  getPrintablesForTopic,
+  getRootTopicsForContentType,
+  getTopicPath,
+  getTopicsForContentType,
+  getTopicsForHub,
+} from "@/lib/catalog";
+import type { ContentType } from "@/lib/catalog";
+
+export function getStaticPaths() {
+  return contentTypes.map((contentType) => ({
+    params: { contentType: contentType.slug },
+    props: { contentType },
+  }));
+}
+
+interface Props {
+  contentType: ContentType;
+}
+
+const { contentType } = Astro.props;
+const seo = buildContentTypeSeo(contentType);
+const hubs = getHubsForContentType(contentType.id);
+const rootTopics = getRootTopicsForContentType(contentType.id);
+const allTopics = getTopicsForContentType(contentType.id);
+const printableCount = allTopics.reduce(
+  (total, topic) => total + getPrintablesForTopic(topic.id).length,
+  0,
+);
+---
+
+<BaseLayout
+  title={`${seo.title} | Color Atlas`}
+  description={seo.description}
+  canonicalPath={seo.canonicalPath}
+  robots={seo.robots}
+>
+  <Breadcrumbs items={[{ label: "Home", href: "/en/" }, { label: contentType.title }]} />
+
+  <section class="content-page py-10 text-center">
+    <div>
+      <p class="eyebrow">{printableCount} printable PDF{printableCount === 1 ? "" : "s"}</p>
+      <h1 class="mt-4 font-serif text-[clamp(2.4rem,6vw,4.2rem)] font-black leading-none text-ink">
+        {contentType.title}
+      </h1>
+      <p class="mt-5 text-base leading-7 text-muted">{contentType.description}</p>
+    </div>
+  </section>
+
+  <section class="container-page py-8">
+    <div class="container-page">
+      <div class="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+        <div>
+          <p class="eyebrow">Browse shelves</p>
+          <h2 class="font-serif text-3xl font-black text-coral-dark">Subcategories</h2>
+        </div>
+      </div>
+
+      <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          hubs.map((hub) => (
+            <CollectionCard
+              title={hub.title}
+              description={hub.description}
+              href={getHubPath(hub)}
+              eyebrow={`${getTopicsForHub(hub.id).length} collection${getTopicsForHub(hub.id).length === 1 ? "" : "s"}`}
+              action="Browse hub"
+            />
+          ))
+        }
+        {
+          rootTopics.map((topic) => (
+            <CollectionCard
+              title={topic.title}
+              description={topic.description}
+              href={getTopicPath(topic)}
+              eyebrow={`${getPrintablesForTopic(topic.id).length} PDF${getPrintablesForTopic(topic.id).length === 1 ? "" : "s"}`}
+              action="Open collection"
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

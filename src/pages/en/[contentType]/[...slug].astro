@@ -1,0 +1,212 @@
+---
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import CollectionCard from "@/components/CollectionCard.astro";
+import PrintableCard from "@/components/PrintableCard.astro";
+import TopicCollection from "@/components/TopicCollection.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import {
+  buildHubSeo,
+  buildPrintableSeo,
+  buildTopicSeo,
+  getContentTypeById,
+  getContentTypePath,
+  getHubById,
+  getHubPath,
+  getPrintablesForTopic,
+  getTopicPath,
+  getTopicsForHub,
+  hubs,
+  printables,
+  topics,
+} from "@/lib/catalog";
+import type { ContentType, Hub, Printable, SeoMeta, Topic } from "@/lib/catalog";
+
+type PageProps =
+  | { kind: "hub"; contentType: ContentType; hub: Hub; seo: SeoMeta }
+  | { kind: "topic"; contentType: ContentType; hub?: Hub; topic: Topic; seo: SeoMeta }
+  | {
+      kind: "printable";
+      contentType: ContentType;
+      hub?: Hub;
+      topic: Topic;
+      printable: Printable;
+      seo: SeoMeta;
+    };
+
+export function getStaticPaths() {
+  const hubPaths = hubs.map((hub) => {
+    const contentType = getContentTypeById(hub.contentTypeId);
+
+    return {
+      params: { contentType: contentType.slug, slug: hub.slug },
+      props: { kind: "hub", contentType, hub, seo: buildHubSeo(hub) },
+    };
+  });
+
+  const rootTopicPaths = topics
+    .filter((topic) => !topic.hubId)
+    .map((topic) => {
+      const contentType = getContentTypeById(topic.contentTypeId);
+
+      return {
+        params: { contentType: contentType.slug, slug: topic.slug },
+        props: { kind: "topic", contentType, topic, seo: buildTopicSeo(topic) },
+      };
+    });
+
+  const hubTopicPaths = topics
+    .filter((topic) => topic.hubId)
+    .map((topic) => {
+      const contentType = getContentTypeById(topic.contentTypeId);
+      const hub = getHubById(topic.hubId as string);
+
+      return {
+        params: { contentType: contentType.slug, slug: `${hub.slug}/${topic.slug}` },
+        props: { kind: "topic", contentType, hub, topic, seo: buildTopicSeo(topic) },
+      };
+    });
+
+  const printablePaths = printables.map((printable) => {
+    const topic = topics.find((entry) => entry.id === printable.topicId) as Topic;
+    const contentType = getContentTypeById(topic.contentTypeId);
+    const hub = topic.hubId ? getHubById(topic.hubId) : undefined;
+    const slug = hub
+      ? `${hub.slug}/${topic.slug}/${printable.slug}`
+      : `${topic.slug}/${printable.slug}`;
+
+    return {
+      params: { contentType: contentType.slug, slug },
+      props: {
+        kind: "printable",
+        contentType,
+        hub,
+        topic,
+        printable,
+        seo: buildPrintableSeo(printable),
+      },
+    };
+  });
+
+  return [...hubPaths, ...rootTopicPaths, ...hubTopicPaths, ...printablePaths];
+}
+
+const props = Astro.props as PageProps;
+const { contentType, seo } = props;
+
+const breadcrumbItems: Array<{ label: string; href?: string }> = [
+  { label: "Home", href: "/en/" },
+  { label: contentType.title, href: getContentTypePath(contentType) },
+];
+
+if (props.kind === "hub") {
+  breadcrumbItems.push({ label: props.hub.title });
+}
+
+if (props.kind === "topic") {
+  if (props.hub) {
+    breadcrumbItems.push({ label: props.hub.title, href: getHubPath(props.hub) });
+  }
+
+  breadcrumbItems.push({ label: props.topic.title });
+}
+
+if (props.kind === "printable") {
+  if (props.hub) {
+    breadcrumbItems.push({ label: props.hub.title, href: getHubPath(props.hub) });
+  }
+
+  breadcrumbItems.push({ label: props.topic.title, href: getTopicPath(props.topic) });
+  breadcrumbItems.push({ label: props.printable.title });
+}
+---
+
+<BaseLayout
+  title={`${seo.title} | Color Atlas`}
+  description={seo.description}
+  canonicalPath={seo.canonicalPath}
+  robots={seo.robots}
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  {
+    props.kind === "hub" && (
+      <>
+        <section class="content-page py-10 text-center">
+          <div>
+            <p class="eyebrow">{getTopicsForHub(props.hub.id).length} collection{getTopicsForHub(props.hub.id).length === 1 ? "" : "s"}</p>
+            <h1 class="mt-4 font-serif text-[clamp(2.4rem,6vw,4.2rem)] font-black leading-none text-ink">
+              {props.hub.title}
+            </h1>
+            <p class="mt-5 text-base leading-7 text-muted">{props.hub.description}</p>
+          </div>
+        </section>
+
+        <section class="container-page py-8">
+          <div>
+            <p class="eyebrow">Browse collections</p>
+            <h2 class="mt-3 font-serif text-3xl font-black text-coral-dark">Topics in this hub</h2>
+            <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {getTopicsForHub(props.hub.id).map((topic) => (
+                <CollectionCard
+                  title={topic.title}
+                  description={topic.description}
+                  href={getTopicPath(topic)}
+                  eyebrow={`${getPrintablesForTopic(topic.id).length} PDF${getPrintablesForTopic(topic.id).length === 1 ? "" : "s"}`}
+                  action="Open collection"
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+      </>
+    )
+  }
+
+  {
+    props.kind === "topic" && (
+      <>
+        <section class="content-page py-10">
+          <div>
+            <p class="eyebrow">{contentType.title}</p>
+            <h1 class="mt-4 font-serif text-[clamp(2.4rem,6vw,4.2rem)] font-black leading-none text-ink">
+              {props.topic.h1}
+            </h1>
+            <p class="mt-5 text-base leading-7 text-muted">{props.topic.intro}</p>
+          </div>
+        </section>
+        <TopicCollection topic={props.topic} />
+      </>
+    )
+  }
+
+  {
+    props.kind === "printable" && (
+      <>
+        <section class="container-page py-10">
+          <div class="grid gap-8 lg:grid-cols-[0.9fr_0.7fr] lg:items-start">
+            <div>
+              <p class="eyebrow">Printable page</p>
+              <h1 class="mt-4 font-serif text-[clamp(2.2rem,5vw,3.8rem)] font-black leading-none text-ink">
+                {props.printable.title}
+              </h1>
+              <p class="mt-5 text-base leading-7 text-muted">{props.printable.description}</p>
+              <p class="mt-5 text-sm leading-6 text-muted">
+                This individual page is available for browsing and sharing, but it canonicalizes
+                to the stronger collection page while the item content remains intentionally slim.
+              </p>
+              <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a href={props.printable.downloadPdf} class="button-primary" download>
+                  Download PDF
+                </a>
+                <a href={getTopicPath(props.topic)} class="button-secondary">
+                  Back to collection
+                </a>
+              </div>
+            </div>
+            <PrintableCard printable={props.printable} />
+          </div>
+        </section>
+      </>
+    )
+  }
+</BaseLayout>

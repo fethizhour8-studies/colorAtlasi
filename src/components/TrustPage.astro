@@ -1,0 +1,50 @@
+---
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import type { TrustPageContent } from "@/lib/trust-pages";
+
+interface Props {
+  page: TrustPageContent;
+}
+
+const { page } = Astro.props;
+const canonicalPath = `/en/${page.slug}/`;
+---
+
+<BaseLayout
+  title={`${page.title} | Color Atlas`}
+  description={page.description}
+  canonicalPath={canonicalPath}
+>
+  <Breadcrumbs items={[{ label: "Home", href: "/en/" }, { label: page.title }]} />
+
+  <section class="container-page py-12 lg:py-16">
+    <div class="grid gap-8 lg:grid-cols-[0.74fr_1.26fr] lg:items-start">
+      <aside class="card-surface p-5">
+        <p class="text-sm font-extrabold text-sage-dark">{page.eyebrow}</p>
+        <h1 class="mt-4 font-serif text-[clamp(2.8rem,6vw,5.2rem)] font-black leading-[0.96] text-ink">
+          {page.title}
+        </h1>
+        <p class="mt-5 text-base leading-7 text-muted">{page.description}</p>
+        <p class="mt-6 rounded-2xl bg-ivory px-4 py-3 text-sm font-bold text-muted">
+          Last updated: {page.updated}
+        </p>
+      </aside>
+
+      <div class="grid gap-5">
+        {
+          page.sections.map((section) => (
+            <section class="card-surface p-6">
+              <h2 class="font-serif text-3xl font-black leading-tight text-ink">{section.heading}</h2>
+              <div class="mt-4 grid gap-4">
+                {section.paragraphs.map((paragraph) => (
+                  <p class="text-base leading-7 text-muted">{paragraph}</p>
+                ))}
+              </div>
+            </section>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

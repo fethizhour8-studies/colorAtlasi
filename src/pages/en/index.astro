@@ -1,0 +1,104 @@
+---
+import CollectionCard from "@/components/CollectionCard.astro";
+import PrintableCard from "@/components/PrintableCard.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import {
+  contentTypes,
+  getContentTypePath,
+  getPrintableById,
+  getPrintablesForTopic,
+  getTopicPath,
+  topics,
+} from "@/lib/catalog";
+
+const featuredTopics = topics.slice(0, 6);
+const latestPrintables = [
+  getPrintableById("magic-owl-coloring-page"),
+  getPrintableById("cute-cow-coloring-page"),
+  getPrintableById("geometric-flower-mandala-coloring-page"),
+  getPrintableById("counting-animals-worksheet"),
+  getPrintableById("january-2026-monthly-calendar"),
+  getPrintableById("simple-weekly-planner-page"),
+];
+const quickLinks = [
+  { label: "Kids", href: "/en/coloring-pages/kids/" },
+  { label: "Animals", href: "/en/coloring-pages/animals/" },
+  { label: "Mandalas", href: "/en/coloring-pages/adults/mandala-coloring-pages/" },
+  { label: "Worksheets", href: "/en/worksheets/" },
+  { label: "Calendars", href: "/en/calendars/" },
+  { label: "Planners", href: "/en/planners/" },
+];
+const getTopicCount = (topicId: string) => getPrintablesForTopic(topicId).length;
+---
+
+<BaseLayout
+  title="Color Atlas - Free Printable Coloring Pages, Worksheets, Calendars, and Planners"
+  description="Browse free printable coloring pages, worksheets, calendars, planners, mandalas, kids printables, adult coloring pages, and classroom resources."
+  canonicalPath="/en/"
+>
+  <section class="content-page py-10 text-center">
+    <h1 class="font-serif text-[clamp(2.4rem,7vw,4.8rem)] font-black leading-none text-ink">
+      Free printable coloring pages and PDF activities.
+    </h1>
+    <p class="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted">
+      Browse original coloring pages, worksheets, calendars, planners, and classroom-friendly
+      printables. Large enough to inspect, simple enough to download quickly.
+    </p>
+  </section>
+
+  <section class="container-page pb-10">
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        contentTypes.map((type) => (
+          <CollectionCard
+            title={type.title}
+            description={type.description}
+            href={getContentTypePath(type)}
+            action="Browse"
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="content-page border-y border-line py-7">
+    <div class="flex flex-wrap justify-center gap-2">
+      {quickLinks.map((item) => <a href={item.href} class="use-chip">{item.label}</a>)}
+    </div>
+  </section>
+
+  <section class="container-page py-12">
+    <div class="mb-6 text-center">
+      <h2 class="font-serif text-3xl font-black text-coral-dark">New printable pages</h2>
+      <p class="mt-2 text-sm leading-6 text-muted">
+        Individual PDF buttons stay attached to each preview.
+      </p>
+    </div>
+    <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+      {latestPrintables.map((printable) => <PrintableCard printable={printable} />)}
+    </div>
+  </section>
+
+  <section class="container-page py-10">
+    <div class="mb-6 text-center">
+      <h2 class="font-serif text-3xl font-black text-coral-dark">Popular collections</h2>
+      <p class="mx-auto mt-2 max-w-2xl text-sm leading-6 text-muted">
+        Collection pages are the main SEO and browsing experience: helpful intro, printable grid,
+        related topics, FAQ, and trust notes.
+      </p>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        featuredTopics.map((topic) => (
+          <CollectionCard
+            title={topic.title}
+            description={topic.description}
+            href={getTopicPath(topic)}
+            eyebrow={`${getTopicCount(topic.id)} PDF${getTopicCount(topic.id) === 1 ? "" : "s"}`}
+            action="Open"
+          />
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

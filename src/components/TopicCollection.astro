@@ -1,0 +1,115 @@
+---
+import PrintableCard from "@/components/PrintableCard.astro";
+import CollectionCard from "@/components/CollectionCard.astro";
+import type { Topic } from "@/lib/catalog";
+import { getPrintablesForTopic, getRelatedTopics, getTopicPath } from "@/lib/catalog";
+
+interface Props {
+  topic: Topic;
+}
+
+const { topic } = Astro.props;
+const printables = getPrintablesForTopic(topic.id);
+const relatedTopics = getRelatedTopics(topic);
+---
+
+<section class="container-page py-8">
+  <div class="grid gap-8 lg:grid-cols-[1fr_260px] lg:items-start">
+    <div>
+      <div class="mb-4 rounded-md border border-coral/35 bg-ivory p-4 text-center">
+        <p class="text-sm font-black text-ink">Which page do you want to print?</p>
+        <div class="mt-3 flex justify-center gap-3 text-xs font-black">
+          <a href="#printable-grid" class="border border-sky px-4 py-2 text-sky-dark">View pages</a>
+          <a href="#how-to-use" class="border border-line px-4 py-2 text-muted">Printing tips</a>
+        </div>
+      </div>
+
+      <div id="printable-grid" class="grid grid-cols-2 gap-4 sm:grid-cols-3">
+        {printables.map((printable) => <PrintableCard printable={printable} />)}
+      </div>
+    </div>
+
+    <aside class="grid gap-4">
+      <div class="sidebar-box p-4">
+        <h2 class="font-serif text-xl font-black text-ink">Quick facts</h2>
+        <dl class="mt-4 grid gap-3">
+          {
+            topic.quickFacts.map((fact) => (
+              <div>
+                <dt class="text-[0.68rem] font-black uppercase text-muted">{fact.label}</dt>
+                <dd class="mt-1 text-sm font-bold leading-5 text-ink">{fact.value}</dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+      <div class="sidebar-box p-4">
+        <h2 class="font-serif text-xl font-black text-ink">Browse tags</h2>
+        <div class="mt-3 flex flex-wrap gap-2">
+          {
+            topic.tags.map((tag) => (
+              <span class="rounded-full border border-line bg-paper px-2 py-1 text-xs font-bold text-muted">
+                {tag}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="how-to-use" class="section-rule content-page py-10">
+  <div class="grid gap-6">
+    <div>
+      <h2 class="font-serif text-3xl font-black text-ink">How to use these printables</h2>
+      <p class="mt-4 text-sm leading-7 text-muted">
+        Download the PDF, print at actual size when possible, and use standard letter paper unless
+        the page says otherwise. These pages are made for simple home, classroom, and quiet-time
+        use.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="content-page py-10">
+  <div class="grid gap-5">
+    <h2 class="font-serif text-3xl font-black text-ink">Common questions</h2>
+    <div class="grid gap-4">
+      <div>
+        <h3 class="font-serif text-xl font-black text-ink">Can I use these in a classroom?</h3>
+        <p class="mt-3 text-sm leading-6 text-muted">
+          Yes, Color Atlas printables are intended for personal, home, and classroom use unless a
+          page says otherwise.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-serif text-xl font-black text-ink">Why are individual pages noindex?</h3>
+        <p class="mt-3 text-sm leading-6 text-muted">
+          Thin printable pages point search engines back to the stronger collection page, where
+          visitors can compare previews and find related PDFs.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{
+  relatedTopics.length > 0 && (
+    <section class="container-page section-rule py-10">
+      <h2 class="mb-5 text-center font-serif text-3xl font-black text-coral-dark">More printable collections</h2>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          relatedTopics.map((relatedTopic) => (
+            <CollectionCard
+              title={relatedTopic.title}
+              description={relatedTopic.description}
+              href={getTopicPath(relatedTopic)}
+              eyebrow="Related"
+            />
+          ))
+        }
+      </div>
+    </section>
+  )
+}
