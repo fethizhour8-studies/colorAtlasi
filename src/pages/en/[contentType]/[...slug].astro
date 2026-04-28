@@ -14,7 +14,6 @@ import {
   getContentTypePath,
   getHubById,
   getHubPath,
-  getPrintablePath,
   getPrintablesForTopic,
   getTopicPath,
   getTopicsForHub,
@@ -193,7 +192,7 @@ if (props.kind === "printable") {
                   title={topic.title}
                   description={topic.description}
                   href={getTopicPath(topic)}
-                  eyebrow={`${getPrintablesForTopic(topic.id).length} PDF${getPrintablesForTopic(topic.id) === 1 ? "" : "s"}`}
+                  eyebrow={`${getPrintablesForTopic(topic.id).length} PDF${getPrintablesForTopic(topic.id).length === 1 ? "" : "s"}`}
                   action="Open collection"
                 />
               ))}
