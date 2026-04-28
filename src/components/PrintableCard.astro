@@ -4,14 +4,21 @@ import { getPrintablePath } from "@/lib/catalog";
 
 interface Props {
   printable: Printable;
+  mode?: "collection" | "detail";
 }
 
-const { printable } = Astro.props;
+const { printable, mode = "collection" } = Astro.props;
 const pagePath = getPrintablePath(printable);
+const isCollection = mode === "collection";
 ---
 
 <article class="simple-print-card p-2">
-  <a href={pagePath} class="block" aria-label={`View ${printable.title}`}>
+  <a
+    href={isCollection ? printable.downloadPdf : pagePath}
+    class="block"
+    aria-label={isCollection ? `Download ${printable.title} PDF` : `View ${printable.title}`}
+    download={isCollection ? true : undefined}
+  >
     <div class="paper-preview p-3">
       <div class="relative h-full overflow-hidden rounded border border-ink/20">
         <span class="absolute left-[16%] top-[13%] size-14 rounded-full border-2 border-ink/38"></span>
@@ -26,16 +33,17 @@ const pagePath = getPrintablePath(printable);
 
   <div class="pt-2 text-center">
     <h3 class="font-serif text-sm font-black leading-tight text-sky-dark">
-      <a href={pagePath}>{printable.title}</a>
+      <a href={isCollection ? printable.downloadPdf : pagePath} download={isCollection ? true : undefined}>{printable.title}</a>
     </h3>
     <p class="mt-1 text-[0.72rem] font-bold uppercase text-muted">{printable.format} · {printable.difficulty}</p>
-    <div class="mt-2 grid gap-2">
-      <a href={printable.downloadPdf} class="button-primary min-h-9 px-3 py-2 text-xs" download>
-        Download PDF
-      </a>
-      <a href={pagePath} class="text-xs font-black text-sky-dark">
+    {isCollection ? (
+      <a href={pagePath} class="mt-2 inline-flex text-xs font-black text-sky-dark">
         View page
       </a>
-    </div>
+    ) : (
+      <a href={printable.downloadPdf} class="button-primary mt-2 min-h-9 px-3 py-2 text-xs" download>
+        Download PDF
+      </a>
+    )}
   </div>
 </article>
