@@ -11,10 +11,10 @@ import {
   getHubPath,
   getHubsForContentType,
   getPrintablesForTopic,
-  getRootTopicsForContentType,
+  getPublicRootTopicsForContentType,
+  getPublicTopicsForHub,
   getTopicPath,
   getTopicsForContentType,
-  getTopicsForHub,
 } from "@/lib/catalog";
 import type { ContentType } from "@/lib/catalog";
 
@@ -32,7 +32,7 @@ interface Props {
 const { contentType } = Astro.props;
 const seo = buildContentTypeSeo(contentType);
 const hubs = getHubsForContentType(contentType.id);
-const rootTopics = getRootTopicsForContentType(contentType.id);
+const rootTopics = getPublicRootTopicsForContentType(contentType.id);
 const allTopics = getTopicsForContentType(contentType.id);
 const printableCount = allTopics.reduce(
   (total, topic) => total + getPrintablesForTopic(topic.id).length,
@@ -100,15 +100,18 @@ const pageIntro =
 
       <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {
-          hubs.map((hub) => (
-            <CollectionCard
-              title={hub.title}
-              description={hub.description}
-              href={getHubPath(hub)}
-              eyebrow={`${getTopicsForHub(hub.id).length} collection${getTopicsForHub(hub.id).length === 1 ? "" : "s"}`}
-              action="Browse hub"
-            />
-          ))
+          hubs.map((hub) => {
+            const publicTopics = getPublicTopicsForHub(hub.id);
+            return (
+              <CollectionCard
+                title={hub.title}
+                description={hub.description}
+                href={getHubPath(hub)}
+                eyebrow={`${publicTopics.length} live collection${publicTopics.length === 1 ? "" : "s"}`}
+                action="Browse hub"
+              />
+            );
+          })
         }
         {
           rootTopics.map((topic) => (
