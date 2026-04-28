@@ -3,8 +3,11 @@ import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import CollectionCard from "@/components/CollectionCard.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import {
+  breadcrumbJsonLd,
   buildContentTypeSeo,
+  collectionJsonLd,
   contentTypes,
+  getContentTypePath,
   getHubPath,
   getHubsForContentType,
   getPrintablesForTopic,
@@ -35,6 +38,7 @@ const printableCount = allTopics.reduce(
   (total, topic) => total + getPrintablesForTopic(topic.id).length,
   0,
 );
+const breadcrumbItems = [{ label: "Home", href: "/en/" }, { label: contentType.title }];
 const pageIntro =
   contentType.id === "coloring-pages"
     ? "Start with broad, safe collections like kids coloring pages, animals, mandalas, and calm adult printables. Each collection is built around original ideas rather than protected characters or brand names."
@@ -50,8 +54,9 @@ const pageIntro =
   description={seo.description}
   canonicalPath={seo.canonicalPath}
   robots={seo.robots}
+  jsonLd={[collectionJsonLd(contentType, getContentTypePath(contentType), printableCount), breadcrumbJsonLd(breadcrumbItems)]}
 >
-  <Breadcrumbs items={[{ label: "Home", href: "/en/" }, { label: contentType.title }]} />
+  <Breadcrumbs items={breadcrumbItems} />
 
   <section class="content-page py-10 text-center">
     <div>
