@@ -9,28 +9,41 @@ interface Props {
 }
 
 const { title, description, href, count, accent = "teal", cta = "Browse collection" } = Astro.props;
+const titleWords = title.split(" ").slice(0, 2).map((word) => word[0]).join("").toUpperCase();
 ---
 
 <a class={`collection-card accent-${accent}`} href={href}>
-  <span class="stack" aria-hidden="true"></span>
-  {typeof count === "number" && <span class="count">{count} printables</span>}
+  <span class="card-topline">
+    <span class="stack" aria-hidden="true"><span>{titleWords}</span></span>
+    {typeof count === "number" && <span class="count">{count} printables</span>}
+  </span>
   <h3>{title}</h3>
   <p>{description}</p>
-  <strong>{cta}</strong>
+  <strong>{cta}<span aria-hidden="true"> →</span></strong>
 </a>
 
 <style>
   .collection-card {
     position: relative;
     display: grid;
-    min-height: 190px;
-    gap: 0.65rem;
+    min-height: 210px;
+    gap: 0.7rem;
     overflow: hidden;
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: 14px;
     background: var(--surface);
     padding: 1rem;
     box-shadow: var(--shadow);
+    transition:
+      transform 160ms ease,
+      box-shadow 160ms ease,
+      border-color 160ms ease;
+  }
+
+  .collection-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(45, 159, 147, 0.34);
+    box-shadow: 0 18px 42px rgba(26, 26, 46, 0.12);
   }
 
   .collection-card::before {
@@ -41,32 +54,69 @@ const { title, description, href, count, accent = "teal", cta = "Browse collecti
     z-index: 0;
   }
 
+  .collection-card::after {
+    content: "";
+    position: absolute;
+    right: -36px;
+    top: -36px;
+    width: 120px;
+    height: 120px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.38);
+    z-index: 0;
+  }
+
   .collection-card > * {
     position: relative;
     z-index: 1;
   }
 
+  .card-topline {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.8rem;
+  }
+
   .stack {
-    width: 70px;
-    height: 52px;
+    display: grid;
+    width: 74px;
+    height: 56px;
+    place-items: center;
     border: 1px solid rgba(26, 26, 46, 0.14);
-    border-radius: 7px;
+    border-radius: 10px;
     background:
-      linear-gradient(#fff, #fff) 12px 8px / 46px 34px no-repeat,
+      linear-gradient(#fff, #fff) 12px 8px / 50px 38px no-repeat,
       var(--sunshine);
     box-shadow:
       8px 8px 0 rgba(255, 255, 255, 0.65),
       14px 14px 0 rgba(26, 26, 46, 0.06);
   }
 
+  .stack span {
+    margin-top: 2px;
+    color: var(--teal-dark);
+    font-size: 0.82rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+  }
+
   .count {
     width: fit-content;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.76);
+    background: rgba(255, 255, 255, 0.78);
     padding: 0.28rem 0.56rem;
     color: var(--teal-dark);
     font-size: 0.82rem;
     font-weight: 750;
+    white-space: nowrap;
+  }
+
+  p {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
   }
 
   strong {
