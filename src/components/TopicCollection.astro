@@ -140,21 +140,6 @@ const featuredPrintable = printables[0];
       </figure>
     )}
 
-    {contentSections.length > 0 && (
-      <section id="collection-guide" class="py-8">
-        <p class="eyebrow">Collection guide</p>
-        <h2 class="mt-3 font-serif text-3xl font-black text-ink">More ideas for {topicLower}</h2>
-        <div class="mt-5 grid gap-8">
-          {contentSections.map((section) => (
-            <section>
-              {section.eyebrow && <p class="eyebrow">{section.eyebrow}</p>}
-              <h3 class="mt-2 font-serif text-2xl font-black text-ink">{section.title}</h3>
-              <p class="mt-3 text-sm leading-8 text-muted">{section.body}</p>
-            </section>
-          ))}
-        </div>
-      </section>
-    )}
 
     <section id="printing-tips" class="section-rule py-10">
       <p class="eyebrow">Printing tips</p>
